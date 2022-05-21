@@ -1,0 +1,398 @@
+<data>
+    <element>
+        <question>Syntax</question>
+        <answer>- Syntax jazyka definuje strukturu program, t.j. to akym sposobom je dovolene jednotlive konstrukcie radit za seba
+- pre definiciu syntaxe pre ucely popisu jazyka pre programatorov sa v sucastnosti pouziva budto syntakticke grafy, BNF ci EBNF, alebo gramatiky</answer>
+    </element>
+    <element>
+        <question>Semantika</question>
+        <answer>popis/definicia jednotlivych syntaktickych konstrukcii, sposob ich vyhodnotenia, spracovania atd.</answer>
+    </element>
+    <element>
+        <question>Formalizmy semantiky</question>
+        <answer>Axiomaticka, Operacna, Denotacna semantika</answer>
+    </element>
+    <element>
+        <question>Axiomaticka semantika</question>
+        <answer>Pre kazdu syntakticku konstrukciu definuje mnozinu axiomov ktore musia byt splnene aby bola dana konstrukcia platna</answer>
+    </element>
+    <element>
+        <question>Operacna semantika</question>
+        <answer>Definuje semantiku spravania programu ako postupnost prechodov medzi jednotlivymi stavmi</answer>
+    </element>
+    <element>
+        <question>Denotacna semantika</question>
+        <answer>program je definovany ako matematicka funkcia ktora zobrazuje vstupy na vystupy</answer>
+    </element>
+    <element>
+        <question>Deklaracia</question>
+        <answer>Uplne vymedzuje atributy danej entity. Moze byt explicitna aj implicitna</answer>
+    </element>
+    <element>
+        <question>Definicia</question>
+        <answer>Uplne vymedzuje atributy danej entity a dalej u premennych definuje sposob alokacie pamate a u funkcii/procedur dalej telo funkcie</answer>
+    </element>
+    <element>
+        <question>Vlastnosti premennych</question>
+        <answer>Meno
+Adresa a umiestnenie
+Hodnoty ktore moze nadobudat
+typ
+doba zivota
+rozsah platnosti</answer>
+    </element>
+    <element>
+        <question>Vazby</question>
+        <answer>Mnozina typov ktore moze premenna nadobudat, priradenie typu premennej, mnozina hodnot ktore mozepremenna nadobudat, hodnota ktoru premenna nadobuda, mnozina vyznamov operatora, konkretny vyznam operatora, interna reprezentacia literalu</answer>
+    </element>
+    <element>
+        <question>Rozsah platnosti premennej</question>
+        <answer>Urcuje tu cast program kedy je mozne s premennou pracovat</answer>
+    </element>
+    <element>
+        <question>Doba zivota premennej</question>
+        <answer>Je casovy interval pocas ktoreho je pre danu premennu alokovana pamat</answer>
+    </element>
+    <element>
+        <question>Nestrukturovane jazyky</question>
+        <answer>Su vacsinou netypovane</answer>
+    </element>
+    <element>
+        <question>Formalna baza</question>
+        <answer>Je taky formalny prostriedok, ktory umoznuje exaktne popisat vsetky konstrukcie daneho jazyka
+	- sluzi k tomu aby bolo mozne iste vlastnosti jazyka formalne dokazat ci overit
+	- casto sa jedna o semantiku, bezospornost jazyka atd.
+	- ak je formalna baza k dispozicii dopredu, tak sa jedna o najidealnejsie voditko preimplementaciu
+	- nestrukturovane jazyky formalnu bazu nemaju</answer>
+    </element>
+    <element>
+        <question>Otvoreny podprogram</question>
+        <answer>Ulozeny v ramci hlavneho tela programu, nema definovane pevne rozhranie, vstup sa dejeskokom na prikaz ktory ma vypocet programu zacat</answer>
+    </element>
+    <element>
+        <question>Strukturovane jazyky</question>
+        <answer>Su typicky typovane</answer>
+    </element>
+    <element>
+        <question>Floyd-Hoare logika</question>
+        <answer>Formalne overenie vlastnosti algoritmov
+- pre kazdy programovy prvok je definovana podmienka splnenia pred a po vykonanej operacie popisanej danym prvkom</answer>
+    </element>
+    <element>
+        <question>Objektovo orientovane programovanie</question>
+        <answer>Je sposob abstrakcie, kedy algoritmus implementujeme ako mnozinu zapuzdrujucich, vzajomne komunikujucich entit, kde kazda z nich ma plnu vypocetnu mocnost celeho pocitaca</answer>
+    </element>
+    <element>
+        <question>Objektovo orientovany system</question>
+        <answer>Sklada sa z jedneho alebo viacerych objektov, ktore spolu komunikuju a interaguju pri spolupraci na riesenie daneho problemu</answer>
+    </element>
+    <element>
+        <question>Objekt</question>
+        <answer>Je entita zapuzdrujuca stavove informacie a poskytujuca sadu operacii nad tymto objektomalebo jeho castami</answer>
+    </element>
+    <element>
+        <question>Sprava</question>
+        <answer>Komunikacna jednotka medzi dvoma lubovolnymi objektami
+Okrem svojho mena moze obsahovat aj dodatocne informacie v podobe parametrov</answer>
+    </element>
+    <element>
+        <question>Metody</question>
+        <answer>Implementuju vsetko spravanie objektov</answer>
+    </element>
+    <element>
+        <question>Koncept objektu</question>
+        <answer>Spojuju data a funkcionalitu do spolocnych jednotiek zvanych objekty, z ktorych sa potomsklada vysledny OOP, su zakladnymi jednotkami modularity a struktury v OOP</answer>
+    </element>
+    <element>
+        <question>Koncept abstrakcie</question>
+        <answer>Schopnost programu zjednodusovat/ignorovat/zapuzdrovat niektore aspekty informacii ci vlastnosti objektov, s ktorymi program pracuje</answer>
+    </element>
+    <element>
+        <question>Koncept zapuzdrenia</question>
+        <answer>Zaistuje uz na urovni definicie semantiky jazyka, ze uzivatel nemoze menit interny stav objektov lubovolnym sposobom ale musi k tomu vyuzivat poskytovane rozhrania</answer>
+    </element>
+    <element>
+        <question>Koncept polymorfizmus (mnohotvarnost)</question>
+        <answer>Vyuziva mechanizmus zasielania sprav
+namiesto bezneho volania podprogramov v strukturovanom programovani sa v OOJ vyuziva mechanizmus zasielania sprav</answer>
+    </element>
+    <element>
+        <question>Koncept dedicnost</question>
+        <answer>Sposob ako implementovat zdielane spravanie
+Nove objekty tak mozu zdielat a rozsirovat spravanie tych existujucich bez nutnosti vsetko znovu reimplementovat</answer>
+    </element>
+    <element>
+        <question>Identita</question>
+        <answer>Porovnava ci sa jedna o ten isty objekt</answer>
+    </element>
+    <element>
+        <question>Zhodnost</question>
+        <answer>Porovnava objekty na zaklade obsahov</answer>
+    </element>
+    <element>
+        <question>Trieda</question>
+        <answer>Sablona podla ktorej mozu byt vytvarane objekty
+stara sa o spravu protokolu objektu</answer>
+    </element>
+    <element>
+        <question>Rusenie objektov v pamati</question>
+        <answer>Automaticky, Manualne</answer>
+    </element>
+    <element>
+        <question>Jednoducha dedicnost</question>
+        <answer>Kazdy potomok ma max 1 priameho predka</answer>
+    </element>
+    <element>
+        <question>Viacnasobna dedicnost</question>
+        <answer>Kazdy potomok moze dedit od viacerych priamych predkov</answer>
+    </element>
+    <element>
+        <question>Dedicnost implementacie</question>
+        <answer>Okrem atributov su dedene aj cele metody vratane ich implementacii</answer>
+    </element>
+    <element>
+        <question>Dedicnost rozhrania</question>
+        <answer>V praxi sa jedna o predpis alebo zoznam metod, ktore je nutne v potomkovi implementovat</answer>
+    </element>
+    <element>
+        <question>Vyzadovana dedicnost</question>
+        <answer>Ak je instancia triedy alebo z nej zdedenej triedy vyzadovana na mieste parametru metody</answer>
+    </element>
+    <element>
+        <question>Staticky typovany jazyk</question>
+        <answer>Urcuje mnozinu operacii ktore objekt podporuje uz v dobe prekladu</answer>
+    </element>
+    <element>
+        <question>Dynamicky typovany jazyk</question>
+        <answer>Kontrolu operacii ktore objekt podporuje robi az pocas behu programu</answer>
+    </element>
+    <element>
+        <question>Redefinicia metod</question>
+        <answer>Moznost jazyka definovat pre metodu podtriedy novu, specifickejsiu implementaciu ako je v jej nadtriede</answer>
+    </element>
+    <element>
+        <question>Prototypovo orientovane jazyky</question>
+        <answer>Tieto jazyky unifikuju svoj navrh tym, ze poznaju iba jediny typ objektu a nevyclenuju samostatne objekty reprezentujuce triedy</answer>
+    </element>
+    <element>
+        <question>UML</question>
+        <answer>Jednotny graficky jazyk pre jednotnu specifikaciu, vizualizaciu, konstrukciu a dokumentaciu pri objektovo orientovanej analyze a navrhu</answer>
+    </element>
+    <element>
+        <question>Menny priestor</question>
+        <answer>Je z programatorskeho hladiska kontajner pre identifikatory, vnutri kontajneru nie su dvarovnake identifikatory</answer>
+    </element>
+    <element>
+        <question>Modifikator viditelnosti</question>
+        <answer>Mechanizmus pritomny v mnohych dnesnych OOJ, ktory ma za ulohu menit moznost pristupu k roznym entitam jazyka</answer>
+    </element>
+    <element>
+        <question>Pretazovanie metod</question>
+        <answer>Je vlastnost umoznujuca definovat v triede viac metod s rovnakym menom, musia sa odlisovat v typoch alebo pocte premennych</answer>
+    </element>
+    <element>
+        <question>Staticka vs triedna metoda</question>
+        <answer>Triedna sa viaze na triedu (obsahuje parameter self)
+Staticka metoda - pristup iba k statickym polozkam</answer>
+    </element>
+    <element>
+        <question>Vyhody objektovej orientacie</question>
+        <answer>Analogia medzi softwarovym modelom a realnym modelom
+Flexibilita takychto softwarovych modelov
+Ich znovupouzitelnost</answer>
+    </element>
+    <element>
+        <question>Vyhody a nevyhody OOP</question>
+        <answer>Toto tu nejdem pisat</answer>
+    </element>
+    <element>
+        <question>Metoda</question>
+        <answer>Odpovedajuca zapuzdrujuca funkcia objektu</answer>
+    </element>
+    <element>
+        <question>Protokol (rozhranie)</question>
+        <answer>Mnozina vsetkych sprav, ktorym objekt rozumie</answer>
+    </element>
+    <element>
+        <question>Instancia</question>
+        <answer>Proces samotneho vytvarania objektu</answer>
+    </element>
+    <element>
+        <question>Konstruktor</question>
+        <answer>Naplnuje alebo inicializuje datove polozky</answer>
+    </element>
+    <element>
+        <question>Kopie objektov</question>
+        <answer>Hlboka kopia, plytka kopia</answer>
+    </element>
+    <element>
+        <question>Ucely dedicnosti</question>
+        <answer>Znovu pouzitie definovanej triedy
+Zaistenie spatnej kompatibility
+K indikacii, ze nove spravanie specializuje ine uz exist. spravanie
+Pre zdielanie kodu</answer>
+    </element>
+    <element>
+        <question>S-kalkul volnost</question>
+        <answer>Rozsah platnosti premennej</answer>
+    </element>
+    <element>
+        <question>UML pohlad</question>
+        <answer>Projekcia systemu na jedno ci viac diagramov UML</answer>
+    </element>
+    <element>
+        <question>UML diagram</question>
+        <answer>Struktura podobna obecnemu grafu obsahujuca mnozinu grafickych prvkov prepojenych vztahmi</answer>
+    </element>
+    <element>
+        <question>Zakladne stavebne bloky UML</question>
+        <answer>Prvky - Strukturne, Spravania, Zoskupovania, Doplnkove
+Vztahy - Asociacia, Zavislost, Agregacia-Kompozicia, Generalizacia, Realizacia</answer>
+    </element>
+    <element>
+        <question>UML Trieda</question>
+        <answer>Rozdelena na 3 bloky: Nazov, zoznam atributov, zoznam operacii</answer>
+    </element>
+    <element>
+        <question>UML Atributy</question>
+        <answer>Prvky objektu, u nich mozno definovat typ, meno, implicitnu hodnotu a viditelnost</answer>
+    </element>
+    <element>
+        <question>UML Operacia</question>
+        <answer>Vo vacsine pripadov odpoveda metodam triedy
+- pomenovane spravanie triedy</answer>
+    </element>
+    <element>
+        <question>Diagram tried</question>
+        <answer>Graf symbolov tried, rozhrani, zoskupeni a dalsich strukturnych prvkov prepojenych statickymi vztahmi</answer>
+    </element>
+    <element>
+        <question>UML Realizacia</question>
+        <answer>Vztah medzi rozhranim a implementacnou triedou</answer>
+    </element>
+    <element>
+        <question>UML Generalizacia</question>
+        <answer>Staticky vztah medzi obecnejsiou a specifickejsiou entitou</answer>
+    </element>
+    <element>
+        <question>UML Agregacia</question>
+        <answer>Vyjadruje zlozenie entity zo skupiny komponentnych entit</answer>
+    </element>
+    <element>
+        <question>UML Kompozicia</question>
+        <answer>Specialny pripad agregacie
+Kazda komponenta moze patrit iba 1 celku</answer>
+    </element>
+    <element>
+        <question>UML Zavislost</question>
+        <answer>Vztah medzi prvkami, ked zmena 1 elementu ma vplyv na zavysli element</answer>
+    </element>
+    <element>
+        <question>UML Ortogonalita</question>
+        <answer>Nezavislost technologie na kontexte</answer>
+    </element>
+    <element>
+        <question>Klasifikacia jazykov podla urcovania typov pri zapise</question>
+        <answer>Beztypove, Netypovane, Typovane</answer>
+    </element>
+    <element>
+        <question>Klasifikacia jazykov podla doby vytvorenia vazby premennej na typ</question>
+        <answer>Staticky, dynamicky typovane</answer>
+    </element>
+    <element>
+        <question>Klasifikacia jazykov podla sposobu typovej kontroly</question>
+        <answer>Staticka, dynamicka</answer>
+    </element>
+    <element>
+        <question>Klasifikacia jazykov podla dokladnosti typovej kontroly</question>
+        <answer>Silne typovane, slabo typovane</answer>
+    </element>
+    <element>
+        <question>Rozhranie</question>
+        <answer>Schema, ktore deklaruje zoznam metod</answer>
+    </element>
+    <element>
+        <question>Implementacie sablon</question>
+        <answer>staticky
+dynamicky
+ad hoc</answer>
+    </element>
+    <element>
+        <question>Sablona</question>
+        <answer>Mechanizmus, ktory umoznuje parametrizaciu definicii datovych typov</answer>
+    </element>
+    <element>
+        <question>Virtualny stroj</question>
+        <answer>Specialna softwarova vrstva, kde jej primarnym ucelom je oddelit pre beziacu aplikaciu hardwarove specifikacie pocitaca, na ktorom je vykonavana</answer>
+    </element>
+    <element>
+        <question>Bytekod</question>
+        <answer>Medzikod</answer>
+    </element>
+    <element>
+        <question>Navrhove vzory</question>
+        <answer>Obecne znovupouzitelne riesenia casto sa vyskytujucich problemov v programovom navrhu
+Systematicky nazyva, vysvetluje a vyhodnocuje dolezity a v OOS sa opakujuci navrh</answer>
+    </element>
+    <element>
+        <question>Jedinacik</question>
+        <answer>Navrhovy vzor
+Obmedzuje moznosti vytvarat z triedy viac ako 1 instanciu</answer>
+    </element>
+    <element>
+        <question>Co vieme odvodit z typu premennej</question>
+        <answer>Velkost ktoru zabera v pamati
+Obor hodnot, ktore moze nadobudat
+Mnozinu operacii, ktore nad nou mozeme vykonavat</answer>
+    </element>
+    <element>
+        <question>Model vypoctu</question>
+        <answer>Imperativne jazyky, deklarativne jazyky</answer>
+    </element>
+    <element>
+        <question>Riesenie cyklickej zavislosti</question>
+        <answer>Spojenim zavyslich modulov do jedneho</answer>
+    </element>
+    <element>
+        <question>Strict evaluation</question>
+        <answer>Parametry su vyhodnocovane pred volanim funkcie a ich hodnota je prekopirovana</answer>
+    </element>
+    <element>
+        <question>Modularne jazyky</question>
+        <answer>Dalsi vyvojovy stupen programovacich jazykov
+Viac podporuje timovu pracu a to tym sposobom ze je mozne program poskladat z podprogramov, ktore na sebe nemusia byt zavysle</answer>
+    </element>
+    <element>
+        <question>Dynamicke semanticke chyby pri jazyku C</question>
+        <answer>Delenie nulou
+Pohyb v poli mimo index po uzivatelskom vstupe
+Zla praca s pamatou
+Overflow/Underflow</answer>
+    </element>
+    <element>
+        <question>SLD rezolucia</question>
+        <answer>Pouziva sa v jazyku prolog
+Vstupny text spracovava na zaklade jednoducheho schematu:
+	klauzule su vyberane postupne zhora dolu
+	paradigma na riadku su vyberane zlava doprava postupne
+V priebehu dochadza k unifikacii medzi premennymi a hodnotami, ktore sa objavuju na prislusnych poziciach parametrov</answer>
+    </element>
+    <element>
+        <question>Co musi splnovat prekladac modularnych jazykov, aby mohol byt po prelozeni vsetkych modulov uspesnezostaveny vysledny program</question>
+        <answer>Musi generovat relativny kod, ktory nasledne ide do linkeru, ktory to prevedie na absolutny alebo relokatibilny kod. Musi generovat vsetky potrebne symboly, a vsetky exportovane, vyvazene symboly</answer>
+    </element>
+    <element>
+        <question>Tranzistentny a perzistentny objekt rozdiely</question>
+        <answer>Perzistentny:
+	Objekt je po znovuspusteni aplikacie/systemu k dispozicii v rovnakom stave a s rovnakou identitou ako pred vypnutim aplikacie/systemu
+Tranzistentny:
+	Vznika za behu programu a zanika najneskor s jeho ukoncenim</answer>
+    </element>
+    <element>
+        <question>Klasifikujte jazyk Python</question>
+        <answer>- Python je multiparadigmaticky programovaci jazyk
+- Dynamicky typovany
+- Sprava pamate pomocou garbage collectoru
+- Modularny - rozsiruje sa cez moduly</answer>
+    </element>
+</data>

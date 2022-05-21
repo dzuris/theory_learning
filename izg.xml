@@ -1,0 +1,310 @@
+<data>
+    <element>
+        <question>Co je potreba pre farbu?</question>
+        <answer>Svetlo (Nositel informacie)
+Objekt (Ma fyzicke vlastnosti)
+Pozorovatel (Vnima farbu)</answer>
+    </element>
+    <element>
+        <question>Achromaticke a chromaticke svetlo</question>
+        <answer>Achromaticke (biele) - Rovnomerne zastupenie vlnovych dlzok
+Chromaticke (farebne) - Nerovnomerne zastupenie vlnovych dlzok</answer>
+    </element>
+    <element>
+        <question>Charakteristika svetla</question>
+        <answer>Jas - Intenzita svetla
+Sytost - Cistota farby svetla, sirka farebneho svetla
+Svetlost - Velkost achromatickej zlozky svetla farby
+Odtien - Dominantna vlnova dlzka svetla</answer>
+    </element>
+    <element>
+        <question>RGB</question>
+        <answer>Odpoveda aditivnemu miesaniu farieb
+Praca/miesanie so svetlom
+Monitory, projektory, kamery atd
+Zakladne farby: Red, Green, Blue
+Zlozenim zakladnych farieb maximalnej intenzity vznika biela farba</answer>
+    </element>
+    <element>
+        <question>CMY</question>
+        <answer>Odpoveda subtraktivnemu miesaniu farieb
+Praca/miesanie s pigmentom
+Tlaciaren
+Zakladne farby: Cyan, Magenta, Yellow
+Zlozenim zakladnych farieb maximalnej intenzity vznika cierna farba</answer>
+    </element>
+    <element>
+        <question>HSV</question>
+        <answer>Uzivatelsky orientovany model
+Nastavuje odtien, sytost a svetlost
+Pri limitoch ubytku jasu klesa zaroven aj sytost</answer>
+    </element>
+    <element>
+        <question>Fragment shader</question>
+        <answer>Vykonava operacie nad jednotlivymi fragmentami sceny (vysledka, teda 2D obrazu), stara sa napriklad o urcenie farieb pixelov ci zobrazenie textur vo vyslednom renderi</answer>
+    </element>
+    <element>
+        <question>Z-buffer (datova struktura, velkost, hodnoty obsahuje, kde sa s nim pracuje, pre aky typ 3D objektov je vhodny?)</question>
+        <answer>Struktura - 2D pole
+Velkost - framebuffer-velkost rozlisenia color bufferu
+Hodnoty obsahuje - Obsahuje Z suradnice najblizsich bodov ploch
+Pracuje sa v GPU
+Vhodny pre 3D objekty - Netransparentne objekty, polygony, trojuholniky</answer>
+    </element>
+    <element>
+        <question>Riadkove vyplnanie</question>
+        <answer>Pouziva sa pre vyplnanie mnohouholnikov
+V skratke prechadza oblasti po riadkoch a useky ktore lezia vnutri objektu su vyfarbene
+Musime brat do uvahy parny a neparny pocet priesecnikov riadkov a modelu + obrazok</answer>
+    </element>
+    <element>
+        <question>Pseudokod pre vykreslenie krivky ktora je zadana parametrickym vyjadrenim G(t) = [x(t), y(t)]</question>
+        <answer>for(float t = 0; t &lt;= 1; t += 0.01) {
+	drawPoint(x(t), y(t));
+}</answer>
+    </element>
+    <element>
+        <question>B-rep 4 charakteristiky</question>
+        <answer>Objekt je popisany pomocou svojho povrchu - hranice
+Informacie o vnutornej strukture objektu neni ulozena
+Objekt definovany pomocou: vrcholov, hran, sten</answer>
+    </element>
+    <element>
+        <question>Graficky kontext (popis a co obsahuje)</question>
+        <answer>Datova struktura, ktora drzi specificke informacie potrebne pre vykreslenie na rozne vystupne zariadenia
+Obsahuje:
+	parametry vystupneho zariadenia
+	sirka a vyska kresliacej plochy
+	transformacia vystupu</answer>
+    </element>
+    <element>
+        <question>Supersampling</question>
+        <answer>Kazdy pixel obrazu je rozdeleny na niekolko vzoriek, subpixely, z ktorych je konvolucnym filtrom zlozena vysledna hodnota pixelu
+- vyhladzuje vysledny obraz, hrany a textury
+- vyrazny pokles vykonu zobrazeni</answer>
+    </element>
+    <element>
+        <question>Co je mozne nanasat na 3D texturu</question>
+        <answer>1. Odraz svetla
+2. Zmena normaloveho vektora
+3. Drsnost
+4. Priehladnost</answer>
+    </element>
+    <element>
+        <question>Texturou nanasane informacie 3D objekty</question>
+        <answer>Farba povrchu
+Priehladnost
+Modifikacia normaly
+Modifikacia geometrie
+Osvetlenie</answer>
+    </element>
+    <element>
+        <question>Ambient, diffuse, specular zlozka v phongovi</question>
+        <answer>Ambient - svetelny sum, rozptylene svetelne pozadie
+Diffuse - Odraz svetla do vsetkych smerov, umoznuje nam vidiet objekty, zavysi na normale a polohe svetla
+Specular - prasatka, zalezi na polohe pozorovatela a polohe svetla</answer>
+    </element>
+    <element>
+        <question>Prevod obrazu na ciernobiely</question>
+        <answer>1. Prevedieme na odtien sedi
+- Prahovanie
+- Nahodne prahovanie
+- Distribucia chyby
+- Maticove rozptylenie</answer>
+    </element>
+    <element>
+        <question>3 metody nanasania struktur</question>
+        <answer>Inverzne mapovacie funkcie
+Premietanie textur
+Mapovanie 3D textur
+UV mapovanie</answer>
+    </element>
+    <element>
+        <question>2 situacie kde sa mozeme stretnut s aliasingom</question>
+        <answer>Na sikmych ciarach, v texturach</answer>
+    </element>
+    <element>
+        <question>Barycentricek rovnice</question>
+        <answer>l1 + l2 + l3 = 1 -&gt; bod nalezi trojuholniku
+l1 + l2 + l3 != 1 -&gt; bod lezi mimo trojuholnika
+l1 = 0; l2 + l3 = 1 -&gt; bod lezi na hrane protilahlej p1</answer>
+    </element>
+    <element>
+        <question>Smernicovy tvar rovnice priamky a popisat</question>
+        <answer>y = kx + q
+y - funkcna hodnota, vysledok funkcie
+x - argument funkcie
+q - offset po osi Y
+k - smernica</answer>
+    </element>
+    <element>
+        <question>Rovnica pre vypocet suradnice xp priesecnika usecky s hranicou orezavacieho okna</question>
+        <answer>(x2 - x1) / (y2 - y1) = (xp - x1) / (yp - y1)</answer>
+    </element>
+    <element>
+        <question>Rovnica krivky a kde sa vyuziva</question>
+        <answer>Parametricke vyjadrenie krivky:
+	x(t) = ax*t^3 + bx*t^2 + cx*t + dx
+	y(t) = ay*t^3 + by*t^2 + cy*t + dy
+Vyuzitie:
+	Definicia objektu
+	Definicia fronty
+	Kreativna grafika
+	urcovanie drahy objektu pri animacii
+	Sablonovanie</answer>
+    </element>
+    <element>
+        <question>Rozdiel medzi fragment, vertex shaderom</question>
+        <answer>Vertex - poskytnut finalnu transformaciu dalej do grafickej pipeline
+Fragment - poskytnut farbu/texturovanie kazdemu pixelu</answer>
+    </element>
+    <element>
+        <question>Transformacna matica posunu v smere (x, y, z)</question>
+        <answer>1 0 0 0
+0 1 0 0
+0 0 1 0
+x y z 1</answer>
+    </element>
+    <element>
+        <question>Matica inverzneho posunutia</question>
+        <answer>1  0  0
+0  1  0
+-x -y 1</answer>
+    </element>
+    <element>
+        <question>Zmena meritka matica (scale) (x, y)</question>
+        <answer>x 0 0
+0 y 0
+0 0 1</answer>
+    </element>
+    <element>
+        <question>Matica inverzny scale</question>
+        <answer>1/x 0   0
+0   1/y 0
+0   0   1</answer>
+    </element>
+    <element>
+        <question>Matica otocenia</question>
+        <answer>cos(a)  sin(a) 0
+-sin(a) cos(a) 0
+0       0      1</answer>
+    </element>
+    <element>
+        <question>Matica skosenia (shear)</question>
+        <answer>1   shy 0
+shx 1   0
+0   0   1</answer>
+    </element>
+    <element>
+        <question>Matica inverzne skosenie (shear)</question>
+        <answer>1    -shy 0
+-shx 1    0
+0    0    1</answer>
+    </element>
+    <element>
+        <question>Inverzne riadkove vyplnovanie</question>
+        <answer>Vyhladavanie priesecniku sa robi inverziou od priesecnika az po okraj obrazu
+nepotrebuje zoradovat priesecniky</answer>
+    </element>
+    <element>
+        <question>Multisampling</question>
+        <answer>Rovnako ako pri supersamplingu su pixely rozdelene na viac subpixelov, ktore lezia na okrajoch polygonu, su pocitane zvlast. Hustejsie vzorkovanie pri hranach objektu, mimo objek a vnutri objektu redsie vzorkovanie vyrazne vyhladzuje hrany objektov, samotnej textury menej</answer>
+    </element>
+    <element>
+        <question>Phongovo tienovanie</question>
+        <answer>Pri rasterizacii prebieha interpolacia normal z vrcholu
+Osvetlovaci model sa pocita pre kazdy pixel
+Je potreba poznat priemerne normaly vo vrcholoch
+Zohladnuje sa zakrivenie povrchov objektov
+Velmi kvalitne vysledky, realisticke zobrazenie
+Narocna implementacia</answer>
+    </element>
+    <element>
+        <question>Popiste zakladni bloky zobrazovaciho retezce (OpenGL)</question>
+        <answer>viz papier</answer>
+    </element>
+    <element>
+        <question>Pinedov algoritmus</question>
+        <answer>Pracuje iba s konvexnymi utvarmi, najcastejsie s trojuholnikmi
+Spociva v rozdeleni oblasti na polroviny hran
+Pre kazdy pixel strany trojuholnika vypocitame hranovu funkciu. Ak je hranova funkcia &gt;= 0, bod je vnutri objektu. Bod vnutri objektu sa znaci pomocou +</answer>
+    </element>
+    <element>
+        <question>MipMap</question>
+        <answer>Zmensena verzia textury, ktora sa pouziva pri texturovani vzdialenych polygonov</answer>
+    </element>
+    <element>
+        <question>Vertex shader</question>
+        <answer>Obsahuje program ktory transformuje
+Vstupy: Build-in attribute variables
+Vystupy: Special output variables</answer>
+    </element>
+    <element>
+        <question>Texturovanie pomocou suradnic</question>
+        <answer>U vacsiny "Beznych" objektov neni mozne najst jedinu analyticku funkciu popisujucu povrch. Preto musime provadet mapovanie po castiach. Spojitost casti zaisti "Texturovacie suradnice". Tie pre kazdy povrchovy vrchol objektu definuju odpovedajuce suradnice textury. Hodnoty texturovacich suradnic medzi definovanymi hodnotami vo vrcholoch su linearne interpolovane</answer>
+    </element>
+    <element>
+        <question>Algoritmus de casteljau</question>
+        <answer>Rekurzivny algoritmus vykreslovania bezbarierovych kriviek
+Plynie z rekurentnej definicie pre bernsteinove polynomy
+Useky riadiaceho polynomu su delene v pomere hodnot t a 1 - t</answer>
+    </element>
+    <element>
+        <question>Ray-tracing a radiozita</question>
+        <answer>viz papier</answer>
+    </element>
+    <element>
+        <question>CSG pre 3D modely</question>
+        <answer>Objekt je popisany stromom z: 3D primitiv, transformacii, bool operacii
+Moznost vzniku singularit
+Po kazdej novej operacii prebieha regeneracia stromu
+Moznost parametrizacie operacii v strome</answer>
+    </element>
+    <element>
+        <question>3 riesenia tienovani</question>
+        <answer>1. Flat shading
+2. Gouraud shading
+3. Phong shading</answer>
+    </element>
+    <element>
+        <question>Flat shading</question>
+        <answer>- Vyhodnocuje sa stredovy pixel polygonu
+- Konstantna farba
+- Nezohladnuje sa zakrivenie
+- Gradient tienu je plynuly, ale lahka implementacia aj v HW</answer>
+    </element>
+    <element>
+        <question>Gouraud shading</question>
+        <answer>- Vyhodnocuju sa pixely vo vrcholoch
+- Interpolacia farieb pri rasterizacii
+- Zohladnuje sa zakryvenie
+- Potreba poznat priemerne normaly vo vrcholoch
+- Gradient plynuly, ale nie uplne presny, lahka implementacia aj v HW</answer>
+    </element>
+    <element>
+        <question>Phong shading</question>
+        <answer>- Interpolacia normal z vrcholov
+- Vyhodnocuje sa kazdy pixel
+- Zohladnuje sa zakryvenie
+- Potreba poznat priemerne normaly vo vrcholoch
+- Gradient plynuly, vysoko presny, narocna implementacia</answer>
+    </element>
+    <element>
+        <question>Is = Il * rs ( V * R ) ^ ns popisat</question>
+        <answer>rs - koeficient reflexie
+ns - koeficient ostrosti
+Is - vysledna intenzita svetla
+Il - intenzita prichadzajuceho svetla
+R - vektor odrazu
+V - vektor k pozorovatelovi</answer>
+    </element>
+    <element>
+        <question>Id = Il * rd * C ( n * L ) popisat</question>
+        <answer>rd - koeficient difuzneho odrazu
+C - farba povrchu
+L - vektor dopadajuceho paprsku
+n - normalovy vektor plochy
+Il - intenzita dopadajuceho paprsku
+Id - vysledna intenzia</answer>
+    </element>
+</data>

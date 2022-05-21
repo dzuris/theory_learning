@@ -1,0 +1,159 @@
+<data>
+    <element>
+        <question>Domena</question>
+        <answer>Pomenovana mnozina skalarnych hodnot urciteho typu</answer>
+    </element>
+    <element>
+        <question>Skalarna hodnota</question>
+        <answer>Najmensia semanticka hodnota dat</answer>
+    </element>
+    <element>
+        <question>zlozena domena</question>
+        <answer>Domena zlozena z niekolkych jednoduchych domen</answer>
+    </element>
+    <element>
+        <question>relacia</question>
+        <answer>Dvojica (schema relacie, telo)</answer>
+    </element>
+    <element>
+        <question>stupen relacie</question>
+        <answer>Pocet atributov relacie</answer>
+    </element>
+    <element>
+        <question>kardinalita relacie</question>
+        <answer>m = | R* |</answer>
+    </element>
+    <element>
+        <question>kandidatny kluc</question>
+        <answer>Jednoznacne identifikuje n-ticu v relacii</answer>
+    </element>
+    <element>
+        <question>referencna integrita</question>
+        <answer>Sulad hodnot PK a FK predstavuje vztahy medzi riadkami tabuliek</answer>
+    </element>
+    <element>
+        <question>algebra matematicky</question>
+        <answer>Dvojica (domena, mnozina operacii)</answer>
+    </element>
+    <element>
+        <question>relacia matematicky</question>
+        <answer>podmnozina kartezskeho sucinu</answer>
+    </element>
+    <element>
+        <question>relacna algebra</question>
+        <answer>Dvojica (R, O)
+R - mnozina relacii
+O - mnozina operacii
+	- tracidne mnozinove operacie (zjednotenie, prienik...)
+	- specialne relacne operacie (projekcia, selekcia...)</answer>
+    </element>
+    <element>
+        <question>zjednotenie tabuliek</question>
+        <answer>UNION</answer>
+    </element>
+    <element>
+        <question>projekcia</question>
+        <answer>SELECT</answer>
+    </element>
+    <element>
+        <question>selekcia</question>
+        <answer>WHERE</answer>
+    </element>
+    <element>
+        <question>spojenie</question>
+        <answer>JOIN</answer>
+    </element>
+    <element>
+        <question>normalizacia</question>
+        <answer>2.vyznamna teoreticka podpora relacnych databazi</answer>
+    </element>
+    <element>
+        <question>3 typy zavislosti normalizacia</question>
+        <answer>1. funkcna zavislost
+2. viachodnotove zavislosti
+3. zavislosti na spojenie</answer>
+    </element>
+    <element>
+        <question>normalizacia - zachovanie zavislosti</question>
+        <answer>Vsetky povodne zavislosti musia byt zachovane a lahko kontrolovatelne</answer>
+    </element>
+    <element>
+        <question>1NF</question>
+        <answer>Vsetky jej jednoduche domeny obsahuju iba atomicke hodnoty</answer>
+    </element>
+    <element>
+        <question>2NF</question>
+        <answer>Musi byt v 1NF a kazdy jej neklucovy atributy je plne funkcne zavisly na kazdom kandidatnom kluci</answer>
+    </element>
+    <element>
+        <question>3NF</question>
+        <answer>Musi byt v 2NF a neexistuje ziadny neklucovy atribut, ktory je tranzitivne zavisli na niektorom kandidatnom kluci</answer>
+    </element>
+    <element>
+        <question>Funkcna zavislost</question>
+        <answer>Hodnoty atributu relacie urcuje jednoznacne hodnotu ineho atributu tej istej relacie </answer>
+    </element>
+    <element>
+        <question>Tranzitivna funkcna zavislost</question>
+        <answer>Y je funkcne zavisli na X ak viem Y jednoznacne urcit podla X</answer>
+    </element>
+    <element>
+        <question>ACID</question>
+        <answer>Atomicita, Konzistencia, Izolacia, Trvalost</answer>
+    </element>
+    <element>
+        <question>Tranzakcia</question>
+        <answer>Skupina prikazov ktora sa musi vykonat spolu alebo nevykonat vobec</answer>
+    </element>
+    <element>
+        <question>Stavy tranzakcie</question>
+        <answer>Active, particularly confirmed, confirmed, fail, aborted</answer>
+    </element>
+    <element>
+        <question>Zurnal</question>
+        <answer>mechanizmus sluzi na zaznamenavanie jednotlivych databazovych operacii</answer>
+    </element>
+    <element>
+        <question>Redo, undo</question>
+        <answer>Potvrd, Vrat</answer>
+    </element>
+    <element>
+        <question>Graf precedencie tranzakcii</question>
+        <answer>Orientovany graf
+kazdy jeho vrchol reprezentuje 1 tranzakciu
+kazda hrana reprezentuje dvojicu konfliktnych operacii</answer>
+    </element>
+    <element>
+        <question>Zamky</question>
+        <answer>Sluzia aby si tranzakcia rezervovala isty databazovy objek pocas doby nevyhnutnej na vykonanie operacie</answer>
+    </element>
+    <element>
+        <question>2PL</question>
+        <answer>2 fazy
+najskor zamyka
+potom odomyka
+inak nekonzistentna analyza
+nezabrani deadlocku</answer>
+    </element>
+    <element>
+        <question>Matica kompatibility</question>
+        <answer>read-read povolene inak zakazane</answer>
+    </element>
+    <element>
+        <question>kategorie chybnych stavov</question>
+        <answer>1. chyby tranzakcie
+2. zrutenie systemu
+3. poskodenie disku so stratou dat</answer>
+    </element>
+    <element>
+        <question>obecne integritne obmedzenia</question>
+        <answer>1. Entitne integritne obmedzenie
+	- Zaistuje uplnost a unikatnost PK
+	- Zamedzi ulozeniu dat ktore by boli v tychto stlpcoch rovnake
+2. Domenove integritne obmedzenie
+	- Zaistuje dodrziavanie datovych typov/domen definovanych u stlpcov databazovej tabulky
+3. Referencne integritne obmedzenia
+	- zaoberaju sa vztahom 2 tabuliek, kde ich relacia je urcena vazbou PK a FK
+	- hodnota FK v jednej tabulke musi odpovedat hodnote KK v inej tabulke, alebo musi byt prazdna</answer>
+    </element>
+</data>

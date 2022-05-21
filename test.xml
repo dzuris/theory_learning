@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<program>
+<data>
     <element>
         <question>Question num 1</question>
         <answer>Answer num 1</answer>
@@ -8,4 +7,4 @@
         <question>Question num 2</question>
         <answer>Answer num 2</answer>
     </element>
-</program>
+</data>
