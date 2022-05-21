@@ -12,6 +12,11 @@ import sys
 import xml.etree.ElementTree as ET
 import re
 
+NO_ERROR = 0
+ERROR_NON_EXIST_FILE = 10
+ERROR_WRONG_PROGRAM_ARGUMENTS = 11
+ERROR_WRONG_XML_STRUCTURE = 20
+
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -19,10 +24,29 @@ def clear():
 
 
 def print_help_message():
-    print()
     print("Usage:")
-    print("\tpython3.8 theory_learning.py FILE")
+    print("\tpython3.8 theory_learning.py [FILE | help]")
     print()
+    print("Options:")
+    print("FILE - Input xml file")
+    print("help | h - prints this message")
+    print()
+
+    print_choices_help()
+
+    print("Exit status:")
+    print("\t0\t\tOK,")
+
+    print("\t10\t\tUnknown file passed as an argument,")
+    print("\t11\t\tWrong program arguments count,")
+
+    print("\t20\t\tWrong XML structure,")
+    print()
+    print("This is help message for the program \"theory_learning.py\"")
+    print()
+
+
+def print_choices_help():
     print("Choices:")
     print("\tr | random - random question")
     print("\t[NUMBER] - gets question from position, indexing starts from one (e.g. 20)")
@@ -33,8 +57,6 @@ def print_help_message():
     print("\th | help - print this message")
     print("\tquit - quit")
     print()
-    print("This is help message for the program \"theory_learning.py\"")
-    print()
 
 
 class Subject:
@@ -42,7 +64,6 @@ class Subject:
     value = None
 
     def __init__(self, input_file):
-        # self.list_of_quest_and_answer = list_of_q_a
         self.load_from_file(input_file)
 
     def load_from_file(self, input_file):
@@ -51,7 +72,7 @@ class Subject:
 
         if root.tag != 'data':
             print('Wrong xml structure')
-            exit(-1)
+            exit(ERROR_WRONG_XML_STRUCTURE)
             
         for element in root.findall('element'):
             question = element.find('question').text
@@ -91,6 +112,8 @@ class Subject:
     def print_answer(self):
         if self.value is not None:
             print(self.get_answer())
+        else:
+            print('No question was generated yet, see \'help\' for how to generate a question')
 
     def print_count(self):
         print(self.get_count())
@@ -107,15 +130,18 @@ if __name__ == "__main__":
     # Loading arguments
     if len(sys.argv) != 2:
         # Wrong program input arguments
-        print("Error in starting file")
+        print("Error in program arguments count")
         print()
         print_help_message()
-        exit(-1)
+        exit(ERROR_WRONG_PROGRAM_ARGUMENTS)
+    elif sys.argv[1] == 'h' or sys.argv[1] == 'help':
+        print_help_message()
+        exit(NO_ERROR)
     else:
         file = sys.argv[1]
         if not os.path.exists(file):
             print("Error: File passed as an argument doesn't exists")
-            exit(-1)
+            exit(ERROR_NON_EXIST_FILE)
 
     subject = Subject(file)
 
@@ -147,6 +173,6 @@ if __name__ == "__main__":
         elif choice == 'quit':
             run = False
         elif choice == 'h' or choice == 'help':
-            print_help_message()
+            print_choices_help()
         else:
-            print("I don't understand the choice, see help for known choices")
+            print("I don't understand the choice, see \'help\' for known choices")
