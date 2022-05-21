@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<program>
+    <element>
+        <question>Question num 1</question>
+        <answer>Answer num 1</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+</program>

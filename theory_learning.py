@@ -1,5 +1,14 @@
+"""
+-----------------------------------------------------------
+@project: Theory learning
+@file: theory_learning.py
+@author: Adam Dzurilla
+-----------------------------------------------------------
+"""
+
 import random
 import os
+import sys
 
 
 def clear():
@@ -8,32 +17,41 @@ def clear():
 
 
 def print_help_message():
-    print("Options:")
+    print("Usage:")
+    print("\tpython3.8 theory_learning.py FILE")
+    print()
+    print("Choices:")
     print("\tr - random question")
     print("\ta - show answer")
     print("\tc | count - number of questions")
     print("\tall - print all questions")
     print("\th | help - print this message")
     print("\tquit - quit")
+    print()
+    print("This is help message for the program \"theory_learning.py\"")
 
 
 class Subject:
     list_of_quest_and_answer = None
-    random_value = None
+    value = None
 
-    def __init__(self, list_of_q_a):
-        self.list_of_quest_and_answer = list_of_q_a
+    def __init__(self, input_file):
+        # self.list_of_quest_and_answer = list_of_q_a
+        self.load_from_file(input_file)
+
+    def load_from_file(self, input_file):
+        pass
 
     def select_random(self):
-        self.random_value = random.choice(list(self.list_of_quest_and_answer))
+        self.value = random.choice(list(self.list_of_quest_and_answer))
 
     def print_ran_choice(self):
         self.select_random()
-        print(self.random_value)
+        print(self.value)
 
     def print_answer(self):
-        if self.random_value is not None:
-            print(self.list_of_quest_and_answer[self.random_value])
+        if self.value is not None:
+            print(self.list_of_quest_and_answer[self.value])
 
     def print_count(self):
         print(len(self.list_of_quest_and_answer))
@@ -466,14 +484,29 @@ if __name__ == "__main__":
                                               "\nIl - intenzita dopadajuceho paprsku"
                                               "\nId - vysledna intenzia"
     }
-    subject = Subject(list_izg)
+
+    file = None
+    # Loading arguments
+    if len(sys.argv) != 2:
+        # Wrong program input arguments
+        print("Error in starting file")
+        print()
+        print_help_message()
+        exit(-1)
+    else:
+        file = sys.argv[1]
+        if not os.path.exists(file):
+            print("Error: File passed as an argument doesn't exists")
+            exit(-1)
+
+    subject = Subject(file)
 
     clear()
     run = True
     while run:
         choice = None
         try:
-            choice = input("Zadaj volbu: ").lower()
+            choice = input("Select choice: ").lower()
         except KeyboardInterrupt:
             run = False
             continue
@@ -484,6 +517,7 @@ if __name__ == "__main__":
         elif choice == 'a':
             subject.print_answer()
         elif choice == 'c' or choice == 'count':
+            clear()
             subject.print_count()
         elif choice == 'all':
             subject.print_all()
@@ -491,3 +525,5 @@ if __name__ == "__main__":
             run = False
         elif choice == 'h' or choice == 'help':
             print_help_message()
+        else:
+            print("I don't understand the choice, see help for known choices")
