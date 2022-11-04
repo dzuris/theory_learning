@@ -1,0 +1,160 @@
+<data>
+    <element>
+        <question>Pyramidovy model</question>
+        <answer>vid papier</answer>
+    </element>
+    <element>
+        <question>Štrukturované dátové typy</question>
+        <answer>Ako z jednoduchších dátových typov budovať zložitejšie
+2 spôsoby ako štrukturované dátove typy vytvárať:
+- štruktúra
+- kolekcia</answer>
+    </element>
+    <element>
+        <question>Štruktúra (záznam)</question>
+        <answer>usporiadané n-tice, ktoré sú prvky kartézskeho súčinu, sú štrukturované hodnoty vytvárané:
+- pevným počtom pomenovaných dílčich hodnôt (dvojica meno, hodnota) obecne rôznych typov</answer>
+    </element>
+    <element>
+        <question>Kolekcia</question>
+        <answer>tvorená predom neobmedzeným počtom hodnôt rovnakých dátových typov.
+Množina obsahuje obvykle každý prvok iba jedenkrát, ak je povolené aby sa jeden prvok vyskytoval v množine viackrát => jedná sa o multimnožinu.
+Tradičný zoznam je usporiadanou multimnožinou</answer>
+    </element>
+    <element>
+        <question>Cookies</question>
+        <answer>v protokole HTTP sa ako cookie označuje malé množstvo dát, ktoré WWW server zašle užívateľovi, a prehliadač ich uloží do počítaču užívateľa
+Cookies bežne slúžia k rozlišovaniu užívateľov, k ukladaniu užívateľských predvolieb a pod.
+Sprístupňuje k čítaniu pomocou superglobálu $_COOKIE
+Zapisuje sa pomocou setcookie()
+
+setcookie(
+    'jazyk',        //meno
+    'cs',           //hodnota
+    time()+3600,    //expiracia
+    '/');           //cesta</answer>
+    </element>
+    <element>
+        <question>Pocitadlo pristupov na stranku pomocou cookie</question>
+        <answer>&lt;?php
+    if(isset($_COOKIE['pocet']):
+        $pocet = $_COOKIE['pocet'];
+    else:
+        $pocet = 0;
+    endif;
+    $pocet++;
+    setcookie('pocet', $pocet);
+?&gt;</answer>
+    </element>
+    <element>
+        <question>HTML formular pre login a PHP spracovanie k tomu</question>
+        <answer>&lt;?php
+    session_start();
+    $login = $_POST['login'];
+    $pwd = $_POST['pwd'];
+    if ($login == 'admin' &amp;&amp; $pwd == 'spravneHeslo')
+    {
+        $_SESSION['user'] = $login;
+        header("Location: http://{$_SERVER['SERVER_NAME']}/admin.php);
+    }
+?&gt;
+
+&lt;html/&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;
+    &lt;form method="post" action="&lt;?= $_SERVER['PHP_SELF']?&gt;"&gt;
+        &lt;label for="login"&gt;Login:&lt;/label&gt;
+        &lt;input type="text" name="login" id="login"/&gt;&lt;br&gt;
+        &lt;label for="pwd"&gt;Heslo:&lt;/label&gt;
+        &lt;input type="password" name="pwd" id="pwd"/&gt;&lt;br&gt;
+        &lt;input type="submit" value="Odoslat"/&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</answer>
+    </element>
+    <element>
+        <question>PDO</question>
+        <answer>PHP Data Object
+Jednoduchá abstrakcia nad databázovým systémom
+Poskytuje štandardné rozhrania pre základné operácie
+Objektovo orientované rozhranie
+Tieto rozhrania implementujú ovládače pre jednotlivé konkrétne systémy (napr. MSSql, Firebird, MySql, SQLite, PostgreSQL, Oracle...)
+Pripojenie k databáze:
+    - Vytvorenie inštancie triedy PDO
+    - Špecifikácia spojenia pomocou DSN (data source name)
+    
+&lt;?php
+    $dsn = 'connectionString';
+    $username = 'login';
+    $password = 'password';
+    $options = array(
+        PDO :: MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
+    );
+    
+    $pdo = new PDO($dsn, $username, $password, $options);
+?&gt;</answer>
+    </element>
+    <element>
+        <question>Jednorázový dotaz v PDO</question>
+        <answer>$stmt = $pdo->query("SELECT name FROM users");</answer>
+    </element>
+    <element>
+        <question>Opakovaný dotaz v PDO</question>
+        <answer>$stmt = $pdo->prepare("SELECT name FROM users WHERE id = ?");
+$stmt->execute(array($userId));</answer>
+    </element>
+    <element>
+        <question>Prostá štruktúra</question>
+        <answer>Objekt je štruktúra s identifikáciou. Každému objektu v systéme je priradená jednoznačná identifikácia nazývaná OID.
+Objekt je teda štruktúra, kde jej systémovou a obvykle aj prvou vlastnosťou je OID. Hodnotu OID generuje databázový systém pri vzniku objektu a po celú dobu činnosti ju nemení.
+Tým že objekt má OID, je identifikovateľný a teda aj odkazovateľný. To má za následok že môže figurovať ako člen vo vzťahoch, to štruktúra bez OID nemôže. Takúto štruktúru nazývame prostá štruktúra.</answer>
+    </element>
+    <element>
+        <question>Superglobály</question>
+        <answer>Globálne premenné ktoré sú dostupné vo všetkých kontextoch bez nutnosti deklarácie</answer>
+    </element>
+    <element>
+        <question>Vzťahy</question>
+        <answer>Umožňujú odkazovať z jednej (štrukturovanej) hodnoty (vlastníka) inú (člena)
+Musí existovať dátový typ jednoznačne identifikujúci (odkazujúci) štrukturovanú hodnotu (napr. OID)</answer>
+    </element>
+    <element>
+        <question>Objektový model dát</question>
+        <answer>Základné typy + dátový typ OID
+Objekt je vždy štruktúrou na najvyššej úrovni
+Dva druhy neobmedzene zanorených štruktúr:
+- kolekcia
+- Prostá štruktúra</answer>
+    </element>
+    <element>
+        <question>Model obecného informačného systému</question>
+        <answer>viď papier 2018/19 skupina A 1.</answer>
+    </element>
+    <element>
+        <question>Session</question>
+        <answer>Protokol HTTP je bezstavový
+Potrebujeme rozlíšiť požiadavky pochádzajúce od rovnakých/rôznych klientov - kontext
+Potreba pridať k HTTP mechanizmus pre uchovávanie informácii o kontexte klientov -> správa sezení (session)
+Novým užívateľom vygenerujeme jednoznačný identifikátor SessionID
+Týmto identifikátorom sa klient overí pri každom ďalšiom požiadavku
+Udržiavanie kontextu pomocou cookies</answer>
+    </element>
+    <element>
+        <question>GET vs POST</question>
+        <answer>GET                                     |       POST
++transparentý                           |       +veľké množstvo dát
++hodnoty možno uložiť                   |       +hodnoty nie sú viditeľné
++pre odoslanie stačí odkaz              |       -nemožno uložiť
+-obmedzené množstvo dát                 |       -odoslanie iba z formulára
+-nevhodné pre predanie citlivých dát    |       -zložitejšia manipulácia s prehliadačom</answer>
+    </element>
+    <element>
+        <question>Čo je to nosič</question>
+        <answer>Systém možno chápať ako množinu prvkov a väzieb medzi nimi, ktoré sú definované na nejakom nosiči
+Nosičom teda je množina prvkov systému vo vzájomných vzťahoch
+Prvky nosiča nazývame zdroje
+Typické nosiče:
+- Fyzické
+- Konceptuálne</answer>
+    </element>
+</data>
