@@ -1,0 +1,30 @@
+<data>
+    <element>
+        <question>Popíšte jednotlivé vrstvy modelu TCP/IP, ich funkcie a protokoly, ktoré na nich komunikujú</question>
+        <answer>1. Aplikačná - HTTP, SMTP, DNS - Vrstva zaisťuje spracovanie dat na najvyššej úrovni vrátane reprezentácie dát, kódovania aj riadenia dialógu.
+2. Transportná - TCP, UDP - Prenáša dáta z aplikácie na zdrojovom počítači do aplikácie na cieľovom počítači.
+3. Internetová (sieťová) - IP - Vytvára diagramy, adresuje ich a smeruje na miesto určenia
+4. Vrstva sieťového rozhrania - ETHERNET, TOKEN RING - Okrem fyzických technológii (metalická kabeláž, bezdrôtový prenos, optika, rádiové vlny) zahrnuje takisto funkcie pre prístup k fyzickému médiu (ovládače sieťových kariet)</answer>
+    </element>
+    <element>
+        <question>Definujte zapúzdrenie a popíšte, ako prebieha. Uveďte, ktoré sieťové prvky, prípadne softvér, vykonávajú zapúzdrenie dát na konkrétnej sieťovej vrstve modelu TCP/IP</question>
+        <answer>Zapúzdrenie spočíva vo vložení PDU (protokolové dátovej jednotky) vyššej vrstvy do jednotky nižšej vrstvy, čo umožňuje aby vyššia vrstva mohla používať služby nižšej vrstvy v zásobníku protokolov. Je to vlastnosť jednotlivých vrstiev TCP/IP modelov.
+Aplikácie v aplikačnej vrstve predávajú dáta transportnej vrstve (implementované typicky systémom - kernelom), ktorý pridá hlavičku transportného protokolu k aplikačným dátam, čím vytvára segment (paket) a predá to nižšej sieťovej vrstve (takisto implementovanej v systéme počítača), ktorá pridá IP hlavičku a vytvorí IP datagram. Systém predá IP datagram vrstve sieťového rozhrania (napr. sieťovej karty), ktorá pridá ethernet hlavičku a pätičku IP datagramu, ktorý zapúzdri, čím vytvára rámec.</answer>
+    </element>
+    <!-- <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element> -->
+</data>
