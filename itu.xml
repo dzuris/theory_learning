@@ -1,0 +1,82 @@
+<data>
+    <element>
+        <question>Programovací jazyk QML</question>
+        <answer>Syntakticky vychádza z CSS a Javascriptu</answer>
+    </element>
+    <element>
+        <question>Skratka WIMP v návrhu uživateľských rozhraní označuje</question>
+        <answer>Klasické paradigma grafických uživateľských rozhraní (Window, Icon, Menu, Pointer)</answer>
+    </element>
+    <element>
+        <question>Sila WPF je v tom, že umožňuje logické delenie GUI na</question>
+        <answer>Definíciu vzhľadu a správanie</answer>
+    </element>
+    <element>
+        <question>XAML je</question>
+        <answer>Jazyk používaný pre definíciu GUI</answer>
+    </element>
+    <element>
+        <question>Animácie v Material Design</question>
+        <answer>Sú dôležitými súčasťami doporučení a majú sa používať</answer>
+    </element>
+    <element>
+        <question>Device context vo WinAPI obecne reprezentuje</question>
+        <answer>Abstraktný objekt pre zjednotené vykreslovanie</answer>
+    </element>
+    <element>
+        <question>Podstatou asynchronnej komunikácie u technológie AJAX je</question>
+        <answer>Klient nečaká na dokončenie prenosu a umožňuje užívateľovi medzitým naďalej so stránkou pracovať</answer>
+    </element>
+    <element>
+        <question>Qwidget je</question>
+        <answer>Základné grafické primitívum v Qt</answer>
+    </element>
+    <element>
+        <question>Ktorá z následujúcich situácii není vhodná pre použitie technológie AJAX</question>
+        <answer>Zobrazenie menu webového portálu, ktoré je na každej stránke rovnaké. Aby sme ho teda nemuseli stále meniť zvlášť, uložíme ho na server a po načítaní stránky zobrazíme AJAXom.</answer>
+    </element>
+    <element>
+        <question>Modálne dialógové okno</question>
+        <answer>Neumožňuje pokračovať nadriadenej aplikácii, pokým nie je uzavreté</answer>
+    </element>
+    <element>
+        <question>Prekreslovanie okien vo Windows sa deje</question>
+        <answer>Obvykle na základe prijímu správ (WM_PAINT)</answer>
+    </element>
+    <element>
+        <question>Pokiaľ objekt XmlHttpRequest nastavíme jeho atribút "onreadychange = lion"</question>
+        <answer>Pri každej zmene stavu HttpRequestObject sa zavolá funkcia s názvom lion, ak daná funkcia existuje</answer>
+    </element>
+    <element>
+        <question>Aké sú vlastnosti GTK platformy (aké tvrdenia platia)</question>
+        <answer>Riadené udalosťami, viac-platformové</answer>
+    </element>
+    <element>
+        <question>Pilotné testovanie je/slúži k</question>
+        <answer>Zistenie problémov, nejasností, nevhodne položených otázok | Nacvičenie techník pre zber dát | Menšia štúdia, pomôže sa poučiť z chýb pred vykonaním hlavnej štúdie</answer>
+    </element>
+    <element>
+        <question>Diagram prípadov užitia (use case diagram) pri návrhu uživateľského rozhrania umožňuje identifikovať</question>
+        <answer>Typické zámery užívateľa s aplikáciou a situáciou, kedy užívateľ aplikáciu používa</answer>
+    </element>
+    <element>
+        <question>Súčasťou Qt toolkit je nástroj na tvorbu GUI ktorý sa nazýva</question>
+        <answer>Designer</answer>
+    </element>
+    <element>
+        <question>Do pravidiel dobrého návrhu uživateľského rozhrania patrí</question>
+        <answer>Rešpektovanie pracovných postupov | spätná väzba o priebehu akcie</answer>
+    </element>
+    <element>
+        <question>Pri stisku klávesy sa vo Windows zašle správa</question>
+        <answer>Oknu aplikácie, ktorá ma "focus"</answer>
+    </element>
+    <element>
+        <question>Ktoré tvrdenie o formáte JSON je pravdivé</question>
+        <answer>Oproti formátu XML je úspornejší, čo sa týka množstva potrebných znakov pre popis rovnakej štruktúry dát</answer>
+    </element>
+    <element>
+        <question>Medzi výhody využitia technológie AJAX na klientovi patrí</question>
+        <answer>Možnosť aktualizovať iba časť stránky dátami zo serveru</answer>
+    </element>
+</data>
