@@ -126,6 +126,13 @@ class Subject:
         """
         return len(self.list_of_quest_and_answer)
 
+    def get_value_index(self):
+        """
+        Gets index of the value in list
+        :return: Index + 1 (due selecting by position) as string
+        """
+        return str(list(self.list_of_quest_and_answer).index(self.value) + 1)
+
     def get_question_from_position(self, position: int):
         """
         Gets question from concrete position, if position is valid
@@ -150,7 +157,7 @@ class Subject:
         :return:
         """
         self.select_random()
-        print(self.get_question())
+        print(self.get_value_index() + ". " + self.get_question())
 
     def print_from_position(self, position):
         """
@@ -165,7 +172,7 @@ class Subject:
             print('Wrong index (indexing starts from 1 to ' + str(self.get_count()) + ')')
         else:
             self.value = key
-            print(key)
+            print(self.get_value_index() + ". " + key)
 
     def print_answer(self):
         """

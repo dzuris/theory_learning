@@ -1,30 +1,489 @@
 <data>
     <element>
         <question>Popíšte jednotlivé vrstvy modelu TCP/IP, ich funkcie a protokoly, ktoré na nich komunikujú</question>
-        <answer>1. Aplikačná - HTTP, SMTP, DNS - Vrstva zaisťuje spracovanie dat na najvyššej úrovni vrátane reprezentácie dát, kódovania aj riadenia dialógu.
+        <answer>1. Aplikačná - DNS, FTP, SIP, Telnet, HTTP, SMTP - Vrstva zaisťuje spracovanie dat na najvyššej úrovni vrátane reprezentácie dát, kódovania aj riadenia dialógu.
 2. Transportná - TCP, UDP - Prenáša dáta z aplikácie na zdrojovom počítači do aplikácie na cieľovom počítači.
-3. Internetová (sieťová) - IP - Vytvára diagramy, adresuje ich a smeruje na miesto určenia
-4. Vrstva sieťového rozhrania - ETHERNET, TOKEN RING - Okrem fyzických technológii (metalická kabeláž, bezdrôtový prenos, optika, rádiové vlny) zahrnuje takisto funkcie pre prístup k fyzickému médiu (ovládače sieťových kariet)</answer>
+3. Internetová (sieťová) - IP, ICMP, IGMP, ARP - Vytvára diagramy, adresuje ich a smeruje na miesto určenia
+4. Vrstva sieťového rozhrania - ETHERNET, FDDI, X.25, Frame Relay - Okrem fyzických technológii (metalická kabeláž, bezdrôtový prenos, optika, rádiové vlny) zahrnuje takisto funkcie pre prístup k fyzickému médiu (ovládače sieťových kariet)</answer>
     </element>
     <element>
         <question>Definujte zapúzdrenie a popíšte, ako prebieha. Uveďte, ktoré sieťové prvky, prípadne softvér, vykonávajú zapúzdrenie dát na konkrétnej sieťovej vrstve modelu TCP/IP</question>
-        <answer>Zapúzdrenie spočíva vo vložení PDU (protokolové dátovej jednotky) vyššej vrstvy do jednotky nižšej vrstvy, čo umožňuje aby vyššia vrstva mohla používať služby nižšej vrstvy v zásobníku protokolov. Je to vlastnosť jednotlivých vrstiev TCP/IP modelov.
-Aplikácie v aplikačnej vrstve predávajú dáta transportnej vrstve (implementované typicky systémom - kernelom), ktorý pridá hlavičku transportného protokolu k aplikačným dátam, čím vytvára segment (paket) a predá to nižšej sieťovej vrstve (takisto implementovanej v systéme počítača), ktorá pridá IP hlavičku a vytvorí IP datagram. Systém predá IP datagram vrstve sieťového rozhrania (napr. sieťovej karty), ktorá pridá ethernet hlavičku a pätičku IP datagramu, ktorý zapúzdri, čím vytvára rámec.</answer>
-    </element>
-    <!-- <element>
-        <question>Question num 2</question>
-        <answer>Answer num 2</answer>
+        <answer>- Zapúzdrenie spočíva vo vložení PDU (protokolové dátovej jednotky) vyššej vrstvy do jednotky nižšej vrstvy, čo umožňuje aby vyššia vrstva mohla používať služby nižšej vrstvy v zásobníku protokolov. Je to vlastnosť jednotlivých vrstiev TCP/IP modelov.
+- Aplikácie v aplikačnej vrstve predávajú dáta transportnej vrstve (implementované typicky systémom - kernelom), ktorý pridá hlavičku transportného protokolu k aplikačným dátam, čím vytvára segment (paket) a predá to nižšej sieťovej vrstve (takisto implementovanej v systéme počítača), ktorá pridá IP hlavičku a vytvorí IP datagram. Systém predá IP datagram vrstve sieťového rozhrania (napr. sieťovej karty), ktorá pridá ethernet hlavičku a pätičku IP datagramu, ktorý zapúzdri, čím vytvára rámec.</answer>
     </element>
     <element>
-        <question>Question num 2</question>
-        <answer>Answer num 2</answer>
+        <question>Signalizačný protokol SIP</question>
+        <answer>- Registrácia užívateľov a zariadení
+- Vytváranie hovorov, smerovanie hovorov, ukončenie hovorov
+- Metody: REGISTER (Žiadosť o registráciu), INVITE, OK, ACK (Vytváranie spojenia), BYE (Ukončenie spojenia), CANCEL (Zrušenie vytvárania spojenia), OPTIONS (zisťovanie možností prenosu)
+
+REGISTER - Registrácia spojenia
+    - Užívateľ identifikovaný adresou vo formáte SIP URI
+    - Registrácia ukladá polohu klienta do lokalizačnej databázy
+    - Registrácia obvykle vyžaduje autentizáciu klienta pomocou hesla
+    
+INVITE - Ustanovenie spojenia
+    - Volajúci pošle volanému správu INVITE cez svoj lokálny SIP server
+    - Ak je volaný pripravený odpovie správou OK
+    - Volajúci potvrdí prijatie správy pomocou ACK a začne komunikácia</answer>
     </element>
     <element>
-        <question>Question num 2</question>
-        <answer>Answer num 2</answer>
+        <question>Hlasové služby zhrnutie</question>
+        <answer>- IP telefonie využíva integráciu datových a hlasových služieb
+- Medzi základné komponenty patria: IP telefón, ústredne (SIP servery), brány, MCU...
+- Pre riadenie využívajú signalizačné protokoly
+- Vlastný transport hlasových dát zaisťuje RTP/RTCP
+- Pre smerovanie buď DNS alebo statické záznamy na serveroch SIP
+- Adresácia pomocou SIP URI</answer>
     </element>
     <element>
-        <question>Question num 2</question>
-        <answer>Answer num 2</answer>
-    </element> -->
+        <question>Čo je protokol?</question>
+        <answer>- súbor syntaktických a sémantických pravidiel určujúcich výmenu dát
+- popisuje vytvorenie spojenia, adresovanie, prenos dát, riadenie toku, zabezpečovanie</answer>
+    </element>
+    <element>
+        <question>Čo sú schránky?</question>
+        <answer>- jednoznačne identifikovateľné v sieti pomocou IP adresy a čísla portu</answer>
+    </element>
+    <element>
+        <question>Komunikácia klient-server</question>
+        <answer>- štandardný spôsob komunikácie medzi 2 procesami
+- výmena informácii je popísaná protokolom</answer>
+    </element>
+    <element>
+        <question>Prenos dát na vrstve IP</question>
+        <answer>Unicastová, Multicastová, Broadcastová komunikácia</answer>
+    </element>
+    <element>
+        <question>Požiadavky na bezpečnosť</question>
+        <answer>Dôvernosť - komunikácia ostane iba medzi komunikujucími, rieši sa pomocou šifrovania
+Autentizácia - overenie užívateľa - heslá, biometrické údaje, digitálne podpis
+Integrita dát - dáta dorazia také, aké boli poslané (kryptografický hash na konci...)
+Neodmietnuteľnosť - ten kto zasiela dáta je ten za koho sa vydáva (digitálny podpis)
+Dostupnosť, kontrola prístupu - dáta sú dostupné v dobe, kedy majú byť dostupné
+- kryptografia rieši iba prvé 4 body zoznamu</answer>
+    </element>
+    <element>
+        <question>Rizika počítačovej komunikácie</question>
+        <answer>- Odposluchy (získavanie citlivých údajov, presmerovávanie komunikácie...)
+- Neautorizovaný prístup k zariadeniam (ťažba kryptomien, zneužitie SIP ústrední pre medzinárodne hovory)
+- Podvrhnutie správy - DNS spoofing (presmerovanie na stránku, ziskávanie údajov)
+- Falšovanie identity - SMTP nahratie falošnej hlavičky (zisk citlivých údajov, peňazí...)
+- Útok na systém - zahltenie zdrojov - DDoS (Denial of Service) - Nedostupnosť nejakej služby môže stáť súkromný či štátny sektor peniaze, prípadne ho úplne vyradiť z prevádzky
+- Škodlivý softvér - viry, červy, trojské kone, ransomware (od získavanie citlivých údajov po poškodzovanie serverových dát...)</answer>
+    </element>
+    <element>
+        <question>Multicast</question>
+        <answer>- odosielanie paketov z jednej vysielajúcej stanice na viac naslúchajúcich zariadení v 1 multicastovej skupine
+- IPv4 používa na vrstve L3 adresy triedy D spoločne pre viac nasluchajúcich staníc
+- IPv6 používa adresy s prefixom FF00::/8
+- MAC adresy sú odvodené na základe prefixov a posledných bitov IP adries</answer>
+    </element>
+    <element>
+        <question>Premapovanie multicastových adries medzi L2 a L3</question>
+        <answer>- MLD (Multicast listener discovery) - poslaný pomocou ICMPv6</answer>
+    </element>
+    <element>
+        <question>Multicast prekryv</question>
+        <answer>- deje sa primárne u IPv4
+- pakety sú odoslané aj zariadeniam s inou vyššou časťou IP adresy, ako je daná multicastová skupina, čo znamená pre zariadenie prácu naviac, pretože sa musí pozrieť do L3 vrstvy</answer>
+    </element>
+    <element>
+        <question>IGMP, MLD</question>
+        <answer>- prihlasujú a odhlasujú zo skupín multicast</answer>
+    </element>
+    <element>
+        <question>Skupiny multicastu</question>
+        <answer>Lokálne rozhranie - ak je nutná komunikácia iba s vlastným rozhraním
+Lokálna sieť - prenos dát, streamov a vysielanie na lokálnom zariadení
+Daná lokalita - podobné
+Organizácia - podobné
+Globálne - videokonferencie</answer>
+    </element>
+    <element>
+        <question>Aplikácia kryptografických algoritmov v počítačových sieťach</question>
+        <answer>- šifrovanie prenášaných dát
+    - pomocou symetrickej kryptografie (tajný kľúč)
+    - pomocou asymetrickej kryptografie (verejný kľúč)
+- zaistenie integrity dát
+    - pomocou symetrickej kryptografie (kryptografický heš)
+    - používa zdieľaný tajný kľúč pre vytvorenie a overenie kryptografického hešu
+- elektronický podpis
+    - pomocou asymetrickej kryptografie
+    - odosielateľ podpíše správu svojím tajným kľúčom
+    - príjemca overí podpis verejným kľúčom</answer>
+    </element>
+    <element>
+        <question>Zabezpečenie komunikácie na modele TCP/IP</question>
+        <answer>application layer   | ssh, imaps, https, RIPv2
+                    | DNSSEC, PGP, S/MIME
+------------------------------------------------
+transport layer     | SSL/TLS
+------------------------------------------------
+network layer       | IPSec VPN (AH, ESP), IKE
+                    | ISAKMP, OSPF, EIGRP
+------------------------------------------------
+link layer          | VPN: PPTL, L2TP 802.1x, 
+                    | EAP, PPP (PAPI CHAP)
+------------------------------------------------
+physical layer      | 802.11: WEP, WPA, WPA2</answer>
+    </element>
+    <element>
+        <question>RSA</question>
+        <answer>Autentizácia odosielateľa</answer>
+    </element>
+    <element>
+        <question>DNS</question>
+        <answer>Globálny adresár doménových mien a ďalších identifikátorov sieťových zariadení a služieb</answer>
+    </element>
+    <element>
+        <question>Čo tvorí architektúru systému DNS?</question>
+        <answer>1. Globálny menný priestor doménových mien či adries + mapovanie doménových mien (nielen) na IP adresy
+2. Uloženie menného priestoru DNS + decentralizovaná správa tohoto priestoru
+3. Vyhľadávanie dát v globálnom priestore doménových mien + prístup k dátam</answer>
+    </element>
+    <element>
+        <question>Ako vyzerá implementácia systému DNS?</question>
+        <answer>1. Hierarchické rozdelenie globálneho priestoru doménových adries -> delegácia správy
+2. Záznamy v zónach DNS uloženéna serveroch DNS -> primárne a sekundárne
+3. Protokol DNS pre prístup k dátam: i) vyhľadávanie (rezolúcia), ii) prenos zón</answer>
+    </element>
+    <element>
+        <question>ICAAN</question>
+        <answer>akredituje registrátory generických doménových mien</answer>
+    </element>
+    <element>
+        <question>Typy serverov DNS</question>
+        <answer>1. primárne
+2. sekundárne
+3. záložné</answer>
+    </element>
+    <element>
+        <question>Prehľad mapovania najdôležitejších záznamov DNS:</question>
+        <answer>
+Záznam  | Mapovanie                     | Príklad
+------------------------------------------------------------------------------------------------
+A       | DNS adresa -> IP adresa       | tereza.fit.vutbr.cz -> 147.229.9.22
+------------------------------------------------------------------------------------------------
+AAAA    | DNS adresa -> IPv6 adresa     | www.cesnet.cz -> 2001:718:1:101::4
+------------------------------------------------------------------------------------------------
+NS      | doména -> doménový server     | fit.vutbr.cz -> gate.feec.vutbr.cz
+------------------------------------------------------------------------------------------------
+MX      | doména -> poštový server      | fit.vutbr.cz -> fit.vutbr.cz -> kazi.fit.vutbr.cz
+------------------------------------------------------------------------------------------------
+SOA     | doména -> info o zóne         | fit.vutbr.cz -> guta.fit.vutbr.cz
+------------------------------------------------------------------------------------------------
+CNAME   | DNS adresa -> DSN adresa      | www.vutbr.cz -> piranha.ro.vutbr.cz
+------------------------------------------------------------------------------------------------
+SRV     | služba -> DNS adresa + port   | _sip._udp.cesnet.cz -> cyrus.cesnet.cz + 5060
+------------------------------------------------------------------------------------------------
+PTR     | IP adresa -> DNS adresa       | 22.9.229.147.in-addr-arpa -> tereza.fit.vutbr.cz
+------------------------------------------------------------------------------------------------
+PTR     | IPv6 adresa -> DNS adresa     | 
+        </answer>
+    </element>
+    <element>
+        <question>Monitorovanie počítačových sietí:</question>
+        <answer>1. Analýza prevádzky
+    - sledovanie obsahu paketov
+    - Vyhľadávanie známych reťazcov
+2. Vytváranie dlhodobých štatistík o premávke
+    - štatistické údaje o premávke daného zariadenia (CNMP)
+    - štatistiky tokov (NetFlow, IPFIX, sFlow, OpenFlow)</answer>
+    </element>
+    <element>
+        <question>Tok</question>
+        <answer>Postupnosť paketov majúcich spoločnú vlastnosť a prechádzajúcich bodom pozorovania za určitý časový interval</answer>
+    </element>
+    <element>
+        <question>Kolektor</question>
+        <answer>- prijíma pakety NetFlow z 1 či viacerých exportérov
+- spracovanie záznamu o tokoch, možnosť agregácie dát
+- uloženie štatistík na disk alebo do databáze</answer>
+    </element>
+    <element>
+        <question>NetFlow</question>
+        <answer>- nástroj pre monitorovanie sietí využivajúce informácie o tokoch
+    - tok je definovaná ako množina paketov spĺňajúcich určité vlastnosti
+    - o každom toku sa uchovávajú informácie - začiatok, koniec, počet prenesených bytov, paketov...
+- Architektúra:
+    - exportér, kolektor a prenosový protokol
+    - záznamy o tokoch sa exportujú podľa nastavení exportérov
+    - kolektor môže zbierať dáta od viacerých sond. Dáta ukladá a zobrazuje
+- Použitie:
+    - Monitorovanie sietí, plánovanie sietí, bezpečnostná analýza
+    - Sledovanie aplikácií, užívateľov, účtovanie
+    - Dlhodobé ukládanie informácií o prenesených dátach</answer>
+    </element>
+    <element>
+        <question>Adresárové služby LDAP</question>
+        <answer>- používajú sa k vyhľadávaniu e-mailových adries, telefónnych čísel
+- systém LDAP definuje:
+    - typ záznamov a adresárové schéma
+    - uloženie záznamov v adresárovom strome DIT
+    - operácie nad dátami a komunikáciu
+    - zabezpečenie prenosu
+- Využíva sa pre autentizáciu užívateľov, pre tvorbu certifikátov a ďalšie</answer>
+    </element>
+    <element>
+        <question>ICMP celým názvom</question>
+        <answer>Internet Controll Message Protocol</answer>
+    </element>
+    <element>
+        <question>SNMP</question>
+        <answer>- monitorovanie objektov
+- usporiadanie objektov do skupín
+- systém monitorovania
+- prenosový protokol SNMP
+- nestavový protokol typu dotaz-odpoveď
+
+Systém popisuje:
+    1. Definíciu a popis monitorovaných objektov pomocou jazyka SMI
+    2. Usporiadanie a správa objektov pomocou MIB
+    3. Kódovanie objektov pre prenos po sieti BER
+    4. Prístup k objektom protokolom SNMP</answer>
+    </element>
+    <element>
+        <question>Systém pre správu siete</question>
+        <answer>- zaisťuje viditeľnosť siete pomocou monitorovania
+- spracovanie a analýza dát
+- prezentácia a reakcia na udalosti</answer>
+    </element>
+    <element>
+        <question>Správa siete na úrovni IP</question>
+        <answer>- ICMPv4 či ICMPv6
+- zaisťuje konfiguráciu, detekciu chýb, testovanie dosažiteľnosti, či zahltenie L3</answer>
+    </element>
+    <element>
+        <question>Zabezpečenie el. pošty:</question>
+        <answer>1. Prenos e-mailových správ medzi serverami: SMTP over SSL/TLS
+2. Čítanie e-mailových správ: IMAP over SSL, HTTPS
+3. Zabezpečenie obsahu: PGP, S/MIME
+4. Podpisovanie: PGP, S/MIME</answer>
+    </element>
+    <element>
+        <question>PGP (Pretty good privacy)</question>
+        <answer>- zaisťuje integritu dát (MD5), autentizáciu odosielateľa (RSA) aj šifrovanie (IDEA)
+- správa je podpísaná súkromným kľúčom odosielateľa
+- správa je zašifrovaná tajným kľúčom
+- tajný kľúč je zašifrovaný verejným kľúčom príjemcu a pripojený ku správe</answer>
+    </element>
+    <element>
+        <question>Adresárové služby</question>
+        <answer>- elektronická databáza pre vyhľadávanie užívateľov
+- globálny distribuovaný systém s jednotným adresovaním
+- používa sa pre vyhľadávanie užívateľov</answer>
+    </element>
+    <element>
+        <question>Záznam</question>
+        <answer>Základna jednotka pre uloženie informácie</answer>
+    </element>
+    <element>
+        <question>LDAP</question>
+        <answer>- komunikácia klient-server
+- klient vytvorí správu
+- server odpovie 1 či viac správami obsahujúcimi odpoveď</answer>
+    </element>
+    <element>
+        <question>Poštové služby</question>
+        <answer>- systém el. pošty prenáša správy protokolom SMTP
+- pre prístup k schránkam sa používajú protokoly IMAP, POP3 či HTTP
+- pre zabezpečenie sa používa SSL, PGP, S/MIME
+- pre overenie užívateľa techniky: SPF, DKIM, DMARC (údaje v hlavičke)
+- Smerovanie:
+    1. Email je poslaný z MUA (Mail User Agent) pomocou SMTP do MTA (Message Transfer Agent)
+    2. Email je poslaný na MTA príjemcu ktorý ho predá MDA (Mail Delivery Agent)
+    3. Užívateľ si stiahne poštu z MDA pomocou protokolu IMAP alebo POP3</answer>
+    </element>
+    <element>
+        <question>RTP (Real-time Transport Protocol)</question>
+        <answer>- štandard pre prenos audio, video a iných v reálnom čase bežiacich dát po počítačovej sieti
+- určený pre prenos unicastom aj multicastom
+- obsahuje typ prenášaných dát, sekvenčné číslo, časovú značku</answer>
+    </element>
+    <element>
+        <question>RTCP (RTP Control Protocol)</question>
+        <answer>- používa sa spolu s RTP
+- oboje využívajú obvykle na transportnej vrstve protokol UDP</answer>
+    </element>
+    <element>
+        <question>RTSP (Real-time Streaming Protocol)</question>
+        <answer>- tzv. signalizačný protokol
+- 2 základne funkcie:
+    - naviazanie a ukončenie spojenia
+    - riadenie 1 alebo viacerých časovo synchronizovaných média streamov
+- textový protokol, syntax podobná ako http
+- Out-of-band protokol - dáta sú doručovanéiným protokolom (RTP, UDP...)
+- Stateful protokol - server si udržuje informáciu o stave relácie</answer>
+    </element>
+    <element>
+        <question>H.323</question>
+        <answer>- doporučenie ITU-T popisujúce terminály a Ďalšie súčasti, ktoré poskytujú služby pre multimediálnu komunikáciu v paketovo orientovaných sieťach, v nich nemusí byť garantovaná kvalita služieb
+- Architektúra:
+    - Terminál
+        - koncové zariadenie
+        - zaisťuje obojsmernú komunikáciu v reálnom čase s iným koncovým zariadením, bránou alebo MCU
+    - Gateway
+        - koncové zariadenie v sieti
+        - obvykle umožňuje obojstrannú komunikáciu v reálnom čase medzi H.323 terminálmi a inými ITU terminálmi
+    - Gatekeeper
+        - voliteľná súčasť architektúry, poskytuje služby pre Address Translation, Bandwidth control...
+    - Multipoint Control Unit (MCU)
+        - umožňuje usporadúvať viacbodové konferenice, prijíma a preposiela streamy
+        - prijíma a dekóduje prichádzajúce streamy v rôznych formátoch a vytvára príslušny výstupny stream pre koncové uzly</answer>
+    </element>
+    <element>
+        <question>Komunikačné protokoly pre poštu</question>
+        <answer>SMTP, POP3, IMAP, HTTP</answer>
+    </element>
+    <element>
+        <question>SMTP (Simple Mail Transfer Protocol)</question>
+        <answer>- aplikačný protokol nad TCP pre posielanie elektronickej pošty, port 25
+- definuje formát príkazov a odpovedí, spôsob prenosu</answer>
+    </element>
+    <element>
+        <question>POP3 (Post Office Protocol)</question>
+        <answer>- Iba 1 klient môže pristupovať k schránke INBOX
+- Obsah prenesený ku klientovi a aktualizovaný až pri ukončení práce
+- Viac schránok možno spravovať iba lokálne u klienta</answer>
+    </element>
+    <element>
+        <question>IMAP (Internet Message Access Protocol)</question>
+        <answer>- viacnásobný prístup k schránkam
+- viac schránok, práce s hlavičkami aj celou správou
+- atributy (Seen, Answered, Recent, Deleted, Flagged)</answer>
+    </element>
+    <element>
+        <question>Popísať prenos pre stream</question>
+        <answer>viď papier</answer>
+    </element>
+    <element>
+        <question>RED (Random Early Detection)</question>
+        <answer>- mechanizmus prevencie zahltenia
+- náhodne zahadzuje pakety vo vstupnej fronte
+- pravdepodobnosť zahodenia Pa vo fronte závisí na aktuálnom zaplnení fronty Qavg (vzorec papier)
+- 3 stavy:
+    - Nezahadzovanie - Qavg &lt; Qmin
+    - Náhodne zahadzovanie - Qmin &lt;= Qavg &lt;= Qmax
+    - Úplne zahadzovanie - Qavg = Qmax</answer>
+    </element>
+    <element>
+        <question>Kvalita služieb</question>
+        <answer>- zaistenie je dôležité hlavne pre prenos hlasu a videa
+- požiadavky na kvalitu prenosu definuje Service Level Agreement (SLA)
+- SLA možno zaistiť pomocou značenia paketov, obmedzenie/rozloženie prenosu
+- na sieti sa implementuje pomocou IntServ či DiffServ
+    - IntServ - rezervujú prenosové pásmo a garantujú QoS pre daný tok
+    - DiffServ - značia pakety, priradzujú ich do tried a definujú spracovanie
+- Zahltenie je možné prechádzať metódou náhodného zahadzovania paketov, čo implementujú metódy RED a WRED</answer>
+    </element>
+    <element>
+        <question>Ako zdieľať sieťové zdroje pre rôzne toky?</question>
+        <answer>- plánovanie obsluhy paketov sieťových prvkov pomocou front
+- využívajú sa modely Leaky Bucket a Token Bucket</answer>
+    </element>
+    <element>
+        <question>Smerovanie IP Telefonie</question>
+        <answer>- základne komponenty: IP telefón, ústredne (SIP Servery) a brány do analógovej siete
+- tieto prvky sú prepojené klasickou sieťovou infraštruktúrou
+- Smerovanie cez SIP proxy servery. Užívateľ odošle požiadavok na SIP server, ktorý sa snaží nájsť SIP server ku ktorému je pripojený volaný. Smerovanie je buď statické alebo dynamické cez DNS.</answer>
+    </element>
+    <element>
+        <question>Smerovanie DNS</question>
+        <answer>Rekurzívne:
+    1. Klient zistí či sa preklad doménového mena na IP adresu nenachádza v jeho cache
+    2. Ak nie, kontaktuje prednastavený DNS server
+    3. Ak DNS server nepozná IP adresu hľadaného doménového mena, tak kontaktuje DNS root server, ktorý vráti IP adresu TLD serveru, ktorý je zodpovedný za dané doménové meno
+    4. DNS Resolver kontaktuje TLD server, ktorý mu vráti adresu authoritative name server, pre dané doménové meno
+    5. DNS Resolver kontaktuje authoritative name server z predchadzajúceho kroku, ktorý mu vráti hľadanú IP adresu
+    6. DNS Resolver vracia DNS klientovi hľadanú IP adresu a uloží si ju do svojej cahce pamäti
+Iteratívny DNS:
+    - Líši sa v bode 2, Vráti najlepšiu možnú odpoveď, Ak ju nepozná vráti odkaz na server, ktorý odpoveď poznať môže.</answer>
+    </element>
+    <element>
+        <question>Preklad IP adresy na MAC adresu</question>
+        <answer>Prebieha pri multicaste, pretože pri multicastie sa neposiela paket iba jednému zariadeniu, ale celej skupine. Nemôžeme tak špecifikovať iba 1 MAC adresu. preto vytvoríme MAX adresu na základe IP adresy multicastovej skupiny</answer>
+    </element>
+    <element>
+        <question>IPv4</question>
+        <answer>- delí sa na 2 časti:
+    - netid - špecifikuje sieť, v ktorej sa zariadenie nachádza
+    - hostid - časť identifikujúca počítač
+- Broadcastové adresy - obsahujú samé 1 miesto časti hostid
+- Maska - 32 bitové číslo, hovorí akým spôsobom je IPv4 adresa rozdelená na sieťovú a hostiteľskú časť
+    
+Class   | Prefix    | Byte      | Subnet Mask       | Subnet prefix
+--------------------------------------------------------------------------
+A       | 0         | 0-127     | 1 0 0 0           | /8=255.0.0.0
+--------------------------------------------------------------------------
+B       | 10        | 128-191   | 1 1 0 0           | /16=255.255.0.0
+--------------------------------------------------------------------------
+C       | 110       | 192-223   | 1 1 1 0           | /24=255.255.255.0
+--------------------------------------------------------------------------
+D       | 1110      | 224-239   | Multicast
+--------------------------------------------------------------------------
+E       | 1111      | 240-255   | Reserved for experiments
+</answer>
+    </element>
+    <element>
+        <question>Adresovanie</question>
+        <answer>- spôsob identifikácie adresáta (cieľa) pomocou jednoznačnej informácie - adresy
+1. Adresovanie na vrstve sieťového rozhrania
+    - používame tzv. fyzickú adresu
+    - technológie založené na ethernete používajú 48-bitovú hlavičku ktorá jednoznačne identifikuje NIC (Network Interface Controller/Card)
+    - Hardvérová adresa sa skladá z 2 častí:
+        - OUI - 24 bitov špecifikujúcich výrobcu karty
+        - 24 bitov - pridelené výrobcom
+    - využíva sa na adresovanie v lokálnej sieti
+2. Adresovanie na IP vrstve
+    - Používame IP adresu
+    - Adresa môže byť pridelená staticky alebo dynamicky
+3. Adresovanie na transportnej vrstve
+    - Používame číslo portu
+    - Slúži k adresovaniu služieb na zariadeniach (FTP, SSH, TELNET)
+    - Porty sa delia:
+        - Rezervované (0-1023)
+        - Registrované (1024-49151)
+        - Dynamické (49152-65535)
+4. Adresovanie na aplikačnej vrstve
+    - Závisi od aplikácie</answer>
+    </element>
+    <element>
+        <question>Smerovanie</question>
+        <answer>- označuje v informatike určovanie ciest datagramov v prostredí počítačových sietí
+1. Smerovanie na linkovej vrstve
+    - Smerovanie na L2 vykonáva switche pomocou tabuľky MAC adries, kde sa mapuje MAC adresa na port. A podľa toho switch zistí, kam má paket poslať
+2. Smerovanie na IP vrstve
+    - Smerovacia tabuľka - mapuje jednotlivé siete na rozhranie internetu
+3. Smerovanie na transportnej vrstve
+    - Príslušný paket je predaný službe, ktorá odposlúcha na danom porte, ak na danom porte neodposlucháva žiadna služba je paket zahodený, a vráti sa ICMP správa destination unreachable odosielateľovi správy
+4. Smerovanie na aplikačnej vrstve
+    - Je závislé od aplikácie, napríklad u aplikácie, ktoré využívajú protokol SMTP sa jedná o priradenie do inboxu užívateľa, ktorý je špecifikovaný adresou príjemcu</answer>
+    </element>
+    <element>
+        <question>IPv6</question>
+        <answer>bits    |   48 (or more)    |   16 (or fewer)   |       64
+-----------------------------------------------------------------------
+fields  |  routing prefix   |     subnet id     | interface identifier
+
+Typy IPv6 adries:
+    - Individuálne (Unicast)
+        - adresa nakonfigurovaná na rozhranie
+        - viac rôznych typov (link-local, unique local, global)
+    - Skupinové (Multicast)
+        - adresácia skupiny - komunikácia one-to-many
+    - Výberové (Anycast)
+        - Identifikujú služby nachadzajúce sa na viac zariadeniach ako rozhranie hosťa
+Prideľovanie IPv6 adries:
+    - IANA prideľuje prefix regionálnym registrátorom dĺžky 12 bitov
+    - RIPE NCC prideľuje prefix lokálnym registrátorom dĺžky 32 bitov
+    - dynamicky pomocou ICMPv6 správy typu RA
+    - lokálny register má k dispozícií 16 bitov pre rozlíšenie svojích zákazníkov</answer>
+    </element>
+    <element>
+        <question>ARP tabuľka</question>
+        <answer>- používa sa pre zapamätanie MAC adries zariadeniami aby sa nemuselo každé zariadenie stále pýtať na MAC adresu v každom pakete
+- tabuľka slúži pre zistenie, kam odosielať IP datagramy, aby dosiahli cieľu
+- ip neighbor</answer>
+    </element>
 </data>

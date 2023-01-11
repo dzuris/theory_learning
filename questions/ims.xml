@@ -1,0 +1,414 @@
+<data>
+    <element>
+        <question>Stavová premenná</question>
+        <answer>- napr. výstup integrátoru
+- stavová premenná je vnútorny stav (pamäť) stavového bloku
+- je treba ju nastaviť pred spustením simulácie, hovoríme že nastavujeme počiatočné podmienky
+- medzi stavové premenné patria: stav integrátoru, relé, hystereze a ďalšie bloky, ktoré majú pamäť</answer>
+    </element>
+    <element>
+        <question>Stavová udalosť</question>
+        <answer>- stavová udalosť nastane po dosiahnutí zadanej hodnoty spojitej veličiny
+- nemožno ju naplánovať, preto sa neplánuje do kalendára, ale spustí sa na základe zmeny stavovej podmienky</answer>
+    </element>
+    <element>
+        <question>Analytické riešenie modelu</question>
+        <answer>- matematické riešenie nejakej napríklad diferenciálnej rovnice spojitého modelu
+- výsledkom je funkcia, do ktorej keď dosadíme parametre, dostaneme výsledok
+- príklad: závažie na pružine</answer>
+    </element>
+    <element>
+        <question>Simulácia</question>
+        <answer>- proces získavania nových znalostí o systéme experimentovaním s jeho modelom
+- cieľom simulácie je získavanie nových znalostí o systéme na základe výsledkov simulácii</answer>
+    </element>
+    <element>
+        <question>Model</question>
+        <answer>- systém napodobňujúci iný systém. Model musí napodobňovať všetky pre naše účely dôležité časti systému. Nedôležité časti môže zanedbať alebo zjednodušiť.
+- napodobenina systému iným systémom
+- reprezentácia znalostí
+- fyzikálne, matematické</answer>
+    </element>
+    <element>
+        <question>Systém</question>
+        <answer>- súbor elementárnych častí, ktoré majú medzi sebou vzťahy S = (U,R)
+    - U je konečná množina prvkov systému
+    - R je množina všetkých prepojení prvkov
+- Väzby medzi systémami:
+    - Sériové
+    - Paralélne
+    - Spätná väzba
++ diagram viď sheet</answer>
+    </element>
+    <element>
+        <question>Typy systémov</question>
+        <answer>- Spojitý systém
+    - jasne definované prvky a je spojito popísaný
+    - príklad: závažie na pružine
+    - popis sústavou rovníc, blokové schéma
+    - typy spojitých blokov:
+        - funkčné bloky - nemajú vnútorny stav, výstup je funkciou vstupu
+        - stavové bloky - majú stav, nastavuje sa pred štartom simulácie
+- Diskrétny systém
+    - mení svoj stav skokovo, môže mať spojitý alebo diskrétny čas
+    - proces = postupnosť udalostí
+    - príklad: Fronta v obchode
+    - Popis programom, konečným automatom, celulárnym automatom, grafom, petriho sieťou
+- Dynamický systém
+    - Proces ktorý patrí systému je charakterizovaný hlavne:
+        - charakteristikou príchodu požiadavkou
+        - charakteristikou obsluhy požiadavkou
+        - charakteristikou prechodu požiadavkou medzi obslužnými linkami
+- Kombinované systémy
+    - obsahujú spojité aj diskrétne prvky
+- Deterministické systémy
+    - všetky prvky deterministické
+- Nedeterministické systémy
+    - aspoň 1 prvok s nedeterministickým správanim
+- Stochastické systémy
+    - náhodne javy sú definované pravdepodobnosťami</answer>
+    </element>
+    <element>
+        <question>Okolie systému</question>
+        <answer>- zahrňuje všetko čo má vplyv na správanie systému
+- není súčasťou systému
+- Uzatvorené systémy
+    - nekomunikujú s okolím (zanedbávame okoli)
+- Otvorené systémy
+    - komunikujú s okolím (majú vstup a výstup)</answer>
+    </element>
+    <element>
+        <question>Izomorfné systémy</question>
+        <answer>- systémy sú izomorfné vtedy, ak ich prvky U1 a U2 možno jednoznačne namapovať 1:1
+- prepojenie R vyjadruje jednoznačné prepojenie prvkov U, vždy sa priradzuje ten 1 konkrétny prvok U, pomocou konkrétneho prepojenia R</answer>
+    </element>
+    <element>
+        <question>Homomorfné systémy</question>
+        <answer>- prvok U1 možno priradiť viac prvkom U2, v tvare N:1, nie opačne
+- homomorfné systémy sú základným princípom modelovania</answer>
+    </element>
+    <element>
+        <question>Ekvivalentné systémy</question>
+        <answer>- pri poskytnutí rovnakých vstupov vrátia rovnaké výstupy</answer>
+    </element>
+    <element>
+        <question>Správanie prvkov systému</question>
+        <answer>- Spojité / Nespojité
+- Deterministické / Nedeterministické</answer>
+    </element>
+    <element>
+        <question>Princíp modelovania a simulácie</question>
+        <answer>Realita -&gt; Znalosti -&gt; Abstraktný model -&gt; Simulačný model
+Cieľom je získavanie nových znalostí o modelovanom systéme</answer>
+    </element>
+    <element>
+        <question>Deklaratívne modely</question>
+        <answer>- definované stavmi a udalosťami
+- Petriho siete
+- Konečné automaty
+- Kalendárové modely
+- Markove modely</answer>
+    </element>
+    <element>
+        <question>Funkcionálne modely</question>
+        <answer>- grafy zobrazujúce funkcie a premenné
+- systém hromadnej obsluhy (SHO)
+- blokové schéma</answer>
+    </element>
+    <element>
+        <question>Priestorové modely</question>
+        <answer>- rozdeľujú systém na priestorovo ohraničené podsystémy
+- Celulárne automaty (CA)</answer>
+    </element>
+    <element>
+        <question>Multimodely</question>
+        <answer>Modely zložené z rôznych typov modelov</answer>
+    </element>
+    <element>
+        <question>Čas</question>
+        <answer>- Reálny čas - čas v reálnych systémoch
+- Modelový čas - čas v rámci modelu, nemusí byť synchronný s reálnym časom
+- Strojový čas - CPU čas potrebný pre simuláciu</answer>
+    </element>
+    <element>
+        <question>Časová množina</question>
+        <answer>- množina všetkých časových okamžikov v ktorých sú definované hodnoty vstupných, stavových a výstupných premenných prvkov systému
+- Diskrétna 
+    - Td = {1,2,3}
+- Spojitá 
+    - Ts = &lt;1.0,5.0&gt;</answer>
+    </element>
+    <element>
+        <question>Konceptuálne modely</question>
+        <answer>- počiatočné fázy pre ujasnenie súvislosti
+- formou obrázkov/textu</answer>
+    </element>
+    <element>
+        <question>Abstraktný model</question>
+        <answer>- zjednodušený popis skúmaného systému
+- obsahuje podstatné údaje o simulovanom systéme, zvyšok môžeme zanedbať</answer>
+    </element>
+    <element>
+        <question>Simulačný model</question>
+        <answer>- zápis abstraktného modelu formou programu
+- programu umožňuje vykonávanie experimentov 1:1 s abstraktným modelom</answer>
+    </element>
+    <element>
+        <question>Výhody simulácie</question>
+        <answer>- cena
+- rýchlosť
+- bezpečnosť
+- možnosť meniť časové meritko</answer>
+    </element>
+    <element>
+        <question>Nevýhody simulácie</question>
+        <answer>- prípadna nevalidnosť
+- náročnosť na výpočetný výkon
+- náročnosť na vytváranie modelov</answer>
+    </element>
+    <element>
+        <question>Alternatívy k simuláciam</question>
+        <answer>Experimenty na reálnych systémoch, analytické riešenia</answer>
+    </element>
+    <element>
+        <question>Princíp numerických metód</question>
+        <answer>- používajú sa pre riešenie diferenciálnych rovníc s predom definovanými počiatočnými podmienkami
+- oproti analytickému riešeniu sa počíta s chybou, ktorá vznikne aproximovaním pri numerických riešeniach
+- Eulerova a RungeKutta metóda sa vykonávajú v 2 krokoch:
+    - Aproximácia
+    - Extrapolácia
+- Matematické riešenie:
+    - Hľadajú riešenie rovnice y'= f(t, y) v tvare y(T) = y0 * ∫0 T f(t, y) dt
+    - Integračný krok (nemusí byť konštantný): hi = ti + 1 - ti
+- Rad metódy:
+    - Rad metódy určuje rad aproximačného polynomu, ktorú metóda využíva
+    - Čím vyšší rád, tým je aproximácia presnejšia
+    - Euler aproximuje priamkou - polynomom prvého radu. Preto je Euler metodou 1. radu
+- Polynom:
+    - Ax^n + Bx^n-1 + ... + C
+    - Priamka =&gt; Ax^1 + B</answer>
+    </element>
+    <element>
+        <question>Kalendár události</question>
+        <answer>- usporiadaná štruktúra uchovávajúca aktivačné záznamy budúcich udalostí
+- každá budúca udalosť (Next-Event) má v kalendári záznamy s hodnotami:
+    - aktivačný čas záznamu
+    - priorita záznamu
+    - odkaz na funkciu ktorá popisuje udalosť
+- je to prioritná fronta FIFO
+- každá udalosť má priradený modelový čas, kedy sa má vykonať + prioritu
+- kým kalendár nie je prázdny tak dochádza k odberu udalosti
+- každá udalosť môže generovať novú udalosť</answer>
+    </element>
+    <element>
+        <question>Algebraická smyčka</question>
+        <answer>- je to rýchla smyčka. Nechceme ju odstrániť, chceme ju riešiť
+- je to cyklus závislostí algebraických funkčných blokov
+- je zapísaná algebraickou rovnicou, metódy na riešenie algebraických rovníc:
+    - Newtonova metóda
+    - Regula Falsi
+    - Polenie intervalov</answer>
+    </element>
+    <element>
+        <question>Modely číslicových systémov</question>
+        <answer>- napr. Logické, RTL... Modely môžeme popísať napríklad pomocou VHDL.
+- Model - Napodobenina systému iným systémom
+- Signály môžeme modelovať ako:
+    - Dvojhodnotové - 1, 0
+    - Trojhodnotové
+    - Päť hodnotové
+- Úrovne popisu:
+    - elektrická - tranzistory (spojité modely)
+    - logická - hradla (diskrétne modely)
+    - medzi registrové prenosy (diskrétne)
+    - systémový - procesory, pamäte (diskrétne, hromadná obsluha, výkonnosť)</answer>
+    </element>
+    <element>
+        <question>Modely oneskorenia</question>
+        <answer>0 - nulové
+1 - jednotkové
+td - priraditeľné
+&lt;t1, t2&gt; - presné</answer>
+    </element>
+    <element>
+        <question>Princíp eulerovej metódy</question>
+        <answer>- jednokroková numerická metóda, vykonávame ju v 2 krokoch:
+    - Aproximácia (priamkou)
+    - Extrapolácia - výpočtom y(t + h)
+- Princíp: y(t + h) = y(t) + h * f(t, y(t))
+    - t - čas
+    - h - krok
+    - f(t, y(t)) - po dosadení reprezentuje smernicu priamky
+- Najjednoduchšia metóda pre riešenie obyčajných diferenciálnych rovníc</answer>
+    </element>
+    <element>
+        <question>Monte-carlo</question>
+        <answer>- slúži pre výpočet integrálov, najmä viacrozmerných integrálov
+    - vygenerujeme N náhodných bodov
+    - vypočítame pravepodobnosť, že bod je vnútri
+    - vynasobíme obsah plochy touto pravdepodobnosťou
+- Presnosť: 1 / sqrt(N)
+    - N - počet krokov
+- Základom metódy sú náhodne experimenty a ich vyhodnocovanie
+- Oplatí sa iba pre viacrozmerné integrály, kde iné metódy zlyhávajú
+- Jej najväčšiou nevýhodou je malá presnosť</answer>
+    </element>
+    <element>
+        <question>Range-kutt</question>
+        <answer>- jednokroková metóda
+- spadá do rovnakej kategórie ako Euler</answer>
+    </element>
+    <element>
+        <question>Markov proces</question>
+        <answer>- proces postupností udalostí
+- Markova vlastnosť - následujúci stav procesu je závislý iba na aktuálnom stave, nie na minulom
+- jedná sa o náhodny proces, ktorý splňuje markovu vlastnosť
+- má spojitý čas
+- je to diskrétny proces
+- SHO používa ako model Markov proces, náhodna premenná je počet transakcii v systéme
+- graf viď doc</answer>
+    </element>
+    <element>
+        <question>Markov reťazec</question>
+        <answer>- je náhodný proces X(t) s diskrétnym časom a diskrétnymi stavmi</answer>
+    </element>
+    <element>
+        <question>Chyby</question>
+        <answer>- zaokrúhľovacia chyba 
+    - daná presnosťou aritmetiky počítača
+    - napríklad sčítanie veľkého a malého čísla: 1000000000.0 + 0.0000000001
+    - čím menší bude krok, tým väčšia zaokrúhľovacia chyba
+- aproximačná chyba
+    - daná predovšetkým rádom numerickej metódy (tj. počtom členov Taylorova rozvoja, ktoré použijeme)
+    - čím väčší krok, tým horšie bude aproximovateľné riešenie a väčšia aproximačná chyba</answer>
+    </element>
+    <element>
+        <question>Systém hromadné obsluhy</question>
+        <answer>- systém obsahujúci zariadenia poskytujúce obsluhu transakciám
+- Obsahuje:
+    - transakcie a popis ich príchodu do systému
+    - obslužné linky a popis obsluhy
+    - fronty
+- sledujeme informácie o časovom priebehu transakcie systémom, doby čakaní vo frontách</answer>
+    </element>
+    <element>
+        <question>Kendellova klasifikácia SHO</question>
+        <answer>- spôsob vyjadrenia SHO
+- X - typ stochastického procesu popisujúci príchod požiadavkov do systému
+- y - zákon rozloženia dekly obsluhy
+- c - počet dostupných liniek
+- X/y/c pr. M/M/1
+
+- M - poisonnovo / Exponencionálne rozloženie
+- D - konštantné rozloženie
+- G - akékoľvek
+- Ek - erlangovo</answer>
+    </element>
+    <element>
+        <question>Modelovanie SHO</question>
+        <answer>- procesy (transakcie) modelujú paralélne správanie aktívnych objektov v systéme
+- obslúžna linka - špeciálne zariadenie (pokladne...) fronty</answer>
+    </element>
+    <element>
+        <question>Typy obslúžnych liniek</question>
+        <answer>Kapacita = 0, zariadenie (facilita) môže naraz obsluhovať iba 1 požiadavok
+Kapacita > 1, sklad (store) môže poskytovať svoju kapacitu viacerým transakciám súčasne</answer>
+    </element>
+    <element>
+        <question>Celulárne automaty</question>
+        <answer>- priestorová simulácia
+- priestor sa skladá z jednotlivých buniek, ktoré sú v konečnej množine stavov
+- CA obsahuje pravidlá, ktoré definujú nový stav buňky v ďalšiom kroku
+- diskrétny systém
+- bunka - základny element
+- pole môže byť n-rozmerné, typicky 1D alebo 2D
+- príklady použitia: šírenie vírusov, požiarov</answer>
+    </element>
+    <element>
+        <question>Okolie CA</question>
+        <answer>4 - Von-Neumann
+8 - Moore
+24 - Extended Moore
+grafy v docs</answer>
+    </element>
+    <element>
+        <question>Priorita procesov</question>
+        <answer>Vlastnosť procesu, ktorá sa využije v prípade keď sa radí do prioritnej fronty, potom sa jeho priorita využije k tomu aby sa mohol predbiehať</answer>
+    </element>
+    <element>
+        <question>Priorita obsluhy</question>
+        <answer>- súvisi s obsluhou
+- v zariadení pri obsadzovaní žiadam s určitou prioritou. Ak je priorita vyššia ako toho kto už v zariadení je, tak je vyhodený a linku obsadí proces s vyššiou prioritou</answer>
+    </element>
+    <element>
+        <question>Verifikácia</question>
+        <answer>- predchádza etape simulácie
+- overujeme že simulačný model korešponduje s abstraktným modelom
+- snažíme sa dokázať, že model je adekvátny k zdrojovému systému
+- overujeme ich izomorfný vzťah</answer>
+    </element>
+    <element>
+        <question>Validácia</question>
+        <answer>- proces pri ktorom sa snažíme dokázať, že pracujeme s modelom adekvátnym k modelovanému systému
+- vyžaduje neustálu konfrontáciu informácii
+- nemožno absolútne dokázať presnosť modelu, validitu chápeme ako mieru použiteľnosti
+- predpokladá homomorfný vzťah</answer>
+    </element>
+    <element>
+        <question>Fuzzy logika</question>
+        <answer>- jedná sa o popis neurčitosti - vágnosť
+- vyjadruje popis určitej vlastnosti - pravdivostná hodnota</answer>
+    </element>
+    <element>
+        <question>Fuzzifikácia</question>
+        <answer>- prevod ostrej premennej na mieru príslušnosti
+- prevod reálnej premennej do fuzzy premennej
+- príklad teplota v miestnost: 3 fuzzy množiny (malá, stredná, veľká), malá 18c 0.5, stredná 0.5, veľká 0</answer>
+    </element>
+    <element>
+        <question>Operácie</question>
+        <answer>- negácia
+- konjunkcia (AND)
+- disjunkcia (OR)</answer>
+    </element>
+    <element>
+        <question>Fuzzy blok</question>
+        <answer>Fuzzification - prevod vstupu na mieru príslušnosti
+If-then-rules - aplikácia pravidiel
+Aggregation - spojenie výstupov pravidiel
+Defuzzification - prevod na ostré hodnoty</answer>
+    </element>
+    <element>
+        <question>Kvaziparalelizmus</question>
+        <answer>- vykonávanie paralelných procesov sériovo
+- ak by v jeden okamžik modelového času malo dôjsť k viacerým udalostiam, vykonajú sa v rovnaký modelový čas ale jedna za druhou</answer>
+    </element>
+    <element>
+        <question>Viac-krokové metódy typu prediktor-korektor</question>
+        <answer>- Viackrokové metódy
+    - využívajú hodnoty zapamätané z predchadzajúcich krokov
+    - viac-kroková metóda je väčšinou potreba naštartovať nejakou 1-krokovou (Euler, Runge Kutta) alebo existujú aj samoštartovacie metódy
+- Preditkor-korektor metódy
+    - spresňujú výsledok ďalšími dodatočnými výpočtami
+    - napríklad metóda Adams-Bashforth-Moulton pridáva k základu metódy Adams-Bashforth ešte kolektor
+    - metódy prediktor-korektor sú zlúčením explicitných a implicitných metód
+    - najskôr je použitá explicitná metóda pre odhad yn+1. V tomto bode je vypočítaná derivácia yn+1, ktorá je následne použitá v implicitnej metóde pre výpočet presnejšej aproximácie yn+1.</answer>
+    </element>
+    <element>
+        <question>Metóda inverznej transformácie</question>
+        <answer>- metóda požadovanej distribučnej funkcie F =&lt; F^-1
+- generovanie náhodného čísla x s rovnomerným rozložením v rozmedzí 0-1
+- y = F^-1(x)</answer>
+    </element>
+    <element>
+        <question>Kongruentný generátor</question>
+        <answer>- x[i+1] = (a * x[i] + b) % m
+- hodnoty a, b, m musia byť vhodne zvolené aby generovali štatisticky nezávislé generované rovnomerné rozdelenie a mali čo najväčšiu periódu
+- pri vhodne zvolených parametroch je dĺžka periódy rovná veľkosti modula
+
+Double Random() {
+    ix = ix * 69069u + 1u;
+    return ix / (double)UINT32_MAX + 1;    
+}</answer>
+    </element>
+</data>
