@@ -1,0 +1,80 @@
+<data>
+    <element>
+        <question>Rest</question>
+        <answer>- založený na HTTP protokole (pomerne často využíva jeho metódy (GET, POST, PUT, DELETE, PATCH) a stavové kódy (200=OK, 201=Created, 404=Not Found, 403=Not Authorized, 500=Internal Server Error...) pre reprezentáciu čo sa má diať
+- u klienta vo vanilla JS k prácu s REST API používame asynchronné volania: XMLHTTPRequest() alebo fetch()
+- fetch využíva koncept sľubov (promise) pre spracovanie odpovedí, zatiaľ čo XMLHTTPRequest využíva nastavený Callback
+- REST nešpecifikuje konkrétne spôsoby predávania (môže byť XML ale typicky JSON), pre GET requesty sa parametry predávajú v URL (?subject=iis&amp;foo=bar)
+- výsledok je HTTP response, čo môže obsahovať ďalšie dáta (napríklad serializovaný JSON obsahujúci požadovaný zdroj)</answer>
+    </element>
+    <element>
+        <question>Štruktúra</question>
+        <answer>- usporiadané n-tice, ktoré sú prvkami kartézskeho súčinu sú štrukturované hodnoty vytvárané:
+    - pevným počtom pomenovaných jednotlivých hodnôt (dvojíc meno, hodnota) obecne rôznych typov
+- časté synonymá pre usporiadanú n-ticu sú: štruktúra alebo záznam</answer>
+    </element>
+    <element>
+        <question>Kolekcia</question>
+        <answer>- na rozdiel od štruktúry je tvorená:
+    - predom neobmedzeným počtom hodnôt rovnakých dátových typov
+- množina obsahuje každý prvok iba raz. Ak je povolené aby sa prvok vyskytoval v množine viackrát, hovoríme o multimnožine.
+- tradičný zoznam je usporiadanou multimnožinou
+- obecne možno vytvárať kolekcie ľubovoľných dátových typov
+- časté obmedzenie je vytvárať iba kolekcie s prvkami dátového typu štruktúra</answer>
+    </element>
+    <element>
+        <question>Objekt</question>
+        <answer>- štruktúra s identifikáciou
+- každému prvku v systéme je priradená jednoznačná identifikácia OID (object identification)
+- je to štruktúra kde je systémovou a obvykle prvou vlastnosťou je OID. Hodnotu OID generuje databázový systém pri vzniku objeku a nemení ju po celú dobu činnosti
+- tým že má objekt OID, je identifikovateľný a teda aj odkazovateľný, to ma za následok že môže figurovať ako člen vo vzťahoch. To štruktúra bez identifikácie nemôže, takúto štruktúru budeme nazývaŤ prostá štruktúra</answer>
+    </element>
+    <element>
+        <question>DOM</question>
+        <answer>- objektová reprezentácia XML (alebo HTML) dokumentu pre prácu s dokumentom
+- slúži pre čítanie a zmenu dokumentu
+- dokument je reprezentovaný ako strom objektov, W3C štandard definuje rozhranie objektov nezávisle na platforme
+
+Document type       Document Fragment
+                    Document            - Text - CDATASection
+                    Character data ------
+Node------------    Attribute           - Comment
+                    Element
+                    Document type
+NodeList            Notation
+    |               Entity
+Named NodeMap       EntityReference
+                    ProcessingInstruction</answer>
+    </element>
+    <element>
+        <question>XSL Transformation</question>
+        <answer>- vytvára z jedného dokumentu iný dokument (napr. XML, ktorý môže odpovedať inému DTD)
+- transformácie sú popísané šablónami - templates
+- šablóny sú priradené elementom zdroja pomocou výrazu XPath</answer>
+    </element>
+    <element>
+        <question>JSON Web Token</question>
+        <answer>- Reťazec tvorený 3 časťami:
+    - Header (Hlavička) - účel, použité algoritmy (JSON)
+    - Payload (Obsah) - JSON dáta obsahujúce id užívateľa, práva, expiráciu a pod.
+    - Signature (Podpis) - slúži pre overenie že token nebol podvrhnutý alebo zmenený cestou
+- tieto 3 časti sa zakódujú a spoja do reťazca xxxx.yyyy.zzzz</answer>
+    </element>
+    <element>
+        <question>Použitie JWT na autentizáciu</question>
+        <answer>1. Aplikácia kontaktuje autorizačný server a dodá autentizačné údaje
+    - rovnaký server ktorý poskytuje API, ale môže byť aj iný (napr. Twitter)
+2. Autentizačný server vygeneruje podpísaný JWT a vráti ho klientovi
+3. Klient predá JWT pri každom volaní API
+    - najčastejšie opäť v hlavičke  Authorization: Bearer xxxxx.yyyyy.zzzzz
+    - api overuje platnosť, rola užívateľa môže byť priamo v JWT</answer>
+    </element>
+    <element>
+        <question>Cookie</question>
+        <answer>- malý objem dát ktoré serverová aplikácia môže uložiť na strane klienta
+- každá cookie má meno a hodnotu
+- pre každú cookie naviac definujeme cestu a dobu expirácie
+    - pristupovať ku cookie môžu iba stránky s rovnakou cestou ako stránka ktorá cookie uložila
+    - možno nastaviť iný adresár (najčastejšie koreňový, aby stránka vedela čítať svoje cookie)</answer>
+    </element>
+</data>

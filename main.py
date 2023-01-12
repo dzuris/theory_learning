@@ -240,7 +240,7 @@ if __name__ == "__main__":
             subject.print_ran_choice()
         elif choice == 'a' or choice == 'answer':
             subject.print_answer()
-        elif re.match("[0-9]+", choice):
+        elif re.fullmatch("[0-9]+", choice):
             clear_terminal()
             subject.print_from_position(int(choice))
         elif choice == 'c' or choice == 'count':
