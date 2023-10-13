@@ -1,0 +1,130 @@
+<data>
+    <element>
+        <question>Pumping Lemma</question>
+        <answer>L ∈ L3 ⇒ ∃k&gt;0: ∀w ∈ ∑*: w∈L ∧ |w|≥k ⇒ 
+∃x,y,z ∈ ∑*: xyz=w ∧ |y|&gt;0 ∧ |xy| ≤ k ∧
+∀i≥0: xy^iz ∈ L
+
+Obmena:
+∀k&gt;0: ∃w ∈ ∑*: w ∈ L ∧ |w|≥0 ∧
+∀x,y,z ∈ ∑*: xyz=w ∧ |y|&gt;0 ∧ |xy| ≤ 0 ⇒
+∃i≥0: xy^iz ∉ L ⇒ L ∉ L3</answer>
+    </element>
+    <element>
+        <question>Myhill-Nerudova veta</question>
+        <answer>Následujúce 3 výroky sú ekvivalentné:
+        1. Pre jazyk L existuje DKA
+        2. Jazyk L je zjednotením niektorých tried rozkladu ∑* podľa relácie pravej kongruencie ~ s konečným indexom.   ~ ⊆ ∑* x ∑*
+        3. Relácia prefixovej ekvivalencie ~L má konečný index.</answer>
+    </element>
+    <element>
+        <question>Čo znamená L^-1 (q)</question>
+        <answer>L^-1 (q) = {w∈∑* | (s0,w) |-* (q, ε)}
+- množina všetkých reťazcov nad ∑* ktoré by som dočítal v stave q</answer>
+    </element>
+    <element>
+        <question>Relácia pravej kongruencie</question>
+        <answer>~ je relácia pravej kongruencie ~ ⊆ (∑*)^2,
+ak je to ekvivalencia a ak ∀u,v,w ∈ ∑*: u~v ⇒ uw ~ vw
+- 2 reťazce sú v relácií pravej kongruencie ak po ich dočítaní skončíme v rovnakom stave</answer>
+    </element>
+    <element>
+        <question>Definícia prefixovej ekvivalencie</question>
+        <answer>~L ⊆ (∑*)^2
+∀u,v ∈ ∑*: u ~L v ⇔ (∀w ∈ ∑*: uw∈L ⇔ vw∈L)
+- každá prefixová ekvivalencia je aj reláciou pravej kongruencie ale prefixová ekvivalencia je najväčšia zo všetkých pravých kongruencií vo vzťahu k nejakému jazyku L.</answer>
+    </element>
+    <element>
+        <question>Regulárna množina</question>
+        <answer>Regulárna množina je rekurzívne definovaná následovne:
+1. ∅ je RM nad ∑
+2. ε je RM nad ∑
+3. a je RM nad ∑, pre ∀a∈∑,
+4. nech P a R sú RM nad ∑, potom:
+    - P∪R je RM nad ∑,
+    - P*R je RM nad ∑,
+    - P* je RM nad ∑.
+5. Žiadne iné množiny ako tie ktoré možno vytvoriť pomocou predchádzajúcich pravidiel nie sú regulárnymi množinami.</answer>
+    </element>
+    <element>
+        <question>Vetná forma</question>
+        <answer>Nech G=(N, ∑, P, S) je gramatika. Reťazec α ∈ (N∪∑)*, nazývamé vetnou formou, ak platí S ⇒* α. Vetná forma, ktorá obsahuje iba terminálne symboly sa nazýva veta.</answer>
+    </element>
+    <element>
+        <question>NKA</question>
+        <answer>NKA je pätica M=(Q, ∑, δ, s0, F) kde:
+Q - konečná neprázdna množina stavov,
+∑ - konečná neprázdna abeceda,
+δ - je prechodová funkcia, δ: Q x ∑ → 2^Q, pri DKA Q x ∑ → Q,
+s0 - s0∈Q je počiatočný stav,
+F - F⊆Q je množina koncových stavov.
+
+Ak ∀q∈Q a ∀a∈∑: |δ(q, a)|≤1 ⇒ M je DKA</answer>
+    </element>
+    <element>
+        <question>Konfigurácia NKA</question>
+        <answer>Konfigurácia C konečného automatu M je usporiadaná dvojica
+        C=(q,w), (q,w)∈Qx∑*
+        q - aktuálny stav
+        w - doposiaľ nespracovaná časť vstupného reťazca</answer>
+    </element>
+    <element>
+        <question>Prechod automatu</question>
+        <answer>Prechodová funkcia je binárna relácia |-M v množine konfigurácií C:
+        |-M ⊆ (Qx∑*)^2 
+        ktor8 je definovan8 takto:
+        (q,w) |-M (q', w') ⇔ w=aw' ∧ q'∈δ(q, a) pre q,q'∈Q, a∈∑, w,w'∈∑*</answer>
+    </element>
+    <element>
+        <question>Jazyk prijímaný NKA M</question>
+        <answer>L(M) = {w | (s0, w) |-* (qf, ε) ∧ gf∈F}</answer>
+    </element>
+    <element>
+        <question>Reťazec prijímaný NKA M</question>
+        <answer>(q0, w) |-* (gf, ε), qf∈F</answer>
+    </element>
+    <element>
+        <question>Regulárna gramatika</question>
+        <answer>RG G=(N, ∑, P, S) kde:
+- N - konečná neprázdna množina nonterminálnych symbolov
+- ∑ - konečná neprázdna množina terminálnych symbolov,  N∩∑ = ∅,
+- P - podmnožina kartézskeho súčinu:
+    (N∪∑)*N(N∪∑)* x (N∪∑)*
+    - nazývaná množina prepisovacích pravidiel
+- S je počiatočný symbol v gramatike G, S∈N</answer>
+    </element>
+    <element>
+        <question>Priama derivácia</question>
+        <answer>Nech G=(N, ∑, P, S) je gramatika a nech λ a μ sú reťazce z (N∪∑)*.
+Medzi λ a μ je binárna relácia =&gt;G ak ich možno zapísať v tvare:
+    λ = γαδ,
+    μ = γβδ,
+    
+kde α,β∈(N∪∑)* a α→β je nejaké prepisovacie pravidlo z P, potom píšeme:
+    λ =&gt;G μ alebo
+    λ =&gt; μ</answer>
+    </element>
+    <element>
+        <question>Jazyk L generovaný gramatikou G</question>
+        <answer>je množina: L(G) = {w ∈∑* | S ⇒* w}</answer>
+    </element>
+    <element>
+        <question>Príklad na rozklad L na zjednotenie niektorých tried rozkladu ~, ~ má konečný index a ~ sa nerovná ~L.</question>
+        <answer>1. Vytvoriť si deterministický, úplny, bez nedosiahnuteľných stavov, neredukovaný automat (tj. musí zaistiť aby ňejaké 2 rôzne stavy boli nerozlíšiteľné).
+2. Nájdeme jazyk prístupových reťazcov L^-1 (s) všetkých stavov.
+3. Nájdeme rozklad množiny ∑* daný ako množina jazykov prístupových reťazcov jednotlivých stavov:
+    P={L^-1(s0),L^-1(s1),L^-1(s2)...}
+4. Nájdeme pravú kongruenciu odpovedajúcu tomuto rozkladu (tj. reláciu ekvivalencie ~ ⊆ (∑*)^2 takú, že P=∑*/~
+    - ∀u,w ∈ Σ* : u ~ w ⇔
+    (u ∈ {cc}* ∧ w ∈ {cc}*) ∨
+    (u ∈ {c}{cc}* ∧ w ∈ {c}{cc}*) ∨
+    (u ∈ {cc}*{a} ∧ w ∈ {cc}*{a}) ∨
+    (u ∈ {cc}*{b} ∧ w ∈ {cc}*{b}) ∨
+    (u ∈ L-1(sink) ∧ w ∈ L-1(sink))
+    - isto ide o ekvivalenciu (vznikla z rozkladu množín)
+    - isto ide o pravú kongruenciu (ide o ekvivalenciu, ktorá vznikla pomocou jazyka prístupových reťazcov stavov automatu)
+    - zjednotením niektorých tried rozkladu ∑*/~ získame jazyk L
+        - L-1(s2) ∪ L-1(s3) = {cc}*{a} ∪ {cc}*{b} = {cc}*{a, b}
+    - ~ isto není prefixová ekvivalencia, lebo sme vychádzali s neredukovaného automatu</answer>
+    </element>
+</data>
