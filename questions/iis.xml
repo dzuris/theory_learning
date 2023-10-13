@@ -50,7 +50,8 @@ Named NodeMap       EntityReference
         <question>XSL Transformation</question>
         <answer>- vytvára z jedného dokumentu iný dokument (napr. XML, ktorý môže odpovedať inému DTD)
 - transformácie sú popísané šablónami - templates
-- šablóny sú priradené elementom zdroja pomocou výrazu XPath</answer>
+- šablóny sú priradené elementom zdroja pomocou výrazu XPath
+- graf viď doc</answer>
     </element>
     <element>
         <question>JSON Web Token</question>
@@ -75,6 +76,47 @@ Named NodeMap       EntityReference
 - každá cookie má meno a hodnotu
 - pre každú cookie naviac definujeme cestu a dobu expirácie
     - pristupovať ku cookie môžu iba stránky s rovnakou cestou ako stránka ktorá cookie uložila
-    - možno nastaviť iný adresár (najčastejšie koreňový, aby stránka vedela čítať svoje cookie)</answer>
+    - možno nastaviť iný adresár (najčastejšie koreňový, aby celá aplikácia vedela čítať svoje cookie)</answer>
     </element>
+    <element>
+        <question>Data, metadata, meta2 data, meta3 data</question>
+        <answer>- Data
+    - konkrétne hodnoty
+- Metadata
+    - formálny popis štruktúry dat
+- Meta2 data
+    - popisuju metadata a dátový model
+- Meta3 data
+    - popisuju databazovy model
+    
+            |   Relačný         |   Objektový
+-------------------------------------------------------------
+data        |   opis relácie    |   čo je uložené v 1 kar.
+            |                   |         súčine
+-------------------------------------------------------------
+metadata    |   opis stĺpca     |   opis štruktúry
+-------------------------------------------------------------
+meta2 data  |   opis tabuľky    |</answer>
+    </element>
+    <element>
+        <question>x-www-form-encode</question>
+        <answer>- serializovaná štruktúra s položkami textových a booleovských typov
+- medzery =&gt; +, nealfanumerické znaky =&gt; %hh, kde hh je hexadecimálny kód
+- položky sú oddelené &amp;, býva položka pre tlačítko submit a jeho meno, pre indikáciu ktoré tlačítko použil užívateľ pre odoslanie
+- používa sa pre prenos hodnôt z prvku &lt;form&gt; jazyka HTML
+- metódy GET a POST</answer>
+    </element>
+    <element>
+        <question>Transakcia</question>
+        <answer>- predstavuje jednotku práce vykonanú databázovým systémom nad databázou a spracovanú súvislým a bezpečným spôsobom nezávisle na iných transakciách</answer>
+    </element>
+    <element>
+        <question>XPath</question>
+        <answer>- jazyk pre výber uzlov v XML
+- výsledkom vyhodnotenia XPath výrazu je obecne množina elementov</answer>
+    </element>
+    <!-- <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element> -->
 </data>
