@@ -1,0 +1,83 @@
+<data>
+    <element>
+        <question>Predikcia skokov</question>
+        <answer>- statická (podľa testu ≠0, &gt;0, ≥0, smeru skoku kompilátorom - predict bit) - založená na inštrukcii
+- dynamická (za behu) - založená na histórií vykonaní
+
+- lokálna - história udržiavaná iba pre danú inštrukciu (adaptívna)
+- globálna - história udržiavaná cez sekvencie skokov (korelačná)</answer>
+    </element>
+    <element>
+        <question>Trace cache</question>
+        <answer>- načíta inštrukcie, ale ukladá ich už sekvenčne za sebou
+Fungovanie:
+1. Sledovanie inštrukcií - Keď procesor vykonáva program, môže sledovať alebo "traceovať" postupnosť vykonávaných inštrukcií. Tento sled môže zahrňovať viacero inštrukcií v určitom poradí, ktoré sú vzájomne závislé a často vykonávané.
+2. Ukladanie do trace cache - Sledované stopy alebo sledy inštrukcií sa ukladajú do trace cache, kde sú prednačítané a uchovávané. To znamená, že tieto stopy sú uložené v pamäti blízko k jádru procesora, čo znižuje čas prístupu k nim.
+3. Rýchle vykonávanie programov - Keď je potrebné vykonávať inštrukcie, procesor môže využiť inštrukcie uložené v trace cache, čo zrýchľuje vykonávanie programov, pretože nemusí čakať na načítanie inštrukcií z hlavnej pamäte.
+
+Trace cache je špeciálne užitočná pre programy, ktoré majú veľký počet skokov a podmienených inštrukcií, pretože umožňuje procesoru prednačítať správne inštrukcie na základe sledovaných stop a minimalizovať oneskorenie spojené so zmätkom a čakaním na načítanie inštrukcií. Tým sa zvyšuje výkon procesora a umožňuje efektívnejšie vykonávanie programov.</answer>
+    </element>
+    <element>
+        <question>Riadiace konflikty</question>
+        <answer>
+- nepodmienený skok
+    - absolútny
+    - do podprogramu
+- podmienený skok
+    - skáče podľa registrov (podľa predchádzajúcej operácie)</answer>
+    </element>
+    <element>
+        <question>Adaptívne prediktory</question>
+        <answer>- rozhodujeme sa na základe posledných k bitov
+- vie sa prispôsobiť rôznym postupnostiam
+- problémy: veľkosť prediktorov rastie exponencionálne s počtom bitov histórie</answer>
+    </element>
+    <element>
+        <question>Korelačné prediktory</question>
+        <answer>- špecifický typ skokových prediktorov, ktoré sa snažia predikovať výsledok skokových inštrukcií na základe korelácie medzi rôznymi skokovými inštrukciami v programe. Tieto prediktory využívajú historické vzory správania sa skokov v programe na zlepšenie presnosti predikcie. Existujú dva hlavné typy korelačných prediktorov: globálny korelačný prediktor a lokálny korelačný prediktor.
+        - globálny korelačný prediktor - sleduje vzory správania sa skokov vo všetkých častiach programu.
+        - lokálny korelačný prediktor - sleduje vzory správania sa skokov len v okolí konkrétnej skokovej inštrukcie.</answer>
+    </element>
+    <element>
+        <question>Skalárny procesor</question>
+        <answer>- vykonáva inštrukcie sekvenčne, t.j. jednu za druhou. To znamená že vykonáva iba 1 inštrukciu za 1 taktný cyklus.
+- inštrukcie sú vykonávané v poradí, v akom sú v programovom kóde
+- tieto procesory majú jednoduchú architektúru a sú vhodné pre jednoduché úlohy, kde inštrukcie nie sú silne závisle</answer>
+    </element>
+    <element>
+        <question>Superskalárne procesory</question>
+        <answer>- je schopný vykonávať viacero inštrukcii za 1 taktný cyklus. To znamená, že môže paralelne vykonávať viacero inštrukcii, ak sú k dispozícií a spĺňajú podmienky.
+- inštrukcie môžu byť vykonávané v nezávislom poradí, čo zvyšuje výkonnosť procesora.
+- majú komplexnejšiu architektúru a sú schopné rýchlejšie spracovávať zložité a náročne programy.</answer>
+    </element>
+    <element>
+        <question>Organizácia jednotky L/S podporujúca RPW (Store buffer)</question>
+        <answer>AVS_03/16</answer>
+    </element>
+    <element>
+        <question>Out-of-order Load/Store jednotka (Load buffer)</question>
+        <answer>AVS_03/18</answer>
+    </element>
+    <element>
+        <question>Bypassing a forwarding</question>
+        <answer>- Load z adresy ,,Z'' predbehne Store s inou adresou ,,X'', ktoré ešte nezačalo (bypassing)
+- Load načíta dáta z ešte nedokončenej inštrukcie Store s rovnakou adresou ,,X'' (Load from Store forwarding, predávanie)</answer>
+    </element>
+    <element>
+        <question>Read can pass Write</question>
+        <answer>- hlavný zdroj lepšej výkonnosti, načítanie totiž býva na začiatku tela smyčiek so závislými inštrukciami.
+- nový Load môže predbehnúť aktuálny Store, iterácie smyčiek sa môžu čiastočne prekrývať</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+</data>
