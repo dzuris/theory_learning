@@ -67,7 +67,7 @@ def print_choices_help():
     print("\tclear - clear the terminal")
     print("\tall - print all questions")
     print("\th | help - print this message")
-    print("\tquit - quit")
+    print("\tq | quit | exit - quit")
     print()
 
 
@@ -250,7 +250,7 @@ if __name__ == "__main__":
             clear_terminal()
         elif choice == 'all':
             subject.print_all()
-        elif choice == 'quit':
+        elif choice == 'q' or choice == 'quit' or choice == 'exit':
             run = False
         elif choice == 'h' or choice == 'help':
             print_choices_help()
