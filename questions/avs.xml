@@ -52,11 +52,17 @@ Trace cache je špeciálne užitočná pre programy, ktoré majú veľký počet
     </element>
     <element>
         <question>Organizácia jednotky L/S podporujúca RPW (Store buffer)</question>
-        <answer>AVS_03/16</answer>
+        <answer>AVS_03/16
+Store buffer - ukladá čo chcem uložiť a kam (adresa/data) ak vyrobí adresu, skontroluje LB či tam nie je už inštrukcia s rovnakou adresou ktorá ho predbehla, ak áno, tak ju zahodí a aj všetko čo po nej následuje
+
+Load buffer - najskôr prechádza SB a hľadá či tam, je adresa ktorú potrebuje &gt; forwarding (ak tam u tej adresy ešte nie sú dáta tak čaká), ak nie tak prehľadá cache pamäť.</answer>
     </element>
     <element>
         <question>Out-of-order Load/Store jednotka (Load buffer)</question>
-        <answer>AVS_03/18</answer>
+        <answer>AVS_03/18
+Store buffer - ukladá čo chcem uložiť a kam (adresa/data) ak vyrobí adresu, skontroluje LB či tam nie je už inštrukcia s rovnakou adresou ktorá ho predbehla, ak áno, tak ju zahodí a aj všetko čo po nej následuje
+
+Load buffer - najskôr prechádza SB a hľadá či tam, je adresa ktorú potrebuje &gt; forwarding (ak tam u tej adresy ešte nie sú dáta tak čaká), ak nie tak prehľadá cache pamäť.</answer>
     </element>
     <element>
         <question>Bypassing a forwarding</question>
@@ -77,7 +83,24 @@ Trace cache je špeciálne užitočná pre programy, ktoré majú veľký počet
     </element>
     <element>
         <question>Amdahlov a Gustafsonov zákon</question>
-        <answer>P1</answer>
+        <answer>Amdahlov zákon je vzorec, ktorý udáva teoretické zrýchlenie latencie vykonávania úlohy pri pevnom pracovnom zaťažení, ktoré možno očakávať od systému, ktorého zdroje sa zlepšili. Uvádza sa v ňom, že celkové zlepšenie výkonu získané optimalizáciou jednej časti systému je obmedzené časovým podielom, v ktorom sa zlepšená časť skutočne používa. Inými slovami, nie je možné dosiahnuť nekonečné zrýchlenie pridaním ďalších procesorov do systému. Vzorec možno vyjadriť takto:
+
+Slatency=1 / ((1-p)+p/N)
+
+kde Slatency je teoretické zrýchlenie vykonávania celej úlohy, p je podiel času vykonávania, ktorý pôvodne zaberala časť využívajúca zlepšené zdroje, a N je počet procesorov.
+Amdahlov zákon sa často používa v paralelných výpočtoch na predpovedanie teoretického zrýchlenia pri použití viacerých procesorov. Napríklad, ak program potrebuje na dokončenie 20 hodín s použitím jedného vlákna, ale hodinová časť programu sa nedá paralelizovať, a preto sa dá paralelizovať len zvyšný čas vykonávania 19 hodín (p = 0,95), potom bez ohľadu na to, koľko vlákien sa venuje paralelizovanému vykonávaniu tohto programu, minimálny čas vykonávania je vždy viac ako 1 hodina. Teoretické zrýchlenie je teda menej ako 20-násobok výkonu jedného vlákna.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+Gustafsonov zákon je vzorec, ktorý udáva teoretické zrýchlenie latencie vykonávania úlohy pri pevne stanovenom čase vykonávania, ktoré možno očakávať od systému, ktorého zdroje sa zlepšili. Je pomenovaný po počítačovom vedcovi Johnovi L. Gustafsonovi a jeho kolegovi Edwinovi H. Barsisovi a bol prezentovaný v článku "Prehodnotenie Amdahlovho zákona" v roku 1988.
+
+Gustafsonov zákon rieši nedostatky Amdahlovho zákona, ktorý je založený na predpoklade pevnej veľkosti problému, t. j. vykonávacieho zaťaženia, ktoré sa nemení vzhľadom na zlepšovanie zdrojov. Gustafsonov zákon namiesto toho navrhuje, aby programátori mali tendenciu zväčšovať veľkosť problémov s cieľom plne využiť výpočtový výkon, ktorý sa stáva dostupným so zlepšovaním zdrojov.
+
+Vzorec možno vyjadriť takto:
+Slatency=N+(1-N)×s
+
+kde Slatency je teoretické zrýchlenie vykonávania celej úlohy, N je počet procesorov a s je podiel času stráveného vykonávaním sériových častí programu na paralelnom systéme.
+
+Na rozdiel od Amdahlovho zákona Gustafsonov zákon predpovedá, že s pribúdajúcim počtom procesorov v systéme sa dajú väčšie problémy vyriešiť za približne rovnaký čas. Je to preto, že programátori môžu zväčšovať veľkosť problémov, aby využili dodatočný výpočtový výkon, namiesto toho, aby boli obmedzovaní pevnou veľkosťou problémov.</answer>
     </element>
     <element>
         <question>Superskalárny procesor - Backend</question>
@@ -104,7 +127,7 @@ Príklady:
 - Premenovanie registrov v HW (OOO) - odstránenie konfliktov WAR a WAW
 - Dynamické plánovanie inštrukcií out-of-order (OOO)
     - Po dekódovaní čakajú inštrukcie na svoje operandy, ktoré sa tvoria. Akonáhle sú operandy pripravené, spustí sa operácia.
-    - Inštrukcie, vrátane prístupu do pamäte, sú spracovávané v inom poradí oproti oproti poradí v programe
+    - Inštrukcie, vrátane prístupu do pamäte, sú spracovávané v inom poradí oproti poradiu v programe
 - Zoraďovacia pamäť (OOO)
     - stupeň WB pomocou nej zaisťuje ukládanie výsledkov v poradí určenom zdrojovým kódom
 - Špekulatívne spracovanie inštrukcii (OOO)
@@ -157,11 +180,40 @@ Lepšia implementácia je prednačítanie s rozostupom.</answer>
 2. Presné výnimky: ROB zabezpečuje presné spracovanie výnimiek, čo znamená, že stav procesora sa vráti späť do bodu výnimky a po výnimke sa nevykonávajú žiadne inštrukcie.
 3. Špekulatívne vykonávanie: ROB umožňuje špekulatívne vykonávanie inštrukcií, čo znamená, že procesor môže vykonávať inštrukcie skôr, ako je isté, že budú potrebné. To môže zlepšiť výkon tým, že sa zníži počet zdržaní v pipeline.</answer>
     </element>
-    <!-- <element>
-        <question></question>
-        <answer>Answer num 2</answer>
+    <element>
+        <question>Relaxovaná pamäťová konzistencia</question>
+        <answer>- lepšia výkonnosť a jednoduchšia HW implementácia.
+- je ponechané na programátorovi, aby identifikoval a označil špec. inštrukciami (napr. pamäťovými bariérami) tie inštrukcie L/S, ktoré musia byť usporiadané.
+- Všetky ostatné inštrukcie sa môžu vykonávať mimo poradia.
+
+- Na vyššej úrovni musí programátor použiť synchronizačné príkazy pre vymedzenie oblastí predpísaného poradia L/S.</answer>
     </element>
     <element>
+        <question>2 úlohy pamätí cache</question>
+        <answer>- zníženie objemu komunikácie s hlavnou pamäťou o 2 až 3 rady.
+- zníženie priemernej doby prístupu o 1 až 2 rady.</answer>
+    </element>
+    <element>
+        <question>Parametry pamätí cache</question>
+        <answer>1. (lokálna) početnosť zásahov hi: počet zásahov v cache úrovne i / počet prístupov do tejto cache
+2. (globálne) početnosť výpadkov v úrovni i: (1-h1)*(1-h2)*...(1-hi) znamená početnosť výpadkov generovaných súčasne v úrovni 1, 2 ... i
+3. latencia zásahov ti: doba od vyslania adresy do návratu dat z cache i
+4. latencia výpadkov (ak procesor pri výpadku blokuje) na úrovni i: doba prenosu z cache úrovne i + 1 do úrovne i a načítanie slova z cache i.</answer>
+    </element>
+    <element>
+        <question>Výpadky v pamäti cache</question>
+        <answer>- Výpadok pri zápise slova do cache (write allocation):
+    - Najde sa volný blok a vykoná sa zápis.
+    - Ak není v cache voľné miesto, musí sa niektorý blok z cache premiestniť do pamäte (block replacemenet).
+- Stratégia výberu bloku pre premiestnenie
+    - LRU, FIFO, random
+- Ak je vymenený blok neskôr treba
+    - nastane výpadok kvôli kolizí (iba jedna cesta u PM cache alebo málo ciest u SA cache)
+    - kapacite (PA cache)
+- Výpadky vznikajú na začiatku, keď je cache prázdna (povinné výpadky)
+- Výpadky udržovania koherencie v multiprocesorovom systéme (koherenčný).</answer>
+    </element>
+    <!-- <element>
         <question></question>
         <answer>Answer num 2</answer>
     </element>
