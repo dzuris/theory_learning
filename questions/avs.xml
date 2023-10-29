@@ -69,15 +69,104 @@ Trace cache je špeciálne užitočná pre programy, ktoré majú veľký počet
 - nový Load môže predbehnúť aktuálny Store, iterácie smyčiek sa môžu čiastočne prekrývať</answer>
     </element>
     <element>
-        <question>Question num 2</question>
+        <question>AVX2 a AVX512</question>
+        <answer>- sú to instrukčné sady ktoré sa v moderných CPUs používajú an vykonávanie SIMD(Single Instruction Multiple Data) operácií.
+- AVX2 je 256-bitová vektorová inštrukčná sada, ktorá podporuje niekoľko interpretácií 256-bitových registrov, ako napríklad 8 floatov, 4 double alebo 32 bajtov. K existujúcim operáciiám s pohyblivou desatinnou čiarkou podporovaným systémom AVX1 pridáva 256-bitové operácie s celými číslami.
+
+- AVX512 je súbor 512-bitových vektorových inštrukcií, ktorý rozširuje možnosti AVX2. Používa nové kódovanie prefixu EVEX (enhanced vector extension) a podporuje mnoho rôznych inštrukcií. Najväčší rozdiel medzi AVX2 a AVX512 je v tom, že AVX512 dokáže spracovať dvakrát viac operácií na inštrukciu.</answer>
+    </element>
+    <element>
+        <question>Amdahlov a Gustafsonov zákon</question>
+        <answer>P1</answer>
+    </element>
+    <element>
+        <question>Superskalárny procesor - Backend</question>
+        <answer>- Odpovedá stupňom EX, MA, WB:
+- vykonáva a ukladá výsledky niekoľkých inštrukcií súbežne.
+- niektoré stupne sú rozdelené na pod stupne.
+- počet (skupin) funkčných jednotiek je minimálne m, ale počet prepojovacích ciest rastie ako m^2.
+
+Dnes m najviac 6 až 9, ale dôležité je IPC: koľko inštrukcií priemerne končí za 1 takt a to je o dosť menej než m.</answer>
+    </element>
+    <element>
+        <question>Rozdelenie superskalárnych procesorov</question>
+        <answer>Delenie podľa spôsobu akým inštrukcie opúšťajú front-end:
+- Podľa poradia v programe, po vyriešení konfliktov (in-order, INO), jednoduchý HW.
+- Mimo poradia (out-of-order, OOO). Nepravé konflikty vyriešené premenovaním v HW, RAW riešený čakaním rozpracovaných inštrukcií. Zápis výsledkov v pôvodnom poradí zaistený zoraďovaciou pamäťou (ROB).
+
+Príklady:
+- INO: prvé superskalárne procesory (Pentium, DEC Alpha 21164), ale aj novšie (IBM Power6, Intel Atom, ARM...)
+- OOO: Intel P6, Pentium4, Intel Core,... až Rocket Lake či Zen.</answer>
+    </element>
+    <element>
+        <question>Rysy superskalárnych procesorov</question>
+        <answer>- Paralélne reťazené linky (INO aj OOO) - časový aj priestorový paralelizmus
+- Premenovanie registrov v HW (OOO) - odstránenie konfliktov WAR a WAW
+- Dynamické plánovanie inštrukcií out-of-order (OOO)
+    - Po dekódovaní čakajú inštrukcie na svoje operandy, ktoré sa tvoria. Akonáhle sú operandy pripravené, spustí sa operácia.
+    - Inštrukcie, vrátane prístupu do pamäte, sú spracovávané v inom poradí oproti oproti poradí v programe
+- Zoraďovacia pamäť (OOO)
+    - stupeň WB pomocou nej zaisťuje ukládanie výsledkov v poradí určenom zdrojovým kódom
+- Špekulatívne spracovanie inštrukcii (OOO)
+    - špekulácia, že skok dopadne podľa predikcie alebo že dopredu načítané dáta sa už nezmenia.</answer>
+    </element>
+    <element>
+        <question>4 veci ktoré sú podmienkou úspešnej vektorizácie cyklu</question>
+        <answer>1. Musí byť spočítateľný počet iterácií (const param)
+2. Nesmie obsahovať volanie funkcií (okrem funkcií ktoré podporujú vektorizáciu)
+3. Žiadne skoky
+4. Jeden vstup a výstup (žiaden break)</answer>
+    </element>
+    <element>
+        <question>RAT</question>
+        <answer>RAT (Register Alias Table) je hardvérová štruktúra, ktorá sleduje premenovanie architektonických registrov na fyzické registre. Používa sa na riešenie konfliktov názvov registrov, ktoré vznikajú pri súčasnom vykonávaní viacerých inštrukcií.</answer>
+    </element>
+    <element>
+        <question>ROB</question>
+        <answer>ROB (Reorder Buffer) - zoraďovacia pamäť - je hardvérová štruktúra, ktorá sleduje inštrukcie, ktoré boli vydané, ale ešte neboli vyradené. Používa sa na zabezpečenie toho, aby boli inštrukcie vyradené v programovom poradí, aj keď sa dokončia mimo poradia.
+- je kruhová vyrovnávacia pamäť rozpracovaných inštrukcií obsahujúca:
+    - informácie o stave inštrukcie
+    - predbežné/špekulatívne výsledky
+- Inštrukcie sú vložené do ROB pri vydaní do RS
+- Všetky inštrukcie sú tu udržované v fronte FIFO v programovom poradí.
+- Prepúšťanie inštrukcie iba z čela ROB, po prepustení všetkých predchádzajúcich inštrukcií.
+- Zápis do arch registrov/pamätí pri opúšťaní ROB.
+- ROB môže byť použitý aj pre premenovanie</answer>
+    </element>
+    <element>
+        <question>BTB</question>
+        <answer>BTB (Branch Target Buffer) je hardvérová štruktúra, ktorá ukladá do vyrovnávacej pamäte cieľovú adresu nedávno vykonaných inštrukcií vetvenia. Používa sa na predvídanie cieľovej adresy budúcich inštrukcií vetvenia a na zníženie výkonnostnej penalizácie spojenej s nesprávnymi predpovediami vetvenia.</answer>
+    </element>
+    <element>
+        <question>PHT</question>
+        <answer>Pattern History Table - je hardvérová štruktúra používaná pri dynamickej predikcii vetiev. Pozostáva z priamo mapovaných položiek a uchováva históriu niekoľkých posledných výsledkov vetvenia. PHT sa používa na predpovedanie smeru nasledujúcej inštrukcie vetvenia a na určenie cieľovej adresy podmienenej inštrukcie vetvenia.</answer>
+    </element>
+    <element>
+        <question>Názvy dvoch základných implementácií hardvérovej podpory pre sekvenčne prednačítanie</question>
+        <answer>- Prednačítanie pri výpadku - pri výpadku v bloku i sa načíta blok i a prednačíta i+1.
+- Prednačítanie s príznakom - pri výpadku v bloku i sa načíta blok i (s príznakom 0) a prednačíta sa blok i+1 (s príznakom 1)
+    - pri zásahu v bloku i+1:
+        - s príznakom 1 (prvý zásah): zmeň príznak na 0 a prednačítaj blok i+2 (s príznakom 1)
+        - s príznakom 0 (druhý a ďalší zásah): žiadna akcia
+        
+Lepšia implementácia je prednačítanie s rozostupom.</answer>
+    </element>
+    <element>
+        <question>Výhody ROB</question>
+        <answer>1. Vykonávanie mimo poradia: ROB umožňuje vykonávať inštrukcie mimo poradia, čo môže zlepšiť výkon tým, že procesor môže vykonávať nezávislé inštrukcie súčasne.
+2. Presné výnimky: ROB zabezpečuje presné spracovanie výnimiek, čo znamená, že stav procesora sa vráti späť do bodu výnimky a po výnimke sa nevykonávajú žiadne inštrukcie.
+3. Špekulatívne vykonávanie: ROB umožňuje špekulatívne vykonávanie inštrukcií, čo znamená, že procesor môže vykonávať inštrukcie skôr, ako je isté, že budú potrebné. To môže zlepšiť výkon tým, že sa zníži počet zdržaní v pipeline.</answer>
+    </element>
+    <!-- <element>
+        <question></question>
         <answer>Answer num 2</answer>
     </element>
     <element>
-        <question>Question num 2</question>
+        <question></question>
         <answer>Answer num 2</answer>
     </element>
     <element>
-        <question>Question num 2</question>
+        <question></question>
         <answer>Answer num 2</answer>
-    </element>
+    </element> -->
 </data>
