@@ -155,4 +155,45 @@ Analytické vs softvérové projekty
 5. Zhodnotenie - interpretácia a zhodnotenie výsledkov z hľadiska cieľov projektu, stanovenie ďalšieho postupu.
 6. Použitie - plán využitia, monitorovania a údržby</answer>
     </element>
+    <element>
+        <question>Dátovy objekt, atribút</question>
+        <answer>Štruktúra typicky reprezentujúca entity reálneho sveta
+Atribút - časť štruktúry datového objektu reprezentujúca nejakú jeho vlastnosť/rys.
+Typy atribútov:
+    - kategorický - reťazec alebo celočíselný
+        - binárny - normálny s 2 stavmi
+            - symetricky binárne - oba stavy rovnako dôležité - Príklad: pohlavie ∈ {muž, žena}
+            - asymetricky binárne - stavy nemajú rovnakú dôležitosť - Príklad: test ∈ {pozitívny, negatívny}
+        - nominálny - kategórie, stavy, mena vecí
+            - Príklad: barva ∈ {čierna, modrá, biela}
+        - ordinálny - je definované usporiadanie, ale rozdiel 2 susedných hodnôt není definovaný
+            - Príklad: vzdelanie ∈ {základné, stredné všeobecné, stredné odborné, vysokoškolské}
+    - numerický/kvantitatívny - celočíselný alebo reálny
+        - intervalový 
+            - hodnoty sú usporiadané
+            - spojitá mierka delená približne lineárne, sme schopní určiť rozdiel, podiel je problematický
+            - není vzťažný/nulový bod
+            - Príklad: teplota v °C, dátum
+        - pomerový
+            - implicitný nulový bod
+            - oproti intervalovému sme schopní určiť aj podiel dvoch hodnôt
+            - iba kladné hodnoty
+            - Príklad: teplota v K, dĺžka, počet detí, čiastka</answer>
+    </element>
+    <!-- <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element> -->
 </data>
