@@ -1,0 +1,158 @@
+<data>
+    <element>
+        <question>Dáta</question>
+        <answer>Významny zdroj potencionálne užitočných informácií</answer>
+    </element>
+    <element>
+        <question>Data mining</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Data science</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Znalosť</question>
+        <answer>Zaujímavá informácia, ktorá je:
+- Netriviálni (nemožno ju získať napr. obyčajným SQL dotazom alebo logickým odvodzovaním)
+- Skrytá (modely a vzory, ktoré nie sú na prvý pohľad vidieť)
+- Predtým neznáma
+- Potencionálne užitočná (má využitie - pre rozhodovanie, potvrdenie hypotézy)</answer>
+    </element>
+    <element>
+        <question>Klasifikácia štruktúry dát</question>
+        <answer>- Štrukturované - možno rozpoznať štruktúru
+    - Plne štrukturované - relačné a transakčné databázy, dáta z dátovych kociek, CSV atď (tabuľka relačnej databázy, súbor obsahu nákupu v supermarkete)
+    - Čiastočne (semi)-štrukturované - textové dáta s rozoznateľným vzorom, ktorý umožňuje syntaktickú analýzu (parsing) (dokument v XML, HTML, JSON, BibTex)
+    - ,,kvazi'' - štrukturované - textové dáta s nepravidelnými formátmi, ktoré môžu obsahovať nekonzistencie v hodnotách a formátoch. (záznam webovými stránkami (clickstream), napr. FIT -&gt; Pre študentov =&gt; Študijne informácie)
+- Neštrukturované - nemajú žiadnu štruktúru (textové dokumenty(prostý text), PDF dokumenty, obrázky, video)</answer>
+    </element>
+    <element>
+        <question>Typické zdroje dát</question>
+        <answer>- Úložisko ,,statických'' dát
+    - tradičné (relačné databázy - tabuľky, datové sklady...)
+    - pokročilé (nerelačné, NoSQL databáze...)
+- Web a sociálne siete
+- Prúdy dát - potencionálne nekonečný -&gt; data dostupné iba dočasne. (dáta zo senzorov, dohľadové systémy, bankové transakcie)
+- Veľmi rozsiahle dáta (Big data) - obecne zmes dát zo zdrojov vyššie, zpravidla charakterizované niekoľkými ,,V'':
+    - objem (Volume) - dát je veľa
+    - rýchlosť vzniku (Velocity) - vznikajú rýchlo
+    - rozlišnosť (Variety) - rôzne zdroje, typy, formáty...
+    - vierohodnosť (Veracity) - neisté dáta vplyvom nekonzistencie, neúplnosti, nejasnosti atď.</answer>
+    </element>
+    <element>
+        <question>Klasifikácia</question>
+        <answer>Predikcia triedy/konceptu daného objektu</answer>
+    </element>
+    <element>
+        <question>Regresia</question>
+        <answer>Predikcia/odhad hodnoty nejakej neznámej vlastnosti objektu</answer>
+    </element>
+    <element>
+        <question>Výsledok/znalosť prediktívnej analýzy</question>
+        <answer>model, ktorý popisuje a rozlišuje triedy/koncepty (u klasifikácie) alebo predikuje hodnoty spojitej veličiny</answer>
+    </element>
+    <element>
+        <question>Prediktívna analýza - klasifikačné metódy</question>
+        <answer>- rozhodovacie stromy
+- bayesovské klasifikácie
+- neurónové siete
+- SVM
+- Rozhodovacie pravidlá
+- k-NN</answer>
+    </element>
+    <element>
+        <question>Prediktívna analýza - regresná analýza</question>
+        <answer>- Využitie rôznych regresných funkcií
+- Neurónové siete
+- SVM
+- k-NN</answer>
+    </element>
+    <element>
+        <question>Zhlukovanie</question>
+        <answer>Podstata: nájdenie skupin/zhlukov podobných objektov. Tie predstavujú predom neznáme triedy.
+
+Výsledok/znalosť: kolekcia zhlukov s čo najväčšiou podobnosťou vo vnútri zhlukov a čo najmenšiou podobnosťou medzi shlukmi.
+
+Metódy: K-means, Hierarchické zhlukovanie, DBSCAN, EM</answer>
+    </element>
+    <element>
+        <question>Analýza/detekcia odľahlých objektov</question>
+        <answer>Odľahlá hodnota: datový objekt, ktorý sa vymyká z hľadiska podobnosti alebo správania ostatným.
+        
+Podstata: hľadanie/detekcia (online) odľahlých objektov v dátach.
+
+Výsledok: zoznam odľahlých objektov, resp. signálov odľahlosti (pri detekcii) pre daný objekt.
+
+Metódy: LOF, Isolation forest, OC-NN, OC-SVM, DBSCAN</answer>
+    </element>
+    <element>
+        <question>Zoskupovanie podľa súčasnosti výskytu</question>
+        <answer>Podstata: hľadanie objektov/vzťahov v dátach, ktoré sa často vyskytujú niekde společne.
+        
+Výsledok/znalosť: zoznam množiny objektov/vzťahov vyskytujúcich sa dostatočne často spoločne - frekventované množiny (vzory).
+
+Z frekventovaných vzorov možno odvodiť asociačné pravidla tvaru A =&gt; B - keď sa vyskytne A, potom sa často vyskytne aj B - vzťah P(B|A).
+
+Silu pravidla vyjadrujú metriky - podpora a spoľahlivosť.
+
+Metódy: algoritmus Apriori</answer>
+    </element>
+    <element>
+        <question>Sekvenčné vzory</question>
+        <answer>Obdoba frekventovaných množín/vzorov aplikovaná na sekvencie.
+
+Podstata: hľadanie podsekvencií vyskytujúcich sa často v nejakej množine sekvencií.
+
+Výsledok: zoznam podsekvencií/sekvenčných vzorov vyskytujúcich sa v sekvenciách dostatočne často
+
+Metódy: GSP (vlastnosť Apriori), SPADE/SPAM, LAPIN</answer>
+    </element>
+    <element>
+        <question>Profilovanie/charakterizácia</question>
+        <answer>Podstata: hľadanie vlastností, resp. správanie určitej triedy/skupiny objektov, ktoré ju charakterizujú.
+        
+Výsledok/znalosť: profil/charakterizácia objektov danej triedy.
+
+Príklad: ktoý zákazníci utratia v danom obchode viac než 100k kč ročne? -&gt; vek 40-50, zamestnaný, plat &gt; 30k
+
+Variantou môže byť diskriminácia - hľadanie vlastností, v ktorých sa objekty dvoch tried najviac líšia.</answer>
+    </element>
+    <element>
+        <question>Analytické projekty</question>
+        <answer>Vstupy:
+- biznis problém rozhodovania na základe dát (DDD - Data-Drive Decision making) alebo hypotéza k overovaniu na základe dát
+- dáta
+
+Výstupy:
+- využiteľná znalosť - model dát, vzory v dátach, profily atď.
+- kvantitatívne ohodnotenie kvality výsledkov
+
+riešený problém + dáta =&gt; DM úloha/y =&gt; DM výsledok =&gt; interpretovaný výsledok
+
+Analytické vs softvérové projekty
+- zameranie na dáta a aplikácie existujúcich algoritmov pre riešenie čiastočných úloh, nie na algoritmy spracovania dát
+- kľúčová roľa doménových analytikov a doménových expertov</answer>
+    </element>
+    <element>
+        <question>Životný cyklus analytického projektu</question>
+        <answer>- rada modelov zahrňujúcich podobné kroky/fáze
+- model CRISP-DM (Cross-Industry Standard Process for Data Mining)
+
+6. Použitie    →    1. Pochopenie kontextu  →   2. Pochopenie dát (UPA)
+
+    ↑                   Dáta                 ↓
+
+5. Zhodnotenie    ←     4. Modelovanie     ←    3. Príprava dát (UPA)
+</answer>
+    </element>
+    <element>
+        <question>Kroky/fázy modelu CRISP-DM</question>
+        <answer>1. Pochopenie kontextu - pochopenie problematiky, určenie cielov projektu a kritérií úspešnosti, zhodnotenie zdrojov vrátane dostupných dát, definície analytického cieľa (úloh(y) získavanie znalostí, plánovanie projektov...)
+2. Pochopenie dát - rozpracovanie informácie k dostupným/potrebným dátam, prípadny zber dát, získanie charakteristík dát (exploračná analýza), zhodnotenie kvality dát.
+3. Príprava dát - výber, čistenie, integrácia, úpravy datovej sady, transformácia dát.
+4. Modelovanie - výber modelovacej techniky, príprava spôsobu ohodnotenia kvality modelu, vytvorenie modelu, ohodnotenie modelu.
+5. Zhodnotenie - interpretácia a zhodnotenie výsledkov z hľadiska cieľov projektu, stanovenie ďalšieho postupu.
+6. Použitie - plán využitia, monitorovania a údržby</answer>
+    </element>
+</data>
