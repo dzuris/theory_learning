@@ -180,9 +180,15 @@ Typy atribútov:
             - iba kladné hodnoty
             - Príklad: teplota v K, dĺžka, počet detí, čiastka</answer>
     </element>
-    <!-- <element>
-        <question>Question num 2</question>
-        <answer>Answer num 2</answer>
+    <element>
+        <question>Typy mier z hľadiska distribucie výpočtu</question>
+        <answer>- Distributívna - možno počítať distribuovane, výsledek rovnakou operáciou s medzivýsledkami (Príklad: počet prvkov)
+- Algebraická - výsledek algebraickou operáciou nad 1 alebo niekoľkými distributivnými mierami. (Príklad: priemer)
+- Holistická - možno spočítať iba výpočtom nad celým súborom. (Príklad: medián)</answer>
+    </element>
+    <element>
+        <question>Korelačná analýza</question>
+        <answer>Vyjadruje štatistickú závislosť dvoch atribútov.</answer>
     </element>
     <element>
         <question>Question num 2</question>
@@ -192,8 +198,4 @@ Typy atribútov:
         <question>Question num 2</question>
         <answer>Answer num 2</answer>
     </element>
-    <element>
-        <question>Question num 2</question>
-        <answer>Answer num 2</answer>
-    </element> -->
 </data>
