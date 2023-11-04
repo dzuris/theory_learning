@@ -191,8 +191,16 @@ Typy atribútov:
         <answer>Vyjadruje štatistickú závislosť dvoch atribútov.</answer>
     </element>
     <element>
-        <question>Question num 2</question>
-        <answer>Answer num 2</answer>
+        <question>Kvalita dát</question>
+        <answer>Niektoré kritéria kvality dát:
+- Presnosť - vzťah k realite
+- Úplnosť - do šírky (atribúty), hĺbky (záznamy)
+- Konzistencia
+- Aktuálnosť (podpora rozhodnutia do budúcnosti)
+- Vierohodnosť
+- Pridaná hodnota - prospešnosť pre danú úlohu
+- Interpretovateľnosť hodnôt - kódovanie intervalov, klasifikačné triedy atď.
+- Dostupnosť, relevancia, zrozumiteľnosť...</answer>
     </element>
     <element>
         <question>Question num 2</question>
