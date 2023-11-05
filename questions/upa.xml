@@ -5,11 +5,15 @@
     </element>
     <element>
         <question>Data mining</question>
-        <answer>Answer num 2</answer>
+        <answer>- je proces objavovania vzorov a iných cenných informácií z veľkých datasetov.</answer>
     </element>
     <element>
         <question>Data science</question>
-        <answer>Answer num 2</answer>
+        <answer>- je interdisciplinárna oblasť, ktorá zahŕňa používanie štatistických techník a techník strojového učenia na získavanie poznatkov z veľkých datasetov.</answer>
+    </element>
+    <element>
+        <question>Business Intelligence (BI)</question>
+        <answer>- je pojem, ktorý označuje procesnú a technickú infraštruktúru, ktorá zhromažďuje, uchováva a analyzuje údaje získané z činností spoločnosti.</answer>
     </element>
     <element>
         <question>Znalosť</question>
