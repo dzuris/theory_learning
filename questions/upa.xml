@@ -203,7 +203,66 @@ Typy atribútov:
 - Dostupnosť, relevancia, zrozumiteľnosť...</answer>
     </element>
     <element>
-        <question>Question num 2</question>
-        <answer>Answer num 2</answer>
+        <question>Transformácia dát</question>
+        <answer>Cieľ: obecne každá úprava hodnôt, tu transformácia dát do podoby vhodnej/nutnej pre dolovanie
+Zahrňuje:
+- odstráňovanie šumu
+- konštrukciu atribútov
+- agregáciu
+- normalizáciu
+- diskretizáciu hodnôt kvantitativného atribútu
+- transformáciu kategorických dát</answer>
+    </element>
+    <element>
+        <question>Príprava dát - typické úlohy</question>
+        <answer>1. Výber dát - aké dáta použijeme a prečo, v značnej miere už na začiatku kroku pochopenia dát, kritéria:
+    - relevancia k cieľovému dolovaniu
+    - kvalita dát
+    - technické obmedzenia (dátove typy, množstvá...)
+2. Čistenie dát - zvýšenie kvality dát
+    - chýbajúce hodnoty
+    - šum
+    - nekonzistencia a redundancia
+3. Integrácia dát - kombinácia dát z niekoľkých zdrojov
+    - spájanie
+    - agregácia
+4. Úprava dátovej sady
+    - redukcia - dimenzionality, počtu záznamov, počtu hodnôt
+    - riešenie nevyváženosti
+5. Transformácia dát - úprava hodnôt do podoby vhodnej/nutnej pre dolovanie
+    - konštrukcia atribútov
+    - agregácia
+    - normalizácia
+    - diskretizácia numerických hodnôt
+    - transformácia kategorických dát
+    </answer>
+    </element>
+    <element>
+        <question>Čistenie dát - zašumené dáta</question>
+        <answer>Metódy odstránenia šumu u numerických atribútov:
+    1. Plnenie (binning)
+        - vyhladenie na základe okolných hodnôt v zoradených dátach
+    2. Regresia
+        - vyhladenie vyrovnaním dát podľa regresnej funkcie
+    3. Analýza odlahlých hodnôt/objektov
+        - detekcia a odstránenie odľahlých hodnôt/objektov, napr. využitím zhlukovania
+Metódy odstránenia šumu u kategorických atribútov:
+    1. oprava textových hodnôt (ideálne oproti známemu oboru hodnôt).
+    2. odstránenie odľahlých (málo početných) hodnôt -&gt; prázdna hodnota.</answer>
+    </element>
+    <element>
+        <question>Integrácia dát</question>
+        <answer>Podstata: kombinácia dát z niekoľkých zdrojov do jedného úložiska/súboru.</answer>
+    </element>
+    <element>
+        <question>Metóda PCA (Principal Component Analysis)</question>
+        <answer>Cieľ: znížiť dimenzionalitu ortogonálnych transformácií pôvodných n-dimenzionálnych dátových objektov do nového n-dimenzionálneho priestoru (k &lt;= n) definovaného tzv. hlavnými komponentami splňujúcimi podmienky:
+    - sú lineárne nezávisle
+    - chyba projekcie by mala byť čo najmenšia</answer>
+    </element>
+    <element>
+        <question>Problém nevyváženosti dát - metóda SMOTE (Synthetic Minority Over-sampling Technique)</question>
+        <answer>Idea: Dáta blízke dátam minoritných tried budú pravdepodobne patriť do tej istej triedy
+    Podstata: Generovanie syntetických dát minoritných tried</answer>
     </element>
 </data>
