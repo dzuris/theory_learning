@@ -185,8 +185,8 @@ Typy atribútov:
             - Príklad: teplota v K, dĺžka, počet detí, čiastka</answer>
     </element>
     <element>
-        <question>Typy mier z hľadiska distribucie výpočtu</question>
-        <answer>- Distributívna - možno počítať distribuovane, výsledek rovnakou operáciou s medzivýsledkami (Príklad: počet prvkov)
+        <question>Typy mier z hľadiska distribúcie výpočtu</question>
+        <answer>- Distributívna - možno počítať distribuovane, výsledok rovnakou operáciou s medzivýsledkami (Príklad: počet prvkov)
 - Algebraická - výsledek algebraickou operáciou nad 1 alebo niekoľkými distributivnými mierami. (Príklad: priemer)
 - Holistická - možno spočítať iba výpočtom nad celým súborom. (Príklad: medián)</answer>
     </element>
@@ -267,6 +267,6 @@ Metódy odstránenia šumu u kategorických atribútov:
     <element>
         <question>Problém nevyváženosti dát - metóda SMOTE (Synthetic Minority Over-sampling Technique)</question>
         <answer>Idea: Dáta blízke dátam minoritných tried budú pravdepodobne patriť do tej istej triedy
-    Podstata: Generovanie syntetických dát minoritných tried</answer>
+Podstata: Generovanie syntetických dát minoritných tried</answer>
     </element>
 </data>
