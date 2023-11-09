@@ -1,0 +1,43 @@
+<data>
+    <element>
+        <question>Gradient</question>
+        <answer>- vektor ukazujúci v ktorom smere funkcia najrýchlejšie rastie, dĺžka vektoru značí strmosť svahu v tomto smere
+- je to vektorové pole (vstup aj výstup je vektor)</answer>
+    </element>
+    <element>
+        <question>Suma štvorcov</question>
+        <answer>je maximálny vierohodný odhad parametrov, s danou pravdepodobnosťou</answer>
+    </element>
+    <element>
+        <question>Maximum a-posteriori classification</question>
+        <answer>"select the most likely class"</answer>
+    </element>
+    <element>
+        <question>MLE</question>
+        <answer>- funkcia ktorá hľadá najpravdepodobnejšie hodnoty parametrov, ktoré vysvetľujú dáta
+- v prípade že máme dáta x1, x2,...xn a funkciu rozloženia pravdepodobnosti f(x|theta), kde theta sú neznáme parametre, môžeme napísať funkciu maximálnej vierohodnosti ako: L(theta|x1,x2,...xn) = SUCIN_1_az_n f(xi|theta)
+- cieľom MLE je nájsť hodnoty parametrov ktoré maximalizujú L(theta|x1,x2,...xn)</answer>
+    </element>
+    <element>
+        <question>Posteriórna pravdepodobnosť</question>
+        <answer>pravdepodobnosť že vzor patrí do danej triedy, za predpokladu, že poznáme jeho vlastnosti</answer>
+    </element>
+    <element>
+        <question>Generatívny klasifikátor</question>
+        <answer>modeluje pravdepodobnostné rozdelenie vlastnosti pre každú triedu</answer>
+    </element>
+    <element>
+        <question>Bayes rule</question>
+        <answer>P(y|x) = P(x|y)*P(y) / P(x)
+        
+P(y|x) - posterior probability
+P(x|y) - likelihood
+P(y) - prior probability
+P(x) - evidence</answer>
+    </element>
+    <element>
+        <question>Evidence</question>
+        <answer>P(x) = P(x|y1)*P(y1) + P(x|y2)*P(y2)
+P(x) = SUM_class P(x|class)*P(class)</answer>
+    </element>
+</data>
