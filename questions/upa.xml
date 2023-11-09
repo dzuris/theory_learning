@@ -269,4 +269,91 @@ Metódy odstránenia šumu u kategorických atribútov:
         <answer>Idea: Dáta blízke dátam minoritných tried budú pravdepodobne patriť do tej istej triedy
 Podstata: Generovanie syntetických dát minoritných tried</answer>
     </element>
+    <element>
+        <question>Požiadavky na moderné databázy</question>
+        <answer>- cloud, distribuované databázy
+    - decentralizované úložisko dát, úmyselná redundancia pre odolnosť proti výpadkom a rýchlosť, veľké objemy dát a veľké množstvo operácií /big data/, atď.
+- problematické dátové typy
+    - údaje kľúč-hodnota, objekty, neštrukturované dokumenty, RDF grafy, atp.
+- iteratívny vývoj
+    - časté zmeny schématu databáze alebo dokonca žiadn schéma, rôzne/nejasné spôsoby použitita databáze, atp.
+- vysoké požiadavky na škálovateľnosť
+    - mobilné zariadenia ako klienti aj úložisko/poskytovateľ dát, nerovnomerné rozloženie záťaže priestorovej aj časovej, špecifické požiadavky na dostupnosť, predom neznáme dotazy nemožno optimalizovať indexy, atp.</answer>
+    </element>
+    <element>
+        <question>Sharding</question>
+        <answer>- technika horizontálneho oddelenia dát v databáze.
+- táto technika umožňuje rozdeliť dáta do menších a spravovateľnejších podmnožín, ktoré sa nazývajú shardy.
+- každý shard má rovnaké schémy a stĺpce, ale úplne odlišné riadky.
+- dáta v každom sharde sú jedinečné a nezávisle na dátach v ostatných shardoch.</answer>
+    </element>
+    <element>
+        <question>Partitioning</question>
+        <answer>- rozdelenie dát v databáze na samostatné časti alebo partície
+- môže zlepšovať škálovateľnosť a výkon aplikácie, ale môže tiež priniesť značné komplikácie a výzvy.
+- 2 hlavné prístupy partitioningu:
+    - vertikálny partitioning - rozdelenie podľa stĺpcov
+    - horizontálny partitioning - rozdelenie podľa riadkov</answer>
+    </element>
+    <element>
+        <question>Natívne a nenatívne mapovanie</question>
+        <answer>Natívne mapovanie:
+    - perzistencia je realizovaná objektovou databázou
+    - aby bolo možné zabezpečiť CCSP, musí byť DB integrovaná do aplikačného kódu (pomocou využívaných knižníc alebo anotácií kódu, ktoré poskytuje vývojár)
+    - jednoduché a priamočiaré použitie, ale (možno) nepopulárne (tento prístup vyžaduje objektovú databázu, ktorá nie je veľmi opakovane použiteľná)
+    
+Object-to-(non-object) mapping
+    - objektovo-relačné mapovanie (ORM)
+    - mapovanie objektov a dokumentov (ODM)
+    - ...majú mnoho nevýhod, napriek tomu sú pomerne populárne</answer>
+    </element>
+    <element>
+        <question>Miera variability dát</question>
+        <answer>- rozpätie R = max - min
+- medzikvartálové rozpätie (IQR - Interquartile range)
+    - IQR = q3 - q1
+    - 50% stredných hodnôt, odľahlá hodnota x: (x &lt; q1 - 1.5*IQR) ∪ (x &gt; q3 + 1.5*IQR)
+- rozptyl (algebraická miera)
+- smerodatná odchylka</answer>
+    </element>
+    <element>
+        <question>Priemerná absolútna odchylka</question>
+        <answer>- stredná hodnota absolútnych hodnôt odchylky od stredu
+- obecne môže byť závislá k inému stredu
+    - Mediánová absolúna odchýlka (median absolute deviation)
+        - MAD = median(|xi - priemer|)
+    - Priemerná absolútna odchýlka (mean absolute deviation)
+        - MAD = 1/n*Σn |xi - priemer|</answer>
+    </element>
+    <element>
+        <question>Normalizácie</question>
+        <answer>- min-max normalizácia na [new_min, new_max]
+    - v = (v-min)/(max-min)*(new_max-new_min)+new_min
+- z-score normalizácia - mi - priemer, ro - smer. odchylka: v' = (v-mi)/ro
+    - normalizácia môže výrazne zmeniť dáta -&gt; uchovať parametry (mi a ro)
+- normalizácia zmenou dekadickej mierky - v' = v/10^j kde j je najmenšie celé číslo také, že max (|v'|) &lt; 1
+- kvantilová normalizácia - založená na kvantiloch (poradí usporiadaných hodnôt pozorovaní) - príklad s génmi</answer>
+    </element>
+    <element>
+        <question>Diskretizácia</question>
+        <answer>Podstata: rozdelenie rozsahu kvantitativného atribútu na intervaly, priradenie labelu intervalu
+Dôvody/prínosy: 
+    - Niektoré klasifikačné algoritmy vyžadujú iba kategorické atribúty.
+    - Dochádza k redukcii dát.
+    - Príprava pre ďalšiu analýzu.
+Prístupy:
+    - s učiteľom/bez učiteľa - využíva informácie o triede?
+    - Zhora-dolu/zdola-hore</answer>
+    </element>
+    <element>
+        <question>Transformácia kategorických dát</question>
+        <answer>Kódovanie - prevod na kvantitativný atribút
+Dôvody: niektoré algoritmy získavania znalostí pracujú iba s numerickými hodnotami.
+Metódy:
+    - ručne - typicky pre ordinálne poradie (známe usporiadanie)
+    - automaticky reťazec -&gt; celé číslo (nahradzuje v poradí výskytu v stĺpci)
+    - 1 z N - kategorická hodnota -&gt; stĺpec; pre nominálne, prípadne ordinálne; nárast dimenzií
+    - binárne - celé číslo -&gt; dvojkové vyjadrenie -&gt; stĺpec pre každú pozíciu dvojkového vyjadrenia.
+    - hashované</answer>
+    </element>
 </data>
