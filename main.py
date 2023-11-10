@@ -37,7 +37,7 @@ def print_help_message():
     print()
     print("Options:")
     print("FILE - Input xml file")
-    print("help | h - prints this message")
+    print("--help | -h - prints this message")
     print()
 
     print_choices_help()
@@ -69,6 +69,35 @@ def print_choices_help():
     print("\th | help - print this message")
     print("\tq | quit | exit - quit")
     print()
+
+
+def process_arguments(argv: list) -> str:
+    """
+    The function gets file name from program arguments and returns its path
+    :return: Path of the XML file
+    """
+    if len(argv) < 1:
+        # Wrong program input arguments
+        print("Error in program arguments count")
+        print()
+        print_help_message()
+        exit(ERROR_WRONG_PROGRAM_ARGUMENTS)
+    elif argv[0] == '-h' or argv[0] == '--help':
+        # Prints help message
+        print_help_message()
+        exit(NO_ERROR)
+    elif (argv[0] == '-f' or argv[0] == '--file') and len(argv) > 1:
+        filePath = argv[1]
+        if not os.path.exists(filePath):
+            print("Error: File passed as an argument doesn't exists")
+            exit(ERROR_NON_EXIST_FILE)
+        else:
+            return filePath
+    else:
+        print("Error: Unknown argument:", argv[0])
+        print()
+        print_help_message()
+        exit(ERROR_WRONG_PROGRAM_ARGUMENTS)
 
 
 class Subject:
@@ -205,22 +234,11 @@ class Subject:
 
 
 if __name__ == "__main__":
-    file = None
-    # Loading arguments
-    if len(sys.argv) != 2:
-        # Wrong program input arguments
-        print("Error in program arguments count")
-        print()
-        print_help_message()
-        exit(ERROR_WRONG_PROGRAM_ARGUMENTS)
-    elif sys.argv[1] == 'h' or sys.argv[1] == 'help':
-        print_help_message()
-        exit(NO_ERROR)
-    else:
-        file = sys.argv[1]
-        if not os.path.exists(file):
-            print("Error: File passed as an argument doesn't exists")
-            exit(ERROR_NON_EXIST_FILE)
+    """
+    Main function of the program
+    :return:
+    """
+    file = process_arguments(sys.argv[1:])
 
     subject = Subject(file)
 
