@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File IPP",
+            "name": "Python: Testing",
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            "args": ["ipp.xml"],
+            "args": ["-f questions/tin_bj.xml"],
             "console": "integratedTerminal",
             "justMyCode": true
         }
