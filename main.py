@@ -33,11 +33,11 @@ def print_help_message():
     :return:
     """
     print("Usage:")
-    print("\tpython3.8 theory_learning.py [FILE | help]")
+    print("\tpython3.8 theory_learning.py [-f FILE | -h | --help]")
     print()
     print("Options:")
     print("FILE - Input xml file")
-    print("--help | -h - prints this message")
+    print("-h | --help - prints this message")
     print()
 
     print_choices_help()
