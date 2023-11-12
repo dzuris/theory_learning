@@ -1,10 +1,167 @@
 <data>
     <element>
-        <question>Question num 1</question>
-        <answer>Answer num 1</answer>
+        <question>Bezkontextová gramatika</question>
+        <answer>Gramatika G = (N, Σ, P, S) sa nazýva bezkontextovou gramatikou, ak všetky pravidla z P majú tvar:
+    A → ɑ, A ∊ N, ɑ ∊ (N ∪ Σ)^*</answer>
     </element>
     <element>
-        <question>Question num 2</question>
+        <question>Ľavá (pravá) derivácia</question>
+        <answer>Nech S ⇒ ɑ1 ⇒ ɑ2 ⇒ ...⇒ ɑn = ɑ je derivácia vetnej formy ɑ. Ak bol v každom reťazci ɑi, i=1,...,n-1 prepísaný najľavejší (najpravejší) nonterminál, potom túto deriváciu nazývame ľavou (pravou) deriváciou vetnej formy ɑ.</answer>
+    </element>
+    <element>
+        <question>Viacznačná gramatika</question>
+        <answer>Gramatika G je viacznačná, ak generuje aspoň 1 viacznačnú vetu. V opačnom prípade hovoríme o jednoznačnej gramatike.
+viacznačná - existujú aspoň 2 derivačné stromy pre niektorý reťazec.</answer>
+    </element>
+    <element>
+        <question>Zásobníkovy automat</question>
+        <answer>Zásobníkový automat P je n-tice P=(Q, Σ, Γ, δ, q0, z0, F) kde:
+1. Q je konečná množina vnútorných stavov,
+2. Σ je konečná vstupná abeceda,
+3. Γ je konečná zásobníková abeceda,
+4. δ je prechodová funkcia v tvare δ: Q x (Σ ∪ {ε}) x Γ → 2^QxΓ*,
+5. q0 ϵ Q je počiatočný stav,
+6. zO ϵ Γ je štartovací symbol zásobníku,
+7. F ⊆ Q je množina koncových stavov</answer>
+    </element>
+    <element>
+        <question>Konfigurácia ZA</question>
+        <answer>Nech P = (Q, Σ, Γ, δ, q0, z0, F) je ZA. Konfiguráciu automatu P nazveme trojicou (q, w, ɑ) ϵ Q x Σ* x Γ*, kde
+1. q je prítomný stav vnútorného riadenia
+2. w je doposiaľ nespracovaná časť vstupného reťazca
+3. ɑ je obsah zásobníku (ɑ=Zi1Zi2...Zik, Zi1 je vrchol zásobníku)</answer>
+    </element>
+    <element>
+        <question>Prechod ZA</question>
+        <answer>Prechod ZA P je binárna relácia ⊢_P definovaná na množine konfigurácií:
+
+    (q,w,β) ⊢_P (q',w',β') ≝ w=aw' ∧ β=Za ∧ β'=γɑ ∧ (q', γ) ϵ δ(q, a, Z),
+    
+kde q,q' ϵ Q, a ϵ Σ ∪ {ε}, w,w' ϵ Σ*, Z ϵ Γ a ɑ,β,β',γ ϵ Γ*.
+    - ak a=ε, potom odpovedajúci prechod nazývame ε-prechodom.
+    - Relácia ⊢_P^i, ⊢_P^*, ⊢_P^+ sú definované obvyklým spôsobom
+    - Ak platí pre reťazec w ϵ Σ* relácia (q0, w, Zo) ⊢_P^* (q, ε, γ), kde q ϵ F a γ ϵ Γ*, potom hovoríme, že w je prijímaný ZA P(q0,w,Zo), resp. (q,ε,γ) je počiatočná, resp. koncová konfigurácia
+    - definujeme jazyk prijímaný zásbníkovým automatom P:
+    L(P) = {w | (q0,w,Zo) ⊢_P^* (q,ε,γ) ∧ q ϵ F}.</answer>
+    </element>
+    <element>
+        <question>Rozšírený ZA P je sedmica P=(Q, Σ, Γ, δ, q0, z0, F), kde δ je prechodová funkcia definovaná takto:
+    δ: Q x (Σ ∪ {ε}) x Γ* → 2^QxΓ*</question>
         <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Nedostupný, zbytočný stav v BG</question>
+        <answer>Nech G = (N, Σ, P, S) je gramatika a XϵN∪Σ symbol. Hovoríme, že symbol X je nedostupný v G, ak v G neexistuje derivácia S ⇒* ɑXβ pre nejaké ɑ,β ϵ (N∪Σ)*.
+        
+Symbol X nazývame zbytočný v G, ak v G neexistuje derivácia tvaru S ⇒* ɑXβ ⇒* zxy pre nejaké ɑ,β ϵ (N∪Σ)* a zxy ϵ Σ*.</answer>
+    </element>
+    <element>
+        <question>Gramatika bez ε-pravidiel</question>
+        <answer>G je gramatikou bez ε-pravidiel, ak neobsahuje žiadne ε-pravidlo (pravidlo tvaru A→ε), alebo, ak εϵL(G), potom obsahuje jediné ε-pravidlo S→ε a S sa potom nevyskytuje na pravej strane žiadneho prepisovacieho pravidla.</answer>
+    </element>
+    <element>
+        <question>Jednoduché pravidlo BG</question>
+        <answer>Pravidlo tvaru A→B, kde A,B ϵ N nazývame jednoduché pravidlo.</answer>
+    </element>
+    <element>
+        <question>Chomského normálna forma</question>
+        <answer>BG G=(N, Σ, P, S) je v Chomského normálnej forme, ak má každé pravidlo z P jeden z týchto tvarov:
+    1. A → BC, kde A,B,C ϵ N,
+    2. A → ɑ, kde L ϵ Σ,
+    3. ak ε ϵ L(G), potom S→ε je jediné ε-pravidlo a S sa nevyskytuje na pravej strane žiadneho prepisovacieho pravidla.</answer>
+    </element>
+    <element>
+        <question>Deterministický zásobníkový automat</question>
+        <answer>Zásobníkový automat P=(Q, Σ, Γ, δ, q0, z0, F) nazývame deterministickým zásobníkovým automatom (DZA), ak pre každé q ϵ Q a z ϵ Γ platí buď:
+    - ∀aϵΣ: |δ(q,a,z)|≤1 ∧ δ(q,ε,z)=∅, alebo
+    - ∀aϵΣ: δ(q,a,z)=∅ ∧ |δ(q,ε,z)|≤1</answer>
+    </element>
+    <element>
+        <question>Deterministický bezkontextový jazyk</question>
+        <answer>Nech L=L(P), kde P je DZA. Jazyk L sa potom nazýva deterministickým bezkontextovým jazykom.</answer>
+    </element>
+    <element>
+        <question>Turningov stroj</question>
+        <answer>Turningov stroj (TS) je šestica tvaru M=(Q,Σ,Γ,δ,q0,qF), kde:
+    - Q je konečná množina vnútorných (riadiacich) stavov,
+    - Σ je konečná množina symbolov nazývaná vstupná abeceda, △∉Σ,
+    - Γ je konečná množina symbolov, Σ ⊂ Γ, △ϵΓ, nazývaná pásková abeceda,
+    - parciálna funkcia δ: (Q\{qF}) x Γ → Q x (Γ ∪ {L,R}), kde L,R∉Γ, je prechodová funkcia
+    - q0 je počiatočný stav, q0ϵQ a
+    - qF je koncový stav, qFϵQ</answer>
+    </element>
+    <element>
+        <question>Konfigurácia pásky TS</question>
+        <answer>- je dvojica zostavajúca z nekonečného reťazca reprezentujúceho obsah pásky a pozíciu hlavy na tomto reťazci - presnejšie ide o prvok množiny {γ∆ω | γ ∈ Γ∗} × N</answer>
+    </element>
+    <element>
+        <question>Konfigurácia stroja TS</question>
+        <answer>- je daná stavom riadenia a konfiguráciou pásky - formálne sa jedná o prvok množiny Q × {γ∆ω | γ ∈ Γ∗} × N.</answer>
+    </element>
+    <element>
+        <question>Krok výpočtu</question>
+        <answer>viď papier TS 3.1</answer>
+    </element>
+    <element>
+        <question>Výpočet TS</question>
+        <answer>viď papier TS 3.1</answer>
+    </element>
+    <element>
+        <question>Nedeterministický TS</question>
+        <answer>- je šestica M = (Q, Σ, Γ, δ, q0, qF), kde význam jednotlivých zložiek je zhodný s deterministickým TS až na δ, ktorá má tvar:
+    δ : (Q \ {qF }) × Γ −→ 2^Q×(Γ∪{L,R})</answer>
+    </element>
+    <element>
+        <question>Kódovací systém TS</question>
+        <answer>Kódovací systém pre TS zahŕňa
+    1) kódovanie stavov (tak, aby boli odlišené všetky stavy vrátane q0 a qF)
+    2) symbolov z Γ
+    3) prechodové funkcie δ</answer>
+    </element>
+    <element>
+        <question>Kódovanie stavov, symbolov a príkazov L,R, prechodu</question>
+        <answer>Kódovanie stavov: Množinu stavov Q usporiadame do postupnosti q0,qF,q,p,...,t. Stav qj zakódujeme ako O^j, pričom indexujeme (napr.) od nuly.
+        
+Kódovanie symbolov a príkazov L/R: Predpokladajme, že Γ=Σ∪{∆}. Usporiadame Σ do postupnosti a1,a2,...,an a zvolíme tieto kódy: ∆ ↦ ε, L ↦ 0, R ↦ 00, ai ↦ 0^i+2
+
+Prechod δ(p, x) = (q, y), kde y ∈ Γ ∪ {L, R}, reprezentujeme štvoricou (p,x,q,y) a kódujeme zreťazením kódu p,x,q,y pri použití 1 ako oddelovača, tj. ako 〈p〉1〈x〉1〈q〉1〈y, kde 〈_〉 značí kód _.
+
+obrázok TS 4.</answer>
+    </element>
+    <element>
+        <question>Úplny TS</question>
+        <answer>TS sa nazýva úplny (total), práve keď sa pre každý vstup zastaví.</answer>
+    </element>
+    <element>
+        <question>Jazyk REC a RE</question>
+        <answer>Jazyk L ⊆ Σ* sa nazýva:
+    - rekurzívne vyčísliteľný (REC), ak L=L(M) pre nejaký TS M,
+    - rekurzívny, ak L=L(M) pre nejaký úplny TS M.
+    
+Ak je M úplny TS, potom hovoríme, že M rozhoduje jazyk L(M)</answer>
+    </element>
+    <element>
+        <question>Rozhodovanie problémov TS</question>
+        <answer>Nech P je problém špecifikovaný jazykom Lp nad Σ. Problém P nazveme:
+    - rozhodnuteľný, ak Lp je rekurzívny jazyk, tj. existuje TS, ktorý Lp rozhoduje (prijime každý reťazec w∈Lp, a zamietne každý reťazec w∈Σ*\Lp),
+    - nerozhodnuteľný, keď nie je rozhodnuteľný
+    - čiastočne rozhodnuteľný, ak Lp je rekurzívne vyčísliteľný jazyk</answer>
+    </element>
+    <element>
+        <question>LOA (LBA)</question>
+        <answer>Lineárne obmedzený automat (LOA) je nedeterministický TS, ktorý nikdy neopustí tu časť pásky, kde na nej je zapísaný jeho vstup.</answer>
+    </element>
+    <element>
+        <question>Počiatočné funkcie</question>
+        <answer>1. nulová funkcia
+2. funkcia následníka
+3. projekcia</answer>
+    </element>
+    <element>
+        <question>Trieda primitivne rekurzívnych funkcií</question>
+        <answer>- je trieda totálnych funkcií, ktoré môžu byť vytvorené z počiatočných funkcií konečnou aplikáciou:
+    - kombinácie
+    - kompozície
+    - primitívnej rekurzie</answer>
     </element>
 </data>
