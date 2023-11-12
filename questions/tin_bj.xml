@@ -61,7 +61,7 @@ Symbol X nazývame zbytočný v G, ak v G neexistuje derivácia tvaru S ⇒* ɑX
     </element>
     <element>
         <question>Jednoduché pravidlo BG</question>
-        <answer>Pravidlo tvaru A→B, kde A,B ϵ N nazývame jednoduché pravidlo.</answer>
+        <answer>Pravidlo tvaru A → B, kde A,B ϵ N nazývame jednoduché pravidlo.</answer>
     </element>
     <element>
         <question>Chomského normálna forma</question>
@@ -92,11 +92,11 @@ Symbol X nazývame zbytočný v G, ak v G neexistuje derivácia tvaru S ⇒* ɑX
     </element>
     <element>
         <question>Konfigurácia pásky TS</question>
-        <answer>- je dvojica zostavajúca z nekonečného reťazca reprezentujúceho obsah pásky a pozíciu hlavy na tomto reťazci - presnejšie ide o prvok množiny {γ∆ω | γ ∈ Γ∗} × N</answer>
+        <answer>- je dvojica zostavajúca z nekonečného reťazca reprezentujúceho obsah pásky a pozíciu hlavy na tomto reťazci - presnejšie ide o prvok množiny {γ∆^ω | γ ∈ Γ^*} × N</answer>
     </element>
     <element>
         <question>Konfigurácia stroja TS</question>
-        <answer>- je daná stavom riadenia a konfiguráciou pásky - formálne sa jedná o prvok množiny Q × {γ∆ω | γ ∈ Γ∗} × N.</answer>
+        <answer>- je daná stavom riadenia a konfiguráciou pásky - formálne sa jedná o prvok množiny Q × {γ∆^ω | γ ∈ Γ^*} × N.</answer>
     </element>
     <element>
         <question>Krok výpočtu</question>
@@ -109,7 +109,7 @@ Symbol X nazývame zbytočný v G, ak v G neexistuje derivácia tvaru S ⇒* ɑX
     <element>
         <question>Nedeterministický TS</question>
         <answer>- je šestica M = (Q, Σ, Γ, δ, q0, qF), kde význam jednotlivých zložiek je zhodný s deterministickým TS až na δ, ktorá má tvar:
-    δ : (Q \ {qF }) × Γ −→ 2^Q×(Γ∪{L,R})</answer>
+    δ : (Q \ {qF }) × Γ → 2^Q×(Γ∪{L,R})</answer>
     </element>
     <element>
         <question>Kódovací systém TS</question>
