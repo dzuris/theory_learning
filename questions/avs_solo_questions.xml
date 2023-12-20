@@ -1,0 +1,198 @@
+<data>
+    <element>
+        <question>Tomasulo
+a) záhlavie tabuliek
+b) vyplnenie tabuliek
+c) popísať čo sa deje po vypočítaní inštrukcie vo FJ</question>
+        <answer>a) RF - Name, Valid bit, Value
+Rezervačná stanica - Dst, Tag | Valid bit, Tag, Value | Valid bit, Tag, Value
+
+b) dúfam že ez
+
+c) pomocou CDB sa tag a hodnota spropagujú do rezervačnej stanice, kde sa v odpovedajúcich riadkoch nastavia valid bity na 1 a hodnoty, takisto sa regName, tag a hodnota pošle aj do RF kde ak je daný tag v registry rovnaký, nastaví sa valid bit na 1 a doplní sa hodnota, v opačnom prípade vieme že náš výsledok už nikto v RF nepotrebuje a teda ho môžeme zahodiť.</answer>
+    </element>
+    <element>
+        <question>Scoreboarding
+a) popíšte čo obsahuje RF a SB tabuľka
+b) ako dôjde k rezervácií celého registru pri vykonávaní inštrukcie? čo keď už je rezervovaný? aký konflikt sa týmto eliminuje?
+c) za akých podmienok dôjde k postúpeniu inštrukcie z SB do FJ? aký konflikt sa týmto eliminuje?
+d) za akých podmienok dôjde k zapísaniu výsledku z FJ do RF? aký konflikt sa tým eliminuje?</question>
+        <answer>a) RF - Name, Valid bit, Value
+SB - regName, name, valid bit, name, valid bit
+
+b) zhodí sa v RF valid bit na 0, tak sa čaká, eliminuje sa týmto WAW
+
+c) ak valid bity sú 1, a je voľná FJ, eliminuje sa RAW
+
+d) ak sa dokončí výpočet na ALU a valid bit v RF je 0, nastavím hodnotu a valid bit nastavím na 1. Eliminuje sa WAR</answer>
+    </element>
+    <element>
+        <question>Doplniť názvy nad registre a jednotky
+a) popísať čo sa robí vo fázach IF, ID, EX, MA, WB
+b) v ktorej fáze sú výsledky pre inštrukcie: add, load, store, bnez
+c) rozbalenie smyčiek ako kompilátor</question>
+        <answer>a) IF - Načítanie inštrukcie
+ID - dekódovanie inštrukcie, načítanie operandov
+EX - vykonanie inštrukcie
+MA - prístup do cache pamäte
+WB - zápis do RF
+
+b) add - na konci EX
+load - na konci MA
+store - na konci MA
+bnez - na konci ID</answer>
+    </element>
+    <element>
+        <question>Koherencia cache
+a) Rozdiel medzi koherenciou a konzistenciou
+b) Napísať konkrétny príklad (kus kódu, alebo popis) koherencie a konzistencie
+c) Napísať kroky čo sa deje pri koherencii s naslúchaním, lokálna cache chce zapísať, hlási výpadok a vzdialená cache hlási hit a blok má v stave M.
+d) Tabuľka MSI
+e) nevýhoda MSI
+f) falošné zdieľanie, ako vzniká a ako ho riešiť</question>
+        <answer>a)Koherencia - týka sa jednoznačnosti zápisu na 1 adresu
+Konzistencia - týka sa poradia prístupov k rôznym adresám
+
+b) Koherencia - zapíšem do L1. Prepnem jadro CPU a v L1 už nemám dané dáta, ale musím ich nájsť v rovnakom stave na L3 (ak L3 je zdieľaná).
+Konzistencia - ak nastavujem dataReadyFlag tak tento flag musím nastaviť až po konci nahrávania dát do premennej.
+
+c) lokálna cache pošle signál brx na zbernicu a do procesoru pw, cache pamäť ktorá vlastní dáta ich odošle cache pamäti ktorá chce zapisovať a prejde do stavu I, a cache pamäť ktorá dáta prijala prejde do stavu M.
+
+d) ez
+
+e) - vysoká spotreba energie, pretože vyžaduje častú komunikáciu medzi jadrami, aby zachovala cache koherenciu
+- zbytočné prístupy do pamäte - napriek tomu že dáta sú v nejakej cache pamäti, tak sa číta z hlavnej pamäte.
+
+MESI - pridáva stav E, ktorý značí, že existuje čistá kópia iba v jedinej cache.
+
+MESIF - pridáva ďalší stav F. Umožňuje rýchly prenos kópie z jednej cache do druhej (rýchlejšie oproti prenosu z SM). V stave F je posledná skopírovaná cache line, keď sa skopíruje ďalej tak stav F sa prenesie a sama prejde do S.</answer>
+    </element>
+    <element>
+        <question>Koherencia cache pamäte s adresárom
+a) aké informácie v sebe adresár obsahuje?
+b) kde sa adresár nachádza?
+c) uveďte výhodu a nevýhodu použitia adresára pre dosiahnutie koherencie cache pamätí?
+d) aké kroky (signály) sa vykonajú, ak chce procesor zapísať dáta do lokálnej cache ktorá hlási HIT. Uvažujte komunikáciu medzi lokálnymi aj vzdialenými cache (za použitia adresára).</question>
+        <answer>a) udržuje informácie o tom, ktorá cache obsahuje ktorý blok (a v akom je ten blok stave)
+
+b) v RAM
+
+c) Výhoda - u veľkých systémov redukuje komunikáciu (signály sa odosielajú iba tým cache, ktoré to potrebujú vedieť)
+Nevýhoda - zaberá veľa miesta
+
+d) Lokálna cache pošle signál rrx (read request exclusive) na Home
+    a) ak bolo viac kópií (S), rozošle im Home inv(invalidate) a čaká než mu odpovedia signálom iack (invalidate acknowledge), tj. zmeň z S -&gt; I. Potom zašle Home MR do RAMky. RAMka vrátí dáta a Home ich vracia žiadateľovi cez dr. Ten si vykoná svoj zápis a mení stav na M (modified).
+    
+    b) Ak bola iba jedna špinavá kópia (M) zasiela Home signál fw-inv. Vlastník odošle data žiadateľovi, invaliduje svoj stav a odosiela iack Home. Home potom zašle žiadateľovi wen (write enable). Ten vykoná zápis a mení svoj stav na M.
+    
+    c) Ak to kde chce zapisovať už je M, tak Home proste odpovie wen.</answer>
+    </element>
+    <element>
+        <question>OMP kod
+a) fibonacci
+b) vyhľadávanie v binárnom strome
+c) direktíva for</question>
+        <answer></answer>
+    </element>
+    <element>
+        <question>Vektorizácia
+a) aké podmienky musia byť splnené, aby bola vykonaná automatická vektorizácia kompilátorom (minimálne 4)?
+b) vektorizujte násobenie matíc za pomoci OpenMP a úpravy kódu (kód bol z druhých cvík)
+c) vysvetlite techniku ako násobiť matice a dodržať čo najväčšiu lokalitu dát -&gt; tiling
+d) vektorizácia kódu, nutné doplniť správny dovetok</question>
+        <answer>a) nesmie obsahovať break, musí byť známy počet iterácií, nesmie obsahovať volanie funkcií (vektorizované môžu byť), iterácie musia byť nezávislé, nesmie obsahovať if-else-switch, nesmie sa objaviť pointer aliasing
+
+b) #pragma omp simd - na najvnútornejšiu smyčku (prehadzuješ j čo najviac dovnútra, k hore o 1)
+
+c) rozdelenie matíc na bloky, inicializácia výslednej matice, vnorené cykly pre násobenie blokov, optimalizácia prístupov do pamäte, aktualizácia výslednej matice
+
+d) #pragma omp simd aligned(a,b,c:16|</answer>
+    </element>
+    <element>
+        <question>Load/Store jednotka
+a) aké tri stupne obsahuje Load/Store jednotka?
+b) Vysvetlite pojem forwarding a bypassing
+c) Store buffer, k čomu slúži a čo obsahuje
+d) Load buffer, k čomu slúži a čo obsahuje</question>
+        <answer>a) generovanie adresy (sčítačka), preklad adresy (DTLB), čítanie z cache(zápis nie je vidieť)
+        
+b) forwarding - predávanie dát z inštrukcie predtým ako sa inštrukcia dokončí (pomocou skratiek v pipeline)
+bypassing - schopnosť meniť poradie vykonávaných inštrukcií ktoré nemajú medzi sebou konflikty.
+
+c) Slúži k odkladanie nedokončených inštrukcií Store, obsahuje dáta a adresu na ktorú sa bude ukladať.
+
+d) Slúži k odkladaniu špekulatívných inštrukcií načítania, obsahuje adresu a dáta.</answer>
+    </element>
+    <element>
+        <question>GPU, CPU
+a) aké sú hlavné rozdiely medzi superskalárnym procesorom a grafickým procesorom (minimálne 4)?
+b) Vysvetlite pojem SIMT, ktorý sa používa u GPU
+c) Aké dva hlavné problémy so sebou nesie používanie SIMT
+d) Prečo nie je GPU hodnotené ako plnohodnotná náhrada obecného viacúčelového procesoru?
+e) Uveďte aspoň jeden nízkoúrovňový programovací jazyk pre programovanie GPU</question>
+        <answer>a) CPU 
+    - viac cache a väčšie
+    - dobre spracované techniky predikcie skokov
+    - vysoko výkonné spracovanie sekvenčných programov
+    - I/O, prerušenia, virtuálna pamäť, izolácia procesov
+    - vláknový a dátový paralelizmus
+GPU
+    - veľa ALU - predovšetkým MAD/FMA
+    - mnoho HW vlákien - SMP
+    - rýchle lokálne pamäte
+    - pamäte na doske s vysokou priepustnosťou ale aj latenciou
+    - spracovávanie SIMT (varianta SIMD)
+    - In-order spracovanie
+    
+b) Single Instruction Multiple Threads
+    - jedna inštrukcia je spracovavaná viacerými vláknami
+    - všetky vlákna majú rovnakú štruktúru
+    - každé vlákno z balíku spracováva rovnakú inštrukciu nad inými dátami
+    - balík vlákien spracovaný v 1 okamžiku sa nazýva WARP.
+    
+c) - divergencia vlákien na podmienke spôsobí sekvenčné vykonávanie vetví programu
+- pre prekrytie pamäťových latencií je nutné mať veľké množstvo vlákien.
+
+d) GPU sú stavané skôr na aritmetické operácie
+- architektúra a flexibilita, pamäťové a inštrukčné obmedzenia, komunikácia medzi procesormi, spracovanie vetiev a škálovateľnosť
+
+e) nízkoúrovňový - CUDA, vysokoúrovňový - MATLAB</answer>
+    </element>
+    <element>
+        <question>Prediktory
+a) v akom stupni pipeline sa nachádza prediktor?
+b) aké 2 cache využíva?
+c) kedy sa z využitím vyššie uvedených cache predikuje skok? čo sa stane?
+d) kedy a ako sa kontroluje korektnosť skoku (kedy sa na to príde). Kroky čo sa musia urobiť pri chybnom skoku.
+e) prečo je korelačný prediktor lepší ako adaptívny a adaptívny lepší ako n-bitový.
+f) prečo sa nedá predikovať skok pri príkaze return, aká jednotka má toto na starosti?
+g) príklad na 2 bitový prediktor inicializovaný na silnú pozitivitu. Koľkokrát sa pomýli?</question>
+        <answer>a) Fetch - na výstupe PC
+    
+b) BHT, BTAC
+
+c) keď v BHT máme záznam že sa skákalo a máme aj cieľ v BTAC, vykonáme skok
+
+d) kontroluje sa to na konci fázy EX, a ak skok nebol správny: zahodia sa všetky rozpracované inštrukcie, programový čítač sa vráti na hodnotu pred skokom + 4 a upraví sa BHT a BTAC
+
+e) n-bitový - obsahuje iba jednoduchý FSM na predikciu skoku
+adaptívny - obsahuje PHT a BHSR učí sa patterny. Nevýhoda je že berie moc priestoru a neberie do úvahy históriu skokov
+korelačný - obsahuje jeden (G)BHSR pre všetky skoky. A na rozdiel od adaptívneho berie pri predikovaní aj históriu skokov
+
+f) pretože sa skáče z rôznych miest v programe, RSB, RAS
+
+g) ez</answer>
+    </element>
+    <!-- <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element> -->
+</data>

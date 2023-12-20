@@ -3,6 +3,7 @@
         <question>Predikcia skokov</question>
         <answer>- statická (podľa testu ≠0, &gt;0, ≥0, smeru skoku kompilátorom - predict bit) - založená na inštrukcii
 - dynamická (za behu) - založená na histórií vykonaní
+- nachádza sa v stupni pipeline fetch - je priamo na výstupe PC.
 
 - lokálna - história udržiavaná iba pre danú inštrukciu (adaptívna)
 - globálna - história udržiavaná cez sekvencie skokov (korelačná)</answer>
@@ -50,20 +51,20 @@ Trace cache je špeciálne užitočná pre programy, ktoré majú veľký počet
 - inštrukcie môžu byť vykonávané v nezávislom poradí, čo zvyšuje výkonnosť procesora.
 - majú komplexnejšiu architektúru a sú schopné rýchlejšie spracovávať zložité a náročne programy.</answer>
     </element>
-    <element>
+    <!-- <element>
         <question>Organizácia jednotky L/S podporujúca RPW (Store buffer)</question>
         <answer>AVS_03/16
 Store buffer - ukladá čo chcem uložiť a kam (adresa/data) ak vyrobí adresu, skontroluje LB či tam nie je už inštrukcia s rovnakou adresou ktorá ho predbehla, ak áno, tak ju zahodí a aj všetko čo po nej následuje
 
 Load buffer - najskôr prechádza SB a hľadá či tam, je adresa ktorú potrebuje &gt; forwarding (ak tam u tej adresy ešte nie sú dáta tak čaká), ak nie tak prehľadá cache pamäť.</answer>
-    </element>
-    <element>
+    </element> -->
+    <!-- <element>
         <question>Out-of-order Load/Store jednotka (Load buffer)</question>
         <answer>AVS_03/18
 Store buffer - ukladá čo chcem uložiť a kam (adresa/data) ak vyrobí adresu, skontroluje LB či tam nie je už inštrukcia s rovnakou adresou ktorá ho predbehla, ak áno, tak ju zahodí a aj všetko čo po nej následuje
 
 Load buffer - najskôr prechádza SB a hľadá či tam, je adresa ktorú potrebuje &gt; forwarding (ak tam u tej adresy ešte nie sú dáta tak čaká), ak nie tak prehľadá cache pamäť.</answer>
-    </element>
+    </element> -->
     <element>
         <question>Bypassing a forwarding</question>
         <answer>- Load z adresy ,,Z'' predbehne Store s inou adresou ,,X'', ktoré ešte nezačalo (bypassing)
@@ -74,7 +75,7 @@ Load buffer - najskôr prechádza SB a hľadá či tam, je adresa ktorú potrebu
         <answer>- hlavný zdroj lepšej výkonnosti, načítanie totiž býva na začiatku tela smyčiek so závislými inštrukciami.
 - nový Load môže predbehnúť aktuálny Store, iterácie smyčiek sa môžu čiastočne prekrývať</answer>
     </element>
-    <element>
+    <!-- <element>
         <question>AVX2 a AVX512</question>
         <answer>- sú to instrukčné sady ktoré sa v moderných CPUs používajú an vykonávanie SIMD(Single Instruction Multiple Data) operácií.
 - AVX2 je 256-bitová vektorová inštrukčná sada, ktorá podporuje niekoľko interpretácií 256-bitových registrov, ako napríklad 8 floatov, 4 double alebo 32 bajtov. K existujúcim operáciiám s pohyblivou desatinnou čiarkou podporovaným systémom AVX1 pridáva 256-bitové operácie s celými číslami.
@@ -90,7 +91,6 @@ Slatency=1 / ((1-p)+p/N)
 kde Slatency je teoretické zrýchlenie vykonávania celej úlohy, p je podiel času vykonávania, ktorý pôvodne zaberala časť využívajúca zlepšené zdroje, a N je počet procesorov.
 Amdahlov zákon sa často používa v paralelných výpočtoch na predpovedanie teoretického zrýchlenia pri použití viacerých procesorov. Napríklad, ak program potrebuje na dokončenie 20 hodín s použitím jedného vlákna, ale hodinová časť programu sa nedá paralelizovať, a preto sa dá paralelizovať len zvyšný čas vykonávania 19 hodín (p = 0,95), potom bez ohľadu na to, koľko vlákien sa venuje paralelizovanému vykonávaniu tohto programu, minimálny čas vykonávania je vždy viac ako 1 hodina. Teoretické zrýchlenie je teda menej ako 20-násobok výkonu jedného vlákna.
 
------------------------------------------------------------------------------------------------------------------------------------
 Gustafsonov zákon je vzorec, ktorý udáva teoretické zrýchlenie latencie vykonávania úlohy pri pevne stanovenom čase vykonávania, ktoré možno očakávať od systému, ktorého zdroje sa zlepšili. Je pomenovaný po počítačovom vedcovi Johnovi L. Gustafsonovi a jeho kolegovi Edwinovi H. Barsisovi a bol prezentovaný v článku "Prehodnotenie Amdahlovho zákona" v roku 1988.
 
 Gustafsonov zákon rieši nedostatky Amdahlovho zákona, ktorý je založený na predpoklade pevnej veľkosti problému, t. j. vykonávacieho zaťaženia, ktoré sa nemení vzhľadom na zlepšovanie zdrojov. Gustafsonov zákon namiesto toho navrhuje, aby programátori mali tendenciu zväčšovať veľkosť problémov s cieľom plne využiť výpočtový výkon, ktorý sa stáva dostupným so zlepšovaním zdrojov.
@@ -101,7 +101,8 @@ Slatency=N+(1-N)×s
 kde Slatency je teoretické zrýchlenie vykonávania celej úlohy, N je počet procesorov a s je podiel času stráveného vykonávaním sériových častí programu na paralelnom systéme.
 
 Na rozdiel od Amdahlovho zákona Gustafsonov zákon predpovedá, že s pribúdajúcim počtom procesorov v systéme sa dajú väčšie problémy vyriešiť za približne rovnaký čas. Je to preto, že programátori môžu zväčšovať veľkosť problémov, aby využili dodatočný výpočtový výkon, namiesto toho, aby boli obmedzovaní pevnou veľkosťou problémov.</answer>
-    </element>
+    </element> -->
+
     <element>
         <question>Superskalárny procesor - Backend</question>
         <answer>- Odpovedá stupňom EX, MA, WB:
@@ -213,11 +214,84 @@ Lepšia implementácia je prednačítanie s rozostupom.</answer>
 - Výpadky vznikajú na začiatku, keď je cache prázdna (povinné výpadky)
 - Výpadky udržovania koherencie v multiprocesorovom systéme (koherenčný).</answer>
     </element>
-    <!-- <element>
-        <question></question>
-        <answer>Answer num 2</answer>
+    <!-- ############################################### SEMESTRALNA SKUSKA OTAZKY ############################################### -->
+    <element>
+        <question>Dynamic Voltage Scalling (DVS), Dynamic Frequency Scalling (DFS)</question>
+        <answer>- DVS - upravuje napätie dodávané do procesora za chodu v závislosti od pracovného zaťaženia a spotreby energie systému.
+- DFS - upravuje rýchlosť hodín procesora za chodu v závislosti od pracovného zaťaženia a spotreby energie systému.
+
+DVS a DFS umožňujú jemnú kontrolu spotreby energie a môže pomôcť znížiť výstup tepla a predĺžiť životnosť batérie.</answer>
     </element>
     <element>
+        <question>Statické škálovanie napätia (SVS), Static Frequency scalling (SFS)</question>
+        <answer>- SVS - nastavuje pevnú úroveň napätia pre procesor bez ohľadu na pracovné zaťaženie alebo potreby spotreby energie systému.
+- SFS - nastavuje pevnú rýchlosť hodín procesora bez ohľadu na pracovné zaťaženie alebo potreby spotreby energie systému.
+
+SVS a SFS sú užitočné v systémoch, kde je výkon vyššiou prioritou ako energetická účinnosť.</answer>
+    </element>
+    <element>
+        <question>Krátkodobé škálovanie napätia (STVS), Krátkodobé frekvenčné škálovanie (STFS)</question>
+        <answer>- STVS - upravuje napätie na veľmi krátke trvanie
+- STFS - táto technika upravuje rýchlosť hodín na veľmi krátke trvanie.
+
+STVS a STFS sú užitočné pre systémy, ktoré musia zvládať vysokofrekvenčné pracovné zaťaženie a potrebujú zostať v rámci obmedzeného energetického rozpočtu.</answer>
+    </element>
+    <element>
+        <question>Čo patrí do CORE a UNCORE</question>
+        <answer>CORE - CPU
+UNCORE - Memory Controller, Cache, I/O rozhrania, Power management unit (PMU), System management unit (SMU)
+
+CORE - ALU, FPU, L1 a L2 cache
+UNCORE - QPI controllers, L3 cache, snoop agent pipeline, on-die memory controller, on-die PCI Express Root Complex</answer>
+    </element>
+    <element>
+        <question>Porovnanie koherencie a konzistencie</question>
+        <answer>koherencia - stav, v ktorom sú všetky kópie zdieľaných údajov v systéme identické a aktuálne. Zabezpečuje, aby boli všetky kópie údajov uložené vo vyrovnávacej pamäti navzájom konzistentné.
+        
+konzistencia - vlastnosť systému, ktorá zabezpečuje, že všetky operácie so zdieľanými údajmi sa vykonávajú v špecifickom poradí a že každá operácia, ktorá načíta údaje, vráti najnovšiu hodnotu.</answer>
+    </element>
+    <element>
+        <question>Nevýhoda MSI a ako ju rieši mesif</question>
+        <answer>Nevýhoda MSI 
+    - v prípade poruchy fyzického stroja, všetky virtuálne stroje, ktoré bežia na tomto fyzickom stroji, sa zastavia.
+    - v prípade zmeny dát jedným procesorom (modifikovaním), všetky ostatné procesy musia invalidovať svoje kópie týchto dát. To môže viesť k zvýšeniu komunikácie a zníženiu výkonu v systéme s veľkým počtom procesorov.
+    - vysoká spotreba energie, pretože vyžaduje častú komunikáciu medzi jadrami, aby zachovala cache konzistenciu.
+    
+MESIF
+    - umožňuje zdieľanie dát medzi virtuálnymi strojmi a zároveň zabezpečuje, že v prípade poruchy fyzického stroja, iba virtuálne stroje, ktoré boli ovplyvnené touto poruchou, sa zastavia.
+    - udržiava adresár, ktorý sleduje stav každého riadku cache v systéme a jadier, ktoré majú jeho kópiu. Využíva tým pádom dodatočné informácie o stave na optimalizáciu komunikácie medzi jadrami, čím sa znižuje počet zneplatnení (invalidation) a snoopov potrebných na udržanie koherencie. Napríklad, ak jadro požaduje údaje, ktoré sú v stave ,,Exclusice'', protokol môže určiť, že údaje uchováva iba jedno jadro a požiadavka môže byť splnená bez odoslania správy akémukoľvek inému jadru.</answer>
+    </element>
+    <element>
+        <question>Aké 2 cache využíva predikcia skokov?</question>
+        <answer>- BHT (Branch History Table): cache s informáciami pre aké adresy sa skákalo.
+- BTAC (Branch Target Address Cache): ciele skokov pre adresy</answer>
+    </element>
+    <element>
+        <question>Napísať konkrétny príklad (kus kódu alebo popis) koherencie a konzistencie</question>
+        <answer>Koherencia - zapíšem dáta do L1 cache. Prepnem jadro CPU a snažím sa získať tieto dáta, ktoré však nie sú v mojej L1 - musím ich ale nájsť v rovnakom stave v ďalšej cache L3 (ak je L3 zdieľaná).
+
+Konzistencia - jedná sa o konflikt VIACERÝCH VLÁKIEN, kde je nutné zachovať poradie vykonávaných nejakých pamäťových operácií (napr. jedno vlákno vykonáva Store X a druhé Store Y, alebo nastavovanie dataReady flagu - nesmie prekročiť nahrávanie dát do premennej, ktorú ten flag indikuje)</answer>
+    </element>
+    <element>
+        <question>Na čom vektorizácia najčastejšie zhavaruje?</question>
+        <answer>1. Nejednotkový rozostup - Možno načítať iba dátové elementy uložené v pamäti za sebou. Ak je rozostup fixný, možno použiť operácie gather/scatter
+2. Nezarovnané datové štruktúry - Je nutné vydávať viac inštrukcií load/store (gather, scatter, shuffle)
+3. Datové závislosti medzi iteráciami - (RAW, WAR, WAW), niektoré možno ošetriť redukciou.
+4. Pointer aliasing - prekrývajúce sa pamäťové oblasti (je nutné robiť testy za chodu a voliť rôzne varianty vykonaní - memcpy vs. memmove)</answer>
+    </element>
+    <element>
+        <question>Aké podmienky musia byť splnené, aby bola vykonaná automatická vektorizácia kompilátorom?</question>
+        <answer>- je potrebné vopred poznať počet iterácií (trip count)
+- jednotlivé iterácie musia byť nezávislé
+- neobsahuje volania funkcií (vektorizované funkcie obsahovať môže)
+- nesmie sa objaviť pointer aliasing
+- cyklus neobsahuje break
+- cyklus neobsahuje if, else, switch - priamy kód
+
+
+- vektorizuje sa iba najvnútornejší cyklus, ak chceme aj ten nad ním, musíme ich prepojiť pomocou #pragma omp collapse</answer>
+    </element>
+    <!-- <element>
         <question></question>
         <answer>Answer num 2</answer>
     </element> -->
