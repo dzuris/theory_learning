@@ -1,0 +1,504 @@
+<data>
+    <!-- Prednáška 1 -->
+    <element>
+        <question>Tradičné vs netradičné</question>
+        <answer>- Tradičné - štandardné techniky, prístupy a riešenia, ktoré sa bežne používajú v oblasti informatiky a výpočetnej techniky.
+- Netradičné - prírodou (biológiou, fyzikou, chémiou...) inšpirovaný prístup v oblasti informatiky a výpočetnej techniky, ktoré ešte neprenikli do ,,main streamu''.
+
+- deep learning - netradičný z ktorého sa stal ,,main stream''.</answer>
+    </element>
+    <element>
+        <question>Čo je život z pohľadu biológie?</question>
+        <answer>- obecná podmienka, ktorá odlišuje organizmy od neživých objektov a mŕtvych organizmov.
+- súbor signálnych a sebaudržovacích procesov v tele určitého organizmu, ktoré zaisťujú napríklad látkovu výmenu, dráždivosť alebo reprodukciu.</answer>
+    </element>
+    <element>
+        <question>Čo je podstatné pre život?</question>
+        <answer>- hierarchická samoorganizovaná vnútorna štruktúra
+- určitá komplexita a rast
+- schopnosť samoregulácie
+    - Homeostáza - samočinné udržovanie hodnoty nejakej veličiny na približne rovnakej hodnote
+- metabolizmus
+- adaptácia v závislosti na meniacom sa prostredí (evolúcia)
+- reaktívne správanie
+- reprodukcia
+- prítomnosť nukleových kyselín a bielkovín</answer>
+    </element>
+    <element>
+        <question>Redukcionizmus</question>
+        <answer>- systém možno pochopiť tak, že ho rozložíme na komponenty a tie budeme študovať</answer>
+    </element>
+    <element>
+        <question>Holizmus</question>
+        <answer>- je postmoderné učenie rozvíjajúce myšlienku, že ,,celok je viac než súhrn jeho častí''.</answer>
+    </element>
+    <element>
+        <question>Emergencia</question>
+        <answer>- vznik globálneho správania (tvarov alebo usporiadania) na základe lokálnej interakcie veľkého množstva komponent systému (bez centrálneho riadenia).</answer>
+    </element>
+    <element>
+        <question>Systém</question>
+        <answer>- množina komponent a množina vzťahov medzi komponentami</answer>
+    </element>
+    <element>
+        <question>Dynamika systému</question>
+        <answer>vývoj ,,x'' v čase (z počiatočného stavu)</answer>
+    </element>
+    <element>
+        <question>Deterministický dynamický systém</question>
+        <answer>- f je funkcia
+    - lineárny systém - možno priebeh x(k) analyticky odvodiť
+    - nelineárny systém - není k dispozícií analytické riešenie</answer>
+    </element>
+    <element>
+        <question>Stochastický systém</question>
+        <answer>- f je pravdepodobnostné rozloženie
+- pr. Častica plynu v uzatvorenej komore
+- modelom stochastického systému s n stavovými premennýi X1, X2, .., Xn je:
+    - združená hustota f(x1,x2,..,xn) pre spojité, resp.
+    - združená distribúcia P(x1, x2,.., xn) pre diskrétne veličiny.</answer>
+    </element>
+    <element>
+        <question>Entropia</question>
+        <answer>- miera neurčitosti</answer>
+    </element>
+    <element>
+        <question>Entropia príklad</question>
+        <answer>n=4 molekuly plynu v izolovanej nádobe
+- molekula sa nachádza buď v pravej (R) alebo ľavej (L) časti nádoby
+- mikrostav 
+    - konkrétne rozmiestnenie molekul, napr. AB:CD, ABD:C, celkom 2^n
+    - kde sú konkrétne molekuly
+- makrostav 
+    - mikrostavy s rovnakým počtom molekul v jednotlivých častiach nádoby
+    - koľko molekúl je kde, jedno či A je vľavo alebo vpravo</answer>
+    </element>
+    <element>
+        <question>Množstvo informácie - I</question>
+        <answer>- ak sú všetky častice vľavo a spýtam sa častice kde je, je I=0
+- ak sú častice polovica vľavo a polovica vpravo a spýtam sa jej kde je, je I maximálne I(s) = -log P(s)
+    - logaritmická funkcia sa hodí na počítanie lebo splňuje požiadavok na aditivitu</answer>
+    </element>
+    <element>
+        <question>Informačná entropia</question>
+        <answer>- priemerné množstvo informácie potrebnej k popisu stavu.
+- je stredná hodnota H(Q) = -∑n (P(qi) * log_2 P(qi))
+- Informácia je úbytok entropie spôsobený prijatím správy I = H_{pred_prijatim} - H_{po_prijati}</answer>
+    </element>
+    <element>
+        <question>Vlastnosti informačnej entropie</question>
+        <answer>- Maximálnu možnú entropiu má systém (o n stavoch), ktorý vykazuje rovnomerné rozdelenie pravdepodobnosti: H = log_2 n
+- Minimálnu možnú entropiu má celkom deterministický systém: H = 0
+- graf P1 17/37</answer>
+    </element>
+    <element>
+        <question>Teória disipativných štruktúr</question>
+        <answer>- teória popisujúca a vysvetlujúca samoorganizáciu
+- disipatívna štruktúra - otvorený dynamický systém, ktorý vykazuje dynamickú samoorganizáciu. Systém neustále generuje entropiu, ale entropia je aktívne rozptylovaná alebo odvádzaná zo systému. Takže systému rastie miera usporiadanosti.
+
+- samoorganizácia vzniká v dynamických nelineárnych systémoch, ktoré sú ďaleko od termodynamickej rovnováhy.</answer>
+    </element>
+    <element>
+        <question>Vlastnosti samoorganizujúcich sa systémov</question>
+        <answer>- dynamické systémy (vyvíjajú sa v čase)
+- nelineárne komponenty
+- existujú spätné väzby
+- chýbajú centrálne riadenia
+- jedná sa o otvorené systémy, ktoré sa nachádzajú ďaleko od stavu rovnováhy
+- vykazujú globálne usporiadanie, ktoré vzniká na základe lokálnych interakcií
+- spontánne vznikajú nové štruktúry
+- robustnosť</answer>
+    </element>
+    <element>
+        <question>Atraktor</question>
+        <answer>- atraktor dynamického systému je množina stavov do ktorých systém smeruje.</answer>
+    </element>
+    <element>
+        <question>Typy atraktorov</question>
+        <answer>- množina pevných bodov - systém sa ustálil v nejakom stabilnom stave
+- množina periodických bodov - systém sa po určitej dobe ustáli tak, že osciluje medzi niekoľkými stavmi
+- atraktor je chaotický - výsledny stav systém nemožno dopredu predpovedať
+- atraktor je ,,zvláštny'' (strange attractor) - komplikovaný atraktor, ktorý vykazuje vlastnosti pravidelného, ale súčasne aj chaotického atraktoru.</answer>
+    </element>
+    <element>
+        <question>Chaos</question>
+        <answer>- je z časového hľadiska budúci stav deterministického dynamického systému, ktorý není predvídateľný v dôsledku veľkej citlivosti systému na počiatočné podmienky
+- typickým predstaviteľom chaotického systému je model počasia
+- aj malé zmeny v počiatočných podmienkach vykazujú v budúcnosti dramatické zmeny (butterfly effect)</answer>
+    </element>
+    <element>
+        <question>Bifurkácia</question>
+        <answer>- jav, pri ktorom dochádza k veľkým zmenám vnútorného stavu v sledovanom systéme v prípade, že sa vstupné parametry iba nepatrne zmenia
+- chaos nastáva v prípade, že v systéme začína dochádzať k veľkému množstvu na seba naväzujúcich bifurkácií.</answer>
+    </element>
+    <element>
+        <question>Bifurkačný diagram</question>
+        <answer>- nástroj pre štúdium bifurkácie
+- na horizontálnu osu sú nanesené hodnoty vstupných parametrov a vo vertikálnom smere sú vynesené hodnoty jedného z vnútorných stavov, kde ich systém v po sebe nasledujúcich krokoch nadobúda</answer>
+    </element>
+    <element>
+        <question>Algoritmická entropia (Kolmogorovská zložitosť)</question>
+        <answer>- zložitosť K(J,Z) správy (postupnosti) Z, je dĺžka najkratšieho programu (v jazyku J), ktorý generuje Z.</answer>
+    </element>
+    <element>
+        <question>Algoritmická entropia - dôležité výsledky</question>
+        <answer>- žiadna správa nemôže byť zložitejšia než systém, ktorý ju generuje
+- učenie algoritmickej entropie je nerozhodnutelný problém
+- nelineárne dynamické systémy sú simulovateľné na Turingovom stroji</answer>
+    </element>
+    <element>
+        <question>Nekonvenčné počítače</question>
+        <answer>- molekulárne výpočty
+- syntetická biológia
+- kvantové počítače
+- optické počítanie
+- chemické počítače</answer>
+    </element>
+    <element>
+        <question>Celulárny automat (CA)</question>
+        <answer>- je paralélny výpočetný model s lokálnou interakciou výpočetných elementov</answer>
+    </element>
+    <element>
+        <question>Natural computing (počítanie podľa prírody)</question>
+        <answer>- zahrňuje:
+    - soft computing (computational intelligence)
+    - nekonvenčné počítače</answer>
+    </element>
+    <element>
+        <question>Dôležitosť fyzického tela (Embodied intelligence)</question>
+        <answer>- pre výpočet je kľúčová fyzikálna podstata výpočetného systému a existencia reálneho prostredia, s ktorým tentosystém interaguje</answer>
+    </element>
+    <!-- ====================================================================================================================================================================== -->
+    <!-- Prednáška 2 -->
+    <element>
+        <question>Church-Turingova téza</question>
+        <answer>Turingové stroje (a im ekvivalentné systémy) definujú svojou výpočetnou silou to, čo intuitívne považujeme za efektivne vyčísliteľné.
+- táto téza nie je dokazateľná, ale má sa za to, že žiadny fyzický realizovateľný výpočetný systém nie je výpočetne silnejší než Turingov stroj.</answer>
+    </element>
+    <element>
+        <question>Fyzická Church-Turingova téza</question>
+        <answer>Ľubovoľná funkcia, ktorú je možné fyzicky vypočítať, môže byť vypočítaná pomocou TS.</answer>
+    </element>
+    <element>
+        <question>Super-turingovské výpočty (Hypercomputing)</question>
+        <answer>- Abstraktný stroj - Nie je problém vytvoriť výpočetný model, ktorý má vyššiu výpočetnú silu než TS
+- Fyzický stroj - zdá sa nemožné, ak by sme chceli zachovať výpočetný scenár TS.</answer>
+    </element>
+    <element>
+        <question>Akcelerujúci TS</question>
+        <answer>- Uvažujme štandardný TS, kde jeho krok výpočtu trvá polovicu času než ten predchádzajúci. Potom je doba výpočtu T = 1 + 0,5 + 0,25 + ... = 2
+- Nekonečne dlho trvajúci výpočet je vykonaný v konečnom čase.
+- Akcelerujúci TS ROZHODUJE problém zastavenia štandardného TS</answer>
+    </element>
+    <element>
+        <question>Heisenbergov princíp neurčitosti</question>
+        <answer>- hovorí, že presnosť merania je v mikrosvete obmedzená. Je nemožné presne zmeriať polohu častice a jej hybnosť súčasne.
+- čím presnejšie určíme jednu z veličín, tým menej vieme o druhej.
+- súčin neurčitosti v polohe (x) a neurčitosti v hybnosti (p) je teda väčší alebo rovný konštante.
+- rovnako tak súčin neurčitosti energie a času opäť nemôže byť menší než daná konštanta.
+- po veľmi krátku dobu tak môže nastať obrovská neurčitosť vo veľkosti energie.
+
+ΔxΔp ≥ ħ
+ΔEΔt ≥ ħ
+ħ - planckova konštanta
+</answer>
+    </element>
+    <element>
+        <question>Najdokonalejší počítač</question>
+        <answer>- má hmotnosť 1kg a objem 1L
+- informáciu ukladá v mikroskopických pohyboch a polohách elementárnych častíc v ňom sa pohybujúcich
+- každý jednotlivý bit, povolený zákonom termodynamiky, je zúžitkovaný.
+- všetka hmota je premenená na energiu
+
+- vykonanie elementárnej logickej operácie za čas ΔT vyžaduje priemerné množstvo energie, ktorá je E ≥ π ħ /(2Δt)
+- systém s priemernou energiou E môže vykonať maximálne f = 2E / (π ħ) operácií za sekundu
+- maximálne je možné vykonať cca 10^50 operácií za sekundu
+
+- Pre rozpoznanie 1 bitu informácie musí byť entropia systému minimálne S_{min} = kb ln 2 [J/K]
+- keď sa jeden kilogram hmoty premení na energiu, vzrastie teplota hmoty na T = 5,87 * 10^8 [K]. Jeho entropiu S možno odhadnúť ako S ≈ Ep/T ≈ 1,5 * 10^8 [J/K]
+- podielom I ≈ S/S_{min} získame maximálny počet bitov v pamäti, čo je cca 10^31 bitov
+- ak najmodernejší počítač používa celú pamäť, môže vykonať cca 10^19 operácií/bit/sekunda.
+- konvenčný počítač vykoná asi 10^10 operácií za sekundu a uchová 10^12 bitov.</answer>
+    </element>
+    <element>
+        <question>Informačná priepustnosť</question>
+        <answer>- B
+- Je definovaná ako B = n/t
+- maximálny počet výpočetných elementov, ktoré je možné prepnúť za jednotku času
+- k prepnutiu prepínača je treba minimálna energia E_{bit}
+    E_{bit} ≥ E_{SNL} kde E_{SNL} = kb T ln 2
+    E_{bit} ≥ 0.017 eV (pre T = 300 K)</answer>
+    </element>
+    <element>
+        <question>Medze zvyšovania hustoty integrácie na čipe</question>
+        <answer>Minimálna veľkosť prepínača x_{min}, ktorému k prepnutiu stačí energia E_{SNL}
+    x_{min} = ħ/Δp = ħ/(√(2*me*E_{bit})) = 1.5nm (T = 300K)
+
+me - hmotnosť elektrónu (pre odvodenie použité E = 1/2 mv^2 a p = mv)
+
+Maximálna hustota integrácie:
+    n_{max} = 1/x_{min}^2 = 4.4 * 10^13 devices/cm^2
+    
+Minimálna doba prepnutia:
+    t_{min} = ħ/ΔE = ħ/(kb T ln 2) = 0.04ps
+    
+Stratový výkon na jednotku plochy:
+    P = (n_{max}*E_{bit}) / t_{min} = 3.7 * 10^6 W/cm^2</answer>
+    </element>
+    <element>
+        <question>Reverzibilné počítanie</question>
+        <answer>- bežné logické hradlá nie sú reverzibilné obvody, tj. z výsledku nie je možné zkonštruovať vstupné hodnoty (výnimka hradlo NOT)
+- pri výpočte dochádza k strate informácie, zvýšeniu entropie a rozptýleniu energie ΔW = T ΔS = kb T ln 2
+
+Reverzibilita:
+    - logická - z výstupu je vždy možné zkonštruovať vstupné hodnoty, tj. výpočetný systém realizuje bijektívne zobrazenie
+    - fyzická - systém nerozptyluje žiadnu energiu, entropia sa nemení. Výpočet s nulovou rozptýlenou energiou nedovoluje Heisenbergov princíp neurčitosti ΔEΔt ≥ ħ</answer>
+    </element>
+    <element>
+        <question>Landauerov princíp</question>
+        <answer>- pre fyzicky reverzibilný výpočetný proces musí platiť, že je logicky reverzibilný</answer>
+    </element>
+    <element>
+        <question>Reverzibilné obvody</question>
+        <answer>- Rovnaký počet vstupov a výstupov, bijektívna funkcia
+- ,,vysoké nároky'' na uchovanie informácie
+- ,,garbage'' vodiče
+- nízka spotreba energie znamená veľmi pomalý výpočet
+- kvantové obvody sú reverzibilné
+- prakticky zaujímavé z pohľadu: kryptografie a kvantového počítania</answer>
+    </element>
+    <!-- ====================================================================================================================================================================== -->
+    <!-- Prednáška 3 -->
+    <element>
+        <question>Gén</question>
+        <answer>- vloha pre určitú vlastnosť
+- súvislý úsek DNA
+- v rôznych bunkách sú v čase aktivované rôzne gény</answer>
+    </element>
+    <element>
+        <question>Alela</question>
+        <answer>- varianta génu</answer>
+    </element>
+    <element>
+        <question>Genotyp</question>
+        <answer>- kombinácia alel, ktoré nesie vo svojích buňkách konkrétny jedinec
+- chromozóm - rovnaký pojem pre nás</answer>
+    </element>
+    <element>
+        <question>Fenotyp</question>
+        <answer>- súhrn všetkých pozorovateľných znakov a vlastnosti organizmu</answer>
+    </element>
+    <element>
+        <question>Selekčný tlak</question>
+        <answer>- tlak, ktorým pôsobí prostredie alebo človek na určitú populáciu tým, že z nej odstraňuje nositela určitých znakov</answer>
+    </element>
+    <element>
+        <question>Populácia</question>
+        <answer>- zložená z jedincov, má obvykle pevnú veľkosť</answer>
+    </element>
+    <element>
+        <question>Sebecký gén myšlienka</question>
+        <answer>- evolúcia neprebieha na úrovni druhov ani jedincov, ale na úrovni génov</answer>
+    </element>
+    <element>
+        <question>Konvenčný dizajn</question>
+        <answer>- používa sa návrhový postup zhora-dolu
+- slúži dobre pre riešenie zložitých zadaní pomocou dekompozície
+- inováciu prináša človek - novou analýzou problému, inšpiráciou mimo oblasť, novým vhľadom</answer>
+    </element>
+    <element>
+        <question>Neutrálna evolúcia</question>
+        <answer>- teória, ktorá hovorí, že sa väčšina znakov populácie fixovala bez pôsobenia prirodzeného výberu (neutrálnymi mutáciami).</answer>
+    </element>
+    <element>
+        <question>Dizajn ako úloha prehľadávania</question>
+        <answer>- dobrý dizajn je výsledkom hľadania, porovnávania alternatív
+- ak by sme chceli vytvoriť automatizovaný systém pre dizajn určitej entity, je treba:
+    - zakódovať kandidátny dizajn pomocou reťazca symbolov
+    - vymyslieť spôsob, ako strojovo ohodnocovať kandidátne dizajny
+    - vymyslieť spôsob, ako generovať nové dizajny
+- problém návrhu je potom prevedený na optimalizačný problém, kedy hľadáme minimum alebo maximum účelovej funkcie f(x)</answer>
+    </element>
+    <element>
+        <question>Evolučné algoritmy (EA)</question>
+        <answer>- je termín, ktorý zastrešuje rôzne algoritmy prehľadávania stavového priestoru, ktoré však majú tieto spoločné rysy:
+    - používajú populáciu kandidátnych riešení
+    - k vytváraniu nových kandidátnych riešení používajú biológiou inšpirované operátory
+    
+- prehľadávanie stavového priestoru s využitím populácie (množiny) kandidátnych riešení a biológiou inšpirovaných operátorov s cieľom maximalizovať (minimalizovať) hodnotu fitness funkcie.
+
+Kostra EA:
+    - vygeneruj počiatočnú populáciu kandidátnych riešení
+    - ohodnoť každé kandidátne riešenie z populácie pomocou fitness funkcie
+    - WHILE nie je splnená ukončujúca podmienka DO:
+        - vytvor novú populáciu
+        - ohodnoť každé kandidátne riešenie z novej populácie pomocou fitness funkcie
+    - kandidátne riešenie s najvyššiou hodnotou fitness je výsledkom evolučného algoritmu</answer>
+    </element>
+    <element>
+        <question>Predpoklady na použitie EA</question>
+        <answer>- potencionálne riešenie problému (fenotyp) musíme byť schopný zakódovať ako reťazec (genotyp)
+- musíme vedieť ohodnotiť kvalitu každého kandidátneho riešenia - k tomu sa používa tzv. fitness funkcia</answer>
+    </element>
+    <element>
+        <question>Evolučný algoritmus graf</question>
+        <answer>P3 16/42</answer>
+    </element>
+    <element>
+        <question>Kódovania problému</question>
+        <answer>- závisí na danej aplikácií
+- najčastejšie kódovania:
+    - binárne (pre n bitov je veľkosť priestoru 2^n)
+    - reálny vektor
+    - permutačné - (veľkosť priestoru n!)
+        - vyžaduje zvláštne genetické operátory
+        - typické pre TSP problém
+        - napr. 7 | 2 | 15 | 3 - zakódovaná cesta kde jednotlivé čísla reprezentujú mestá
+    - strom - umožňuje zakódovať výrazy, popr. celé programy
+    - graf - používa sa pre kódovanie obvodov
+    - a iné - možno zakódovať čokoľvek a akokoľvek, ak sa to zrovna hodí</answer>
+    </element>
+    <element>
+        <question>Genetické operátory - Kríženie binárnych chromozómov</question>
+        <answer>a) jednobodové
+    Chromozom 1: 10011 | 001   -&gt; 10011 101
+    Chromozom 2: 01101 | 101   -&gt; 01101 001
+
+b) dvojbodové
+    Chromozom 1: 100 | 11 | 001     -&gt;   100 01 001
+    Chromozom 2: 011 | 01 | 101     -&gt;   011 11 101
+
+c) uniformné
+    - náhodne sa pre každý bit v potomkovi vyberá rodič</answer>
+    </element>
+    <element>
+        <question>Genetické operátory - kríženie stromov</question>
+        <answer>- máme dva stromy, v každom spravíme random sek a vymeníme dva odseknuté podstromy
+- P3 22/42</answer>
+    </element>
+    <element>
+        <question>Genetické operátory - mutácie</question>
+        <answer>- mutáciou sa rozumie malá zmena chromozómu - napr. negácia bitu
+- obvykle sa aplikuje s malou pravdepodobnosťou (napr. 1 zmena na chromozóm)
+
+Chromozóm 1: 10011 | 001    kríženie-&gt;   100 01 001  mutácia-&gt; 1(1)001(1)01
+Chromozóm 2: 01101 | 101    kríženie-&gt;   01101 001   mutácia-&gt; (1)11010(1)(0)
+</answer>
+    </element>
+    <element>
+        <question>Genetické operátory - mutácie stromu</question>
+        <answer>- Náhodne sa vyberie uzol. Tento uzol sa spolu s príslušným podstromom nahradí náhodne vygenerovaným stromom R, vznikne mutovaný potomok.</answer>
+    </element>
+    <element>
+        <question>Genetické operátory - mutácie reálneho vektoru</question>
+        <answer>Kandidátne riešenie: (x1, ..., xn)
+Mutované riešenie: (x1+N(0,ρ1), ..., xn+N(0,ρn))
+
+- vygeneruje sa vektor náhodných čísel z gaussovského rozloženia, následne sa tento vektor pripočíta k pôvodnému vektoru a vznikne mutovaný vektor</answer>
+    </element>
+    <element>
+        <question>Selekcia</question>
+        <answer>- vykonáva sa v okamžiku, kedy hľadáme rodiča pre tvorbu potomkov
+- jedinci s vyššiou fitness majú väčšiu šancu, že budú vybraní ako rodičia (jedinec môže byť vybraný viackrát)
+- základne algoritmy:
+    - ruleta - vypočíta sa relatívna fitness funkcia = fitness jedinca / fitness celej populácie, jedinci sú vybraní s pravdepodobnosťou relatívnej fitness hodnoty P3 27/42
+    - výber podľa poradia - podobné ako predchádzajúce a k výberu dochádza podľa poradia a nie podľa absolútnej hodnoty fitness
+    - turnaj - z populácie sa vyberie náhodne K jedincov a porovnávajú sa ich fitness hodnoty. Jedinec s najvyššiou fitness hodnotou je vybraný. Tento proces sa opakuje pokým je potreba ,,hľadať rodiča''. K je obvykle 2.
+    - deterministicky - vyberie sa K najlepších jedincov</answer>
+    </element>
+    <element>
+        <question>Nahradenie</question>
+        <answer>- vykonáva sa v okamžiku, kedy z pôvodnej populácie a z vytvorených potomkov potrebujú vytvoriť novú populáciu
+- základne postupy:
+    - Steady-state EA - nová populácia o P jedincoch obsahuje N jedincov zo starej populácie a M (obvykle najlepších) jedincov z množiny potomkov (P = N + M)
+    - Generačný EA - Nová populácia obsahuje iba jedincov z množiny potomkov.</answer>
+    </element>
+    <element>
+        <question>Etilismus</question>
+        <answer>- najlepší jedinec z predchádzajúcej populácie sa vždy dostane do novej populácie</answer>
+    </element>
+    <element>
+        <question>Ak chceme riešiť problém pomocou EA, potom musíme:</question>
+        <answer>- navrhnúť reprezentáciu problému v chromozóme
+- vytvoriť fitness funkciu
+- vymyslieť genetické operátory
+- zvoliť vhodný spôsob selekcie, nahradenie jedincov a ukončenie EA
+- vyriešiť niektoré ďalšie problémy (výkonnosť, generovanie pseudonáhodných čísel...)
+
+Ak riešime pomocou EA reálnu aplikáciu, potom neexistuje k žiadnemu z vyššie uvedených bodov dostatočná teória, podľa ktorej by bolo možné konkrétny bod uspokojivo vyriešiť.
+
+Praktický postup: Naimplementuje sa EA a potom sa ,,ladí'' - skúša sa vplyv jednotlivých komponent EA na kvalitu výsledkov (zaisťuje sa napr. priemerný počet generácií nutných k nájdeniu riešení apod.)</answer>
+    </element>
+    <element>
+        <question>Hodnotenie účinnosti Ea</question>
+        <answer>Doba evolúcie ≈ G * (P * Ta + Tp)
+    - G - počet generácií
+    - P - veľkosť populácie
+    - Ta - doba ohodnotenia jedinca - je obvykle časovo náročnejšia operácia EA
+    - Tp - doba pre vytvorenie novej populácie
+- obvykle sa hodnotí počet evaluácií, tj. súčin G*P
+- dôležitý je výsledok z n behov (n by malo byť aspoň 30)
+    - zaujíma nás priemerný počet evaluácií nutných k nájdeniu riešenia
+    - zaujíma nás počet úspešných behov z celkového počtu behov n.
+    - štatistika - smerodatná odchýlka, interval spoľahlivosti, testovanie hypotéz...
+- ak nie sme s činnosťou EA spokojný, vykonáme zmenu</answer>
+    </element>
+    <element>
+        <question>Viackriteriálne optimalizácie</question>
+        <answer>- u mnohých problémov existuje n vzájomne konfliktných kritérií f1, ...,fn (napr. chyba vs zložitosť klasifikátoru)
+    - potom obecne neexistuje jedno ,,najlepšie'' riešenie.
+- 2 hlavné prístupy k optimalizácií:
+    - Prevod na jednokriteriálnu optimalizáciu pomocou vhodnej agregácie, prioritizácie, popr. zavedením obmedzujúcich podmienok a následná optimalizácia jednokriteriálnym algoritmom.
+    - Použitie plne viackriteriálneho optimalizačného algoritmu, ktorý buduje tzv. Paretovu frontu
+    
+- Agregácia 
+    - stanoviť váhy w1,..,wn pre jednotlivé kritéria a definovať jednu fitness hodnotu pomocou agregačnej funkcie f'(x)
+    - f'(x) = ∑n wi * fi(x)
+- Prioritizácia 
+    - stanoviť priority optimalizácie, napr. f1 je dôležitejšia než f2 (n=2)
+    - optimalizovať podľa f1
+
+- skutočné viackriteriálne EA využívajú koncept Paretovej dominancie
+- hovoríme, že riešenie x dominuje y, ak je x aspoň rovnako dobré podľa všetkých kritérií a lepšie aspoň v jednom kritériu než y.</answer>
+    </element>
+    <element>
+        <question>Pareto fronta</question>
+        <answer>P3 34/42</answer>
+    </element>
+    <element>
+        <question>varianty EA</question>
+        <answer>- genetický algoritmus - binárny/celočíselný chromozóm pevnej dĺžky, používa mutáciu a kríženie.
+
+- genetické programovanie - jedná sa o evolúciu spustiteľných štruktúr, najčastejšie reprezentovaných ako stromy alebo grafy. Používa sa kríženie a mutácia. Veľké populácie, malý počet generácií.
+
+- evolučné stratégie - v chromozóme je zakódované riešenie a tzv. strategické parametry, ktoré sa adaptujú/evolvujú spoločne s riešením. Najprepracovanejšie teoretické základy. Najčastejšie používa iba mutácie.
+
+- evolučné programovanie - pôvodne navrhnuté pre návrh automatov, používa iba mutácie.</answer>
+    </element>
+    <element>
+        <question>Evolučné optimalizácie vs evolučný dizajn</question>
+        <answer>evolučné optimalizácie - tradičné aplikácie EA
+    - hľadáme hodnoty N parametrov
+    - o výsledku už musím predom veľa vedieť
+    - výsledok nie je výrazne prekvapivý a principiálne inovatívny
+    
+evolučný dizajn
+    - sú definované komponenty a pravidlá pre ich spájanie
+    - o výsledku nemusím takmer nič vedieť
+    - výsledok je často prekvapivý, možno objaviť úplne nové veci a princípy
+    
+evolučné umenie - kritérium určujúcim fitness je estetické cítenie</answer>
+    </element>
+    <!-- <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element> -->
+</data>
