@@ -187,7 +187,7 @@ Typy atribútov:
     <element>
         <question>Typy mier z hľadiska distribúcie výpočtu</question>
         <answer>- Distributívna - možno počítať distribuovane, výsledok rovnakou operáciou s medzivýsledkami (Príklad: počet prvkov)
-- Algebraická - výsledek algebraickou operáciou nad 1 alebo niekoľkými distributivnými mierami. (Príklad: priemer)
+- Algebraická - výsledok algebraickou operáciou nad 1 alebo niekoľkými distributivnými mierami. (Príklad: priemer)
 - Holistická - možno spočítať iba výpočtom nad celým súborom. (Príklad: medián)</answer>
     </element>
     <element>
@@ -260,7 +260,7 @@ Metódy odstránenia šumu u kategorických atribútov:
     </element>
     <element>
         <question>Metóda PCA (Principal Component Analysis)</question>
-        <answer>Cieľ: znížiť dimenzionalitu ortogonálnych transformácií pôvodných n-dimenzionálnych dátových objektov do nového n-dimenzionálneho priestoru (k &lt;= n) definovaného tzv. hlavnými komponentami splňujúcimi podmienky:
+        <answer>Cieľ: znížiť dimenzionalitu ortogonálnych transformácií pôvodných n-dimenzionálnych dátových objektov do nového k-dimenzionálneho priestoru (k &lt;= n) definovaného tzv. hlavnými komponentami splňujúcimi podmienky:
     - sú lineárne nezávisle
     - chyba projekcie by mala byť čo najmenšia</answer>
     </element>
@@ -276,7 +276,7 @@ Podstata: Generovanie syntetických dát minoritných tried</answer>
 - problematické dátové typy
     - údaje kľúč-hodnota, objekty, neštrukturované dokumenty, RDF grafy, atp.
 - iteratívny vývoj
-    - časté zmeny schématu databáze alebo dokonca žiadn schéma, rôzne/nejasné spôsoby použitita databáze, atp.
+    - časté zmeny schématu databáze alebo dokonca žiadne schéma, rôzne/nejasné spôsoby použitita databáze, atp.
 - vysoké požiadavky na škálovateľnosť
     - mobilné zariadenia ako klienti aj úložisko/poskytovateľ dát, nerovnomerné rozloženie záťaže priestorovej aj časovej, špecifické požiadavky na dostupnosť, predom neznáme dotazy nemožno optimalizovať indexy, atp.</answer>
     </element>
@@ -356,4 +356,5 @@ Metódy:
     - binárne - celé číslo -&gt; dvojkové vyjadrenie -&gt; stĺpec pre každú pozíciu dvojkového vyjadrenia.
     - hashované</answer>
     </element>
+    <!-- ############################## POLSEMESTRALKA ############################## -->
 </data>
