@@ -166,7 +166,7 @@
     </element>
     <element>
         <question>Dôležitosť fyzického tela (Embodied intelligence)</question>
-        <answer>- pre výpočet je kľúčová fyzikálna podstata výpočetného systému a existencia reálneho prostredia, s ktorým tentosystém interaguje</answer>
+        <answer>- pre výpočet je kľúčová fyzikálna podstata výpočetného systému a existencia reálneho prostredia, s ktorým tento systém interaguje</answer>
     </element>
     <!-- ====================================================================================================================================================================== -->
     <!-- Prednáška 2 -->
@@ -414,7 +414,7 @@ Mutované riešenie: (x1+N(0,ρ1), ..., xn+N(0,ρn))
     - Generačný EA - Nová populácia obsahuje iba jedincov z množiny potomkov.</answer>
     </element>
     <element>
-        <question>Etilismus</question>
+        <question>Elitismus</question>
         <answer>- najlepší jedinec z predchádzajúcej populácie sa vždy dostane do novej populácie</answer>
     </element>
     <element>
