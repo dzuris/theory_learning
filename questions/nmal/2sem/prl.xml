@@ -1,0 +1,404 @@
+<data>
+    <element>
+        <question>Vzorec na Amdahlov zákon</question>
+        <answer>S(N) = 1 / ((1-alfa) + alfa/N)
+N - počet procesorov
+alfa - koľko percent úlohy je paralelizovateľnej &lt; 0;1 &gt;</answer>
+    </element>
+    <element>
+        <question>Flynová klasifikácia</question>
+        <answer>(Single / Multiple, Instruction / Data)
+- SISD - Jedna inštrukcia pracuje s jedným dátovým prvkom
+- SIMD - Jedna inštrukcia pracuje s viac datovými prvkami
+    - Vektorové procesory
+    - MSIMD
+- MISD - Viac inštrukcií pracuje s jedným datovým prvkom
+- MIMD - Viac inštrukcií pracuje s viac dátovými prvkami
+    - Viacvláknové procesory
+    - Viacprocesorové systémy</answer>
+    </element>
+    <element>
+        <question>Dataflow architektúra</question>
+        <answer>- není von Neumannovská architektúra (nemá program a PC)
+- vykonáva interpretáciu grafu toku dát
+
+Program =&gt; Dataflow graf =&gt; Interpretácia grafu</answer>
+    </element>
+    <element>
+        <question>Jazyky pre dataflow</question>
+        <answer>Hlavný požiadavok - single assignment rule
+    - Premenná sa môže vyskytovať na ľavej strane priradenia iba jedenkrát (v oblasti kódu, kde je používaná)
+- Príklad jazykov - VAL, Id, LUCID
+- Dataflow program je preložený na dataflow graf, čo je orientovaný graf s pomenovanými uzlami, ktoré reprezentujú inštrukcie, a hranami, reprezentujúcimi závislosti medzi inštrukciami</answer>
+    </element>
+    <element>
+        <question>Dynamický dataflow</question>
+        <answer>- Každá iterácia smyčky alebo vyvolanie podprogramu by mala byť možná paralelne (ako samostatný podgraf)
+- Jeho replikácia je iba ,,konceptuálna''
+- Každá značka má
+    - adresu inštrukcie, pre ktorú sú dáta určené
+    - kontextové informácie
+- každá hrana je súbor (bag) ktorý môže obsahovať ľubovoľné množstvá značiek s rôznými tagmi
+- operáciu je možné vykonať, ak má na vstupoch všetky potrebné dáta (s identickými tag-mi)</answer>
+    </element>
+    <element>
+        <question>Redukčný počítač</question>
+        <answer>- Funkcionálne programovanie / založené na redukcii výrazu
+- Redukcia, nahradenie časti výrazu jeho hodnotou
+- výrazy sa rozdelia do sekvencií ktoré sa môžu vykonávať paralélne</answer>
+    </element>
+    <element>
+        <question>Zreťazené procesory</question>
+        <answer>- Lineárne prepojené procesory
+- Riešenie úloh s prúdovým charakterom
+- Data prechádzajú postupne jednotlivými procesormi
+- Aritmetické zreťazenie / zreťazenie inštrukcií</answer>
+    </element>
+    <element>
+        <question>Zreťazené procesory - problémy</question>
+        <answer>- štrukturálne hazardy
+    - Inštrukcie v zreťazenej linke požadujú rovnaký prostriedok
+- datové hazardy
+    - výsledok predchádzajúcej inštrukcie v zreťazenej linke je očakávaný inou - následujúcou inštrukciou
+- riadiace hazardy
+    - podmienené skoky</answer>
+    </element>
+    <element>
+        <question>VLIW (Very Long Instruction Word)</question>
+        <answer>- jediný tok riadenia, ktorý riadi všetky procesory
+- každá inštrukcia - samostatné pole s operačným kódom pre všetky procesory
+    - jediný PC, ktorý prechádza programom
+    - inštrukcie sú vykonávané sekvenčne
+    - inštrukcie takisto určujú, ako prebieha komunikácia medzi procesormi. Sú v nich uložené informácie o odosielatelovi, príjemcovi a veľkosti dát. Tieto informácie s ohľadom na časovanie generuje kompilátor.
+    
+- prekladač organizuje nezávislé inštrukcie do jedného dlhého inštrukčného slova
+    - zvyšuje nárok na prekladač, ale znižuje ,,zložitosť'' HW</answer>
+    </element>
+    <element>
+        <question>VLIW - výhody / nevýhody</question>
+        <answer>Výhody:
+    - jednoduchý hardware
+    - dobre škálovateľné
+    
+Nevýhody:
+    - podmienené skoky (keď jedna inštrukcia vykoná skok, ostatné inštrukcie majú problém)
+    - problém toku dát (inštrukcie spracované v jednom kroku nemôžu navzájom používať svoje výsledky)
+    - veľkosť programu - synchronizačné NOPy sú v VLIW naviac
+    - VLIW nie sú softvérovo spätne kompatibilné ako superskalárne procesory (aj keď existujú cesty, ako to dosiahnuť)
+    </answer>
+    </element>
+    <element>
+        <question>VLIW vs superskalárne procesory</question>
+        <answer>- statické superskalárne procesory
+    - spracovávajú viac inštrukcií paralélne ale v programovom poradí
+    - typická šírka 3-4 inštrukcie
+    - paralélne vykonávanie môže zahájiť iba limitovaná kombinácia typov inštrukcií (,,párovateľné inštrukcie'')
+        - veľmi závislé na kvalitnom prekladači
+        
+- VLIW procesory
+    - inštrukcie obsahujú viac paralélnych operácií
+    - konflikty detekuje a rieši prekladač (takmer výlučne)
+    - šírka inštrukcií typicky 6-10 paralélnych operácií
+    
+- dynamické superskalárne procesory
+    - spracováva viac inštrukcií paralélne aj mimo programové poradie
+    - dnes typicky podporuje špekulatívne vykonávanie inštrukcií za skokom a niekedy aj špekulatívne vykonávanie Load/Store inštrukcií</answer>
+    </element>
+    <element>
+        <question>SIMD</question>
+        <answer>- vektorové procesory
+- obsahuje inštrukcie pre práce s polami - vektory dát
+- použitie skôr u GPU, dnes už bežná súčasť architektúr</answer>
+    </element>
+    <element>
+        <question>Vector / array computers</question>
+        <answer>Array computers
+    - obsahuje jednotky zvládajúce ALU, a Floating point + registre
+    - pracujú paralélne a synchronizovane
+
+Vector computers
+    - jednotky sú jednoduchšie, špecializované
+    - pracujú zreťazene</answer>
+    </element>
+    <element>
+        <question>Výhody / nevýhody SIMD</question>
+        <answer>Výhody:
+    - jednoduchšie než MIMD
+    - menšie nároky na pamäť
+    - jeden inštrukčný tok a synchronizácia zjednodušuje programy
+    - odpadá réžia so zložitou synchronizáciou medzi procesami, ktorá je u MIMD
+    - rýchlejšia komunikácia medzi procesormi než u MIMD
+        - menšia latencia
+        - menšia réžia na štruktúry komunikačných paketov, smerovania atď
+        
+Nevýhody:
+    - nie všetky problémy sú dátovo paralelizovateľné
+    - pokles výkonnosti u programov s mnohými podmienenými skokmi
+    - nie sú vhodné pri malom počte procesorov (neexistuje niečo ako ,,starter kit'')
+    - vyžadujú nie úplne bežné procesory</answer>
+    </element>
+    <element>
+        <question>Komunikácia</question>
+        <answer>- prenáša dáta
+- prostriedky pre komunikáciu
+    - zdieľaná pamäť
+        - skutočná x simulovaná
+        - boj o zbernicu, cache, lokalita odkazov
+        - riešenie konfliktov pri zápise
+        - obtiažne použiteľná pre synchronizáciu
+    - zasielanie správ
+        - kanály
+            - synchronné x asynchronné (kapacita)
+            - jednosmerný x obojsmerný (ACK)
+        - volanie vzdialených procedúr (RPC)
+        - všesmerové vysielanie (broadcasting)
+            - úmyselné posielanie správ všetkým
+            - vysielanie každému procesu
+            - záplava - na jednu správu odpovedia procesy inou b. správou</answer>
+    </element>
+    <element>
+        <question>Synchronizácia</question>
+        <answer>- neprenášajú sa dáta
+- prostriedky
+    - zasielanie správ
+    - randevous
+    - semafor
+    - monitor
+    - bariéra
+- typické synchronizačné úlohy
+    - súperenie
+    - kooperácia
+- synchronizácia v distribuovaných systémoch
+    - logický čas
+    - časové razítka / tokeny</answer>
+    </element>
+    <element>
+        <question>Prepojovacie siete</question>
+        <answer>Použitie:
+    - prepojiť procesory so zdieľanou pamäťou
+    - prepojiť procesory navzájom
+Typy prepojovacích médií:
+    - statické
+    - dynamické
+    - zdieľané (zbernice)
+    - prepínané
+- vlastnosti prepojovacej siete ovplyvňujú vhodnosť jednotlivých typov algoritmov a ovplyvňujú efektívnosť toku dát</answer>
+    </element>
+    <element>
+        <question>Statické siete</question>
+        <answer>- všetky uzly sú procesory
+- kanály sú spojnice medzi uzlami (procesory)
+- používajú sa pre architektúry bez zdieľanej pamäte</answer>
+    </element>
+    <element>
+        <question>Statické siete - vlastnosti</question>
+        <answer>- Priemer (Diameter) - dĺžka najdlhšej z najkratších ciest medzi všetkými dvojicami uzlov
+- Šírka bisekcie (Bisection width) - Minimálny počet hrán, ktoré spojujú dve približne rovnako veľké polovice siete
+- Konektivita (Arc connectivity) - Minimálny počet hrán, ktoré je nutné odstrániť pre rozdelenie siete na viac častí, taktiež stupeň uzlu
+- Veľkosť (Network size) - Počet uzlov v sieti
+- Cena (Cost) - Počet hrán v sieti</answer>
+    </element>
+    <element>
+        <question>n-rozmerná kocka (k=2) - vlastnosti</question>
+        <answer>- Počet uzlov = 2^n
+- Diameter = n
+- Konektivita = n
+- Šírka bisekcie = 2^(n-1)</answer>
+    </element>
+    <element>
+        <question>k-nárna n-rozmerná kocka (mriežka) - vlastnosti</question>
+        <answer>- Počet uzlov |N| = k^n
+- Diameter = n(k-1)
+- Konektivita = 2n
+- šírka bisekcie = k^(n-1)</answer>
+    </element>
+    <element>
+        <question>k-nárna n-rozmerná kocka (torus) - vlastnosti</question>
+        <answer>Jednosmerný
+- Počet uzlov |N| = k^n
+- Diameter = n(k-1)
+- Konektivita = 2n
+- šírka bisekcie = k^(n-1)
+
+Obojsmerný
+- Počet uzlov |N| = k^n
+- Diameter = n[k/2]
+- Konektivita = 4n
+- Šírka bisekcie = 2k^(n-1)</answer>
+    </element>
+    <element>
+        <question>d-árny strom - vlastnosti</question>
+        <answer>- strom kde žiadny uzol nemá viac než d potomkov, obvykle (d=2)
+- Diameter = 2p, 2*(log_d p) pre vyvážené
+- Konektivita = 1
+- Šírka bisekcie = 1</answer>
+    </element>
+    <element>
+        <question>Dynamické siete</question>
+        <answer>- prvky sú buď procesory, pamäťové buňky, alebo prepínače
+- často sa používajú pre implementáciu architektúr so zdieľanou pamäťou
+- zbernica, krížové prepínače (crossbar), dynamické siete, fat tree</answer>
+    </element>
+    <element>
+        <question>Sieť omega</question>
+        <answer>0 - vyberá si hornú cestu
+1 - vyberá si spodnú cestu</answer>
+    </element>
+    <element>
+        <question>Analýza algoritmov</question>
+        <answer>- Počet procesorov - (p) potrebných k riešeniu úlohy v závislosti na veľkosti inštancie n
+- Čas riešenia potrebný k riešeniu úlohy v jednotkách (krokoch) t(n)
+- Cena paralelného riešenia: c(n) = p(n) * t(n)
+    - algoritmus s optimálnou cenou: c(n)_optim = t_seq(n)
+- Zrýchlenie x Efektívnosť
+    - Zrýchlenie t_seq(n) / t(n)
+    - Efektívnosť t_seq(n) / c(n)</answer>
+    </element>
+    <element>
+        <question>Enumeration sort 1</question>
+        <answer>P3/4 4/89</answer>
+    </element>
+    <element>
+        <question>Odd-even transposition sort</question>
+        <answer>P3/4 8/89</answer>
+    </element>
+    <element>
+        <question>Odd-even merge sort</question>
+        <answer>P3/4 9/89</answer>
+    </element>
+    <element>
+        <question>Merge-splitting sort</question>
+        <answer>P3/4 11/89</answer>
+    </element>
+    <element>
+        <question>Pipeline merge sort</question>
+        <answer>P3/4 12/89</answer>
+    </element>
+    <element>
+        <question>Enumeration sort 2</question>
+        <answer>P3/4 14/89</answer>
+    </element>
+    <element>
+        <question>Minimum extraction sort</question>
+        <answer>P3/4 16/89</answer>
+    </element>
+    <element>
+        <question>Bucket sort</question>
+        <answer>P3/4 18/89</answer>
+    </element>
+    <element>
+        <question>Median finding and Splitting</question>
+        <answer>P3/4 20/89</answer>
+    </element>
+    <element>
+        <question>Parallel select</question>
+        <answer>P3/4 24/89</answer>
+    </element>
+    <element>
+        <question>Parallel splitting</question>
+        <answer>P3/4 25/89</answer>
+    </element>
+    <element>
+        <question>N-ary search</question>
+        <answer>P5 3/63</answer>
+    </element>
+    <element>
+        <question>Unsorted search</question>
+        <answer>P5 4/63</answer>
+    </element>
+    <element>
+        <question>EREW, CREW, CRCW</question>
+        <answer>EREW
+    - 1.krok = O(log n)    2.krok = O(n/N)    3.krok = O(log N)
+    - t(n) = O(log N + n/N)
+    - c(n) = O(N*log N + n)
+    
+CREW
+    - 1.krok = O(1)    2.krok = O(n/N)    3.krok = O(log N)
+    - t(n) = O(log N + n/N)
+    - c(n) = O(N*log N + n)
+    
+CRCW
+    - 1.krok = O(1)    2.krok = O(n/N)    3.krok = O(1)
+    - t(n) = O(n/N)
+    - c(n) = O(n) - optimálne</answer>
+    </element>
+    <element>
+        <question>Tree search</question>
+        <answer>P5 5/63</answer>
+    </element>
+    <element>
+        <question>Transpozícia</question>
+        <answer>P5 7/63</answer>
+    </element>
+    <element>
+        <question>Násobenie matíc</question>
+        <answer>P5 9/63</answer>
+    </element>
+    <element>
+        <question>Mesh multiplication</question>
+        <answer>P5 10/63</answer>
+    </element>
+    <element>
+        <question>Linear array multiplication</question>
+        <answer>P5 12/63</answer>
+    </element>
+    <element>
+        <question>Tree MV multiplication</question>
+        <answer>P5 13/63</answer>
+    </element>
+    <element>
+        <question>PRAM (Parallel Random Access Machine)</question>
+        <answer>- Synchronný model paralelného výpočtu, procesory komunikujú zdieľanou pamäťou
+- Skladá sa z p procesorov RAM
+
+Procesor:
+- Aditívne (logické) operácie
+- Podmienené skoky na základe porovnania
+
+Pamäť (sada registrov)
+- neobmedzený počet
+
+- je to alternatívny model k paralelnému Turingovmu stroju
+- všetky RAMy sú riadené jedným spoločným programom</answer>
+    </element>
+    <element>
+        <question>Broadcast</question>
+        <answer>- hodnota, uložená v pamäti, má byť rozšírená medzi N procesorov
+    - pre CREW a CRCW PRAM je triviálne riešenie v konštantnom čase
+    - pre EREW je treba simulovať súčasné čítanie</answer>
+    </element>
+    <element>
+        <question>Suma prefixov</question>
+        <answer>- All-prefix-sums, allsums, scan
+- jeden zo základných kameňov stavby paralélnych algoritmov
+- suma prefixov je operácia, kde jej vstupom je binárny asociatívny operátor ⊕ a usporiadaná postupnosť prvkov [a0, a1, ... a_(n-1)] ktorá vracia postupnosť [a0, (a0 ⊕ a1), ..., (a0 ⊕ a1 ⊕ ... ⊕ a_(n-1)]
+- napr. ak je operátor ⊕ sčítanie a vstupná postupnosť [3 1 7 0 4 1 6 3] potom výsledok sumy prefixov je [3 4 11 11 15 16 22 25]
+
+- Použitia:
+    - Vyhodnocovanie polynómov
+    - Sčítanie binárnych čísel v hardware
+    - Lexikálne porovnanie reťazcov
+    - Lexikálna analýza
+    - Implementácia radix-sortu, quick-sortu
+    - Rušenie označených prvkov v poli
+    - Vyhľadávanie regulárnych výrazov (grep)</answer>
+    </element>
+    <element>
+        <question>Segmentový scan</question>
+        <answer>P6 20/106</answer>
+    </element>
+    <element>
+        <question>Quicksort</question>
+        <answer>P6 20/106</answer>
+    </element>
+    <!-- ################################################################### KONIEC POLSEMESTRALKA ############################################### -->
+    <!-- <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element> -->
+</data>
