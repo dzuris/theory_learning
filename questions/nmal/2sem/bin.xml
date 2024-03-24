@@ -489,6 +489,135 @@ evolučný dizajn
     
 evolučné umenie - kritérium určujúcim fitness je estetické cítenie</answer>
     </element>
+    <!-- ====================================================================================================================================================================== -->
+    <!-- Prednáška 4 -->
+    <element>
+        <question>Reprezentácia problému v CGP</question>
+        <answer>- pomocou acyklického orientovaného grafu
+- ni - počet vstupov
+- no - počet výstupov
+- v - počet stĺpcov
+- u - počet riadkov</answer>
+    </element>
+    <element>
+        <question>CGP L-back, L-back parameter</question>
+        <answer>- vstup uzlu môže byť pripojený k primárnemu vstupu alebo k výstupu iného uzla, ktorý sa nachádza v predchádzajúcich stĺpcoh. V rámci stĺpca je prepojovanie zakázané. Z pohľadu číslicových obvodov tak môžu vzniknúť iba kombinačné logické obvody.
+        
+L-back parameter - určuje počet stĺpcov predchádzajúcich j-tý stĺpec,z ktorých môže byť vybraný vstup pre uzol v j-tom stĺpci (primárne vstupy sú obvykle chápané ako výstupy ,,nultého'' stĺpca)
+    - L=1 - môžu byť prepojené iba susedné stĺpce
+    - L=max - neexistuje obmedzenie na prepojenie medzi stĺpcami
+    - L=max a počet riadkov je 1 - povolená maximálna možná konektivita
+    - parameter L teda výrazne ovplyvňuje množinu vytvoriteľných grafov a veľkostí stavového priestoru</answer>
+    </element>
+    <element>
+        <question>Fitness hodnota v CGP</question>
+        <answer>- počet správne určených bitov na výstupe pre všetky zadané vstupné kombinácie (max 16)</answer>
+    </element>
+    <element>
+        <question>Najčastejšie používané utácie v CGP</question>
+        <answer>Pravdepodobnostná mutácia - mutuj každý gén s pravdepodobnosťou pm
+Bodová mutácia - Náhodne vyber k integerov a nahraď ich náhodne generovanými (ale legálnymi) hodnotami</answer>
+    </element>
+    <element>
+        <question>Mutácie v CGP</question>
+        <answer>- z aktívnych uzlov sa môžu stať neaktívne uzly a naopak
+- majú veľký vplyv na fenotyp
+- mutácia je neutrálna, ak nemá vplyv na fitness
+- single mutácia - mutuje sa tak dlho, kým sa nezmení aspoň jeden aktívny uzol
+- Kríženie: Zavedenie niekoľkých spôsobov kríženia, ale (štatisticky) nepreukázaná významná užitočnosť</answer>
+    </element>
+    <element>
+        <question>Neutralita fenotypov CGP</question>
+        <answer>- dva fenotypy sú vzájomne neutrálne ak majú rovnakú fitness hodnotu.</answer>
+    </element>
+    <element>
+        <question>Vplyv pozície uzlu na jeho aktivitu CGP</question>
+        <answer>- uzly umiestnené blízko k primárnym vstupom budú aktívne s vyššiou pravdepodobnosťou než vzdialenejšie uzly</answer>
+    </element>
+    <element>
+        <question>Problémy CGP</question>
+        <answer>- ak pracujeme na úrovni hradiel a ohodnocujeme vo fitness funkcii všetky vstupné kombinácie, potom CGP je schopné vygenerovať kvalitné riešenie pre obvody do cca 15 vstupov - za predpokladu, že je počiatočná populácia náhodne inicializovaná
+- v prípade násobičiek ale CGP bežne funguje iba pre max. 4b operandy
+- ak neohodnocujeme vo fitness funkcii všetky vstupné kombinácie, často sa nepodarí nájsť správne fungujúci obvod
+- s rastúcou zložitosťou cieľového obvodu klesá počet behov, ktoré skončia úspešne</answer>
+    </element>
+    <element>
+        <question>Aplikácia CGP</question>
+        <answer>- návrh programov - symbolická regresia
+- návrh číslicových obvodov
+- návrh číslicových filtrov
+- návrh číslicových operátorov
+- návrh kontrolérov pre roboty
+- návrh NN a CNN
+- biológiou inšpirovaný development
+- alife
+- evolučné umenie
+- CGP v FPGA</answer>
+    </element>
+    <!-- ====================================================================================================================================================================== -->
+    <!-- Prednáška 5 -->
+    <element>
+        <question>Reprezentácia obvodov EWH</question>
+        <answer>- priamo na rôznych úrovniach:
+    - úroveň materiálu, nanoštruktúry
+    - tranzistory
+    - hradla
+    - funkčné bloky
+    - matematický model
+- nepriamo:
+    - chromozóm obsahuje program (predpis) pre konštrukciu obvodu</answer>
+    </element>
+    <element>
+        <question>Ohodnotenie kandidátnych obvodov</question>
+        <answer>- extrinsic evolution (nepravá evolúcia) - kandidátne obvody sú vyhodnocované pomocou simulátoru. Iba pre výsledok evolúcie je uvažovaná fyzická realizácia
+    - nevýhody: obvykle pomalé, není možné do modelu zahrnúť ,,celý svet''
+- intrinsic evolution (pravá evolúcia) - kandidátne obvody sú vyhodnocované v skutočnom HW
+- mixtrinsic evolution (zmiešaná evolúcia) - čásť populácie je ohodnotená pomocou simulátoru, časť v reálnom HW</answer>
+    </element>
+    <element>
+        <question>Doba evaluácie a doba evolúcie</question>
+        <answer>t_eval = t_bitgen + t_rec + N*(t_vect_eval + t_cmp) + t_store
+- t_eval - doba nutná k evaluácii kandidátneho riešenia
+- t_bitgen - doba nutná k vytvoreniu konfigurácie z chromozómu
+- t_rec - doba rekonfigurácie
+- N - počet trénovacích vektorov
+- t_vect_eval - doba nutná k evaluácií jedného trénovacieho vektoru
+- t_cmp - doba porovnania jedného výstupu s referenčnou hodnotou
+- t_store - doba nutná pre výpočet/aktualizáciu fitness hodnoty a jej uloženie
+Predpoklad: operácie sú vykonávané postupne
+
+Doba evolúcie:
+t = G(P*t_eval + t_np)
+- P - veľkosť populácie
+- G - počet generácií
+- t_np - doba vytvorenia novej populácie</answer>
+    </element>
+    <element>
+        <question>2 základne použitia vyvíjajúcich sa obvodov</question>
+        <answer>- evolučný návrh obvodov
+- evolvable hardware</answer>
+    </element>
+    <element>
+        <question>Thompsonov experiment</question>
+        <answer>P5 10-12/41</answer>
+    </element>
+    <element>
+        <question>Súčasné problémy EWH</question>
+        <answer>- škálovateľnosť reprezentácie
+    - zložité obvody sú obvykle reprezentované dlhým chromozómom =&gt; veľký (a členitý) priestor kandidátnych riešení =&gt; EA je neefektívne
+    - EA pracujúce na úrovni hradiel umožňuje nájsť riešenie pre obvody do cca 15 vstupov a 10 výstupov a cca 100 hradiel - jedná sa o evolučný návrh s prakticky nulovou znalosťou návrhara
+    - Riešenie: dodať znalosť o probléme do metódy riešenia
+- škálovateľnosť evaluácie kandidátnych riešení
+    - doba ohodnotenia rastie exponencionálne s počtom vstupov</answer>
+    </element>
+    <element>
+        <question>Evolučný návrh na úrovni funkčných blokov</question>
+        <answer>- do metódy riešenia je dodaná znalosť
+- táto reprezentácia vedie na skrátenie chromozómu oproti reprezentácii rovnakého obvodu na úrovni hradiel
+- nie je možné otestovať vo fitness funkcii všetky možné kombinácie na vstupoch =&gt; používa sa trénovacia množina.</answer>
+    </element>
+    <!-- ====================================================================================================================================================================== -->
+    <!-- Prednáška 6 -->
     <!-- <element>
         <question>Question num 2</question>
         <answer>Answer num 2</answer>
