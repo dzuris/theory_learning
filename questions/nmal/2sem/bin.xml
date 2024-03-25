@@ -514,7 +514,7 @@ L-back parameter - určuje počet stĺpcov predchádzajúcich j-tý stĺpec,z kt
         <answer>- počet správne určených bitov na výstupe pre všetky zadané vstupné kombinácie (max 16)</answer>
     </element>
     <element>
-        <question>Najčastejšie používané utácie v CGP</question>
+        <question>Najčastejšie používané mutácie v CGP</question>
         <answer>Pravdepodobnostná mutácia - mutuj každý gén s pravdepodobnosťou pm
 Bodová mutácia - Náhodne vyber k integerov a nahraď ich náhodne generovanými (ale legálnymi) hodnotami</answer>
     </element>
