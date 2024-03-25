@@ -618,9 +618,28 @@ t = G(P*t_eval + t_np)
     </element>
     <!-- ====================================================================================================================================================================== -->
     <!-- Prednáška 6 -->
-    <!-- <element>
-        <question>Question num 2</question>
-        <answer>Answer num 2</answer>
+    <element>
+        <question>Návrh analógových obvodov pomocou GP (Kozova metóda)</question>
+        <answer>- chromozóm obsahuje program, ktorý, keď je spustený, postupne konštruuje kandidátny analógový obvod zo zadaného triviálneho obvodu (tzv. embrya)
+- program obsahuje inštrukcie, napr. sem vlož kapacitátor
+- vytvorený obvod je následne zkonvertovaný do formátu netlist
+- tento netlist spoločne so zvoleným typom simulácie a nastavením vstupných signálov predstavuje vstup pre simulátor
+- spustí sa simulátor, vykoná sa požadovaná simulácia a výstup simulácie sa uloží do súboru
+- na základe analýzy tohoto súboru zistíme fitness hodnotu
+
+- Nevýhody: nutnosť vysokého výpočetného výkonu
+- Kozova metóda býva niekedy kritizována, pretože generuje obvody, ktoré nerešpektujú určité technologické obmedzenia, a teda nie sú vhodné pre existujúci postup výroby. Tieto nedostatky možno eliminovať zavedením určitých obmedzení do porcesu generovania kandidátnych riešení (napr. metóda ISCLEs)</answer>
+    </element>
+    <element>
+        <question>Problém evolučne navrhnutých obvodov</question>
+        <answer>- často pracujú iba v tých podmienkach, ktoré existovali v priebehu evolúcie a pre tie vstupy, na ktoré boli natrénované</answer>
+    </element>
+    <element>
+        <question>Evolúcia v FPTA-2</question>
+        <answer>- je obtiažne vyevolvovať zložité obvody, aj keď je evaluácia kandidátnych obvodov v FPTA výrazne rýchlejšia než pomocou simulátoru
+- často je obtiažne dosiahnuť toho, aby vyevolvované riešenie bolo robustné, stabilné a pracovalo aj v podmienkach, ktoré neexistovali v priebehu evolúcie
+- obtiažnosť spočíva vo vytvorení vhodnej fitness funkcie. Implicitné predpoklady EA neberie v úvahu
+- experimentálne preukázané, že je evolučný návrh schopný generovať riešenia pre extrémne prostredie. Oproti bežným technikám, je obnovenie funkcie zaistené vhodnou rekonfiguráciou</answer>
     </element>
     <element>
         <question>Question num 2</question>
@@ -629,5 +648,9 @@ t = G(P*t_eval + t_np)
     <element>
         <question>Question num 2</question>
         <answer>Answer num 2</answer>
-    </element> -->
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
 </data>
