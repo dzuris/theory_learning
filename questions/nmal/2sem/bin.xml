@@ -641,7 +641,8 @@ t = G(P*t_eval + t_np)
 - obtiažnosť spočíva vo vytvorení vhodnej fitness funkcie. Implicitné predpoklady EA neberie v úvahu
 - experimentálne preukázané, že je evolučný návrh schopný generovať riešenia pre extrémne prostredie. Oproti bežným technikám, je obnovenie funkcie zaistené vhodnou rekonfiguráciou</answer>
     </element>
-    <element>
+    <!-- ============================================== POLSEMESTRALKA ===================================================== -->
+    <!-- <element>
         <question>Question num 2</question>
         <answer>Answer num 2</answer>
     </element>
@@ -652,5 +653,5 @@ t = G(P*t_eval + t_np)
     <element>
         <question>Question num 2</question>
         <answer>Answer num 2</answer>
-    </element>
+    </element> -->
 </data>
