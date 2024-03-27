@@ -595,7 +595,18 @@ t = G(P*t_eval + t_np)
     <element>
         <question>2 základne použitia vyvíjajúcich sa obvodov</question>
         <answer>- evolučný návrh obvodov
-- evolvable hardware</answer>
+    - EA je použitý vo fázi návrhu. EA nie je súčasťou výsledného produktu.
+    - Zaujíma nás výsledok evolúcie. Cieľom je nájsť inovatívne riešenie schopné ,,poraziť'' konvenčné riešenie alebo zautomatizovaný návrh.
+    - Doba behu EA môže byť dlhá, ak to prinesie očakávaný výsledok.
+- evolvable hardware
+    - EA je použitý pre adaptáciu HW behom činnosti HW v prípade, že:
+        - je zmenená špecifikácia
+        - dôjde k zmene charakteru vstupných dát
+        - dôjde k poruche HW a je treba nájsť ,,lepšiu'' konfiguráciu, ktorá v ideálnom prípade obnoví pôvodnú činnosť obvodu
+    - EA je typicky súčasťou systému. Okrem kvality vyevolvovaného riešenia nás zaujíma aj doba evolúcie.
+    - často sa jedná o evolúciu s otvoreným koncom, tj. nie je známy cieľový stav, po jeho dosiahnutí by evolúcia mohla skončiť
+    - vyevolvované riešenie je optimalizované pre dané miesto, čas a okolné podmienky
+    - termín ,,evolvable hardware'' je správne používať iba v tomto kontexte, aj keď je často používaný aj pre evolučný návrh obvodov</answer>
     </element>
     <element>
         <question>Thompsonov experiment</question>
