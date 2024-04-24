@@ -1,5 +1,5 @@
 <data>
-    <element>
+    <!-- <element>
         <question>Vzorec na Amdahlov zákon</question>
         <answer>S(N) = 1 / ((1-alfa) + alfa/N)
 N - počet procesorov
@@ -8,11 +8,11 @@ alfa - koľko percent úlohy je paralelizovateľnej &lt; 0;1 &gt;</answer>
     <element>
         <question>Flynová klasifikácia</question>
         <answer>(Single / Multiple, Instruction / Data)
-- SISD - Jedna inštrukcia pracuje s jedným dátovým prvkom
-- SIMD - Jedna inštrukcia pracuje s viac datovými prvkami
+- SISD (konvenčné) - Jedna inštrukcia pracuje s jedným dátovým prvkom
+- SIMD (vektorové) - Jedna inštrukcia pracuje s viac datovými prvkami
     - Vektorové procesory
     - MSIMD
-- MISD - Viac inštrukcií pracuje s jedným datovým prvkom
+- MISD (reťazové) - Viac inštrukcií pracuje s jedným datovým prvkom
 - MIMD - Viac inštrukcií pracuje s viac dátovými prvkami
     - Viacvláknové procesory
     - Viacprocesorové systémy</answer>
@@ -30,6 +30,10 @@ Program =&gt; Dataflow graf =&gt; Interpretácia grafu</answer>
     - Premenná sa môže vyskytovať na ľavej strane priradenia iba jedenkrát (v oblasti kódu, kde je používaná)
 - Príklad jazykov - VAL, Id, LUCID
 - Dataflow program je preložený na dataflow graf, čo je orientovaný graf s pomenovanými uzlami, ktoré reprezentujú inštrukcie, a hranami, reprezentujúcimi závislosti medzi inštrukciami</answer>
+    </element>
+    <element>
+        <question>Interpretácia grafu toku dát, dataflow procesor (statický)</question>
+        <answer>Dokument 6/54</answer>
     </element>
     <element>
         <question>Dynamický dataflow</question>
@@ -58,10 +62,13 @@ Program =&gt; Dataflow graf =&gt; Interpretácia grafu</answer>
         <question>Zreťazené procesory - problémy</question>
         <answer>- štrukturálne hazardy
     - Inštrukcie v zreťazenej linke požadujú rovnaký prostriedok
+    - Riešenie: pozdržanie vykonávania, oddelenie inštrukčnej a dátovej pamäte
 - datové hazardy
     - výsledok predchádzajúcej inštrukcie v zreťazenej linke je očakávaný inou - následujúcou inštrukciou
+    - Riešenie: prekladač zmení poradie inštrukcií, vloží NOPy
 - riadiace hazardy
-    - podmienené skoky</answer>
+    - podmienené skoky
+    - Riešenie: odloženie vykonávaných následujúcich inštrukcií, špekulatívne vykonávanie</answer>
     </element>
     <element>
         <question>VLIW (Very Long Instruction Word)</question>
@@ -136,6 +143,10 @@ Nevýhody:
     - pokles výkonnosti u programov s mnohými podmienenými skokmi
     - nie sú vhodné pri malom počte procesorov (neexistuje niečo ako ,,starter kit'')
     - vyžadujú nie úplne bežné procesory</answer>
+    </element>
+    <element>
+        <question>Granularita paralelizmu</question>
+        <answer>Dokument 10/54</answer>
     </element>
     <element>
         <question>Komunikácia</question>
@@ -240,6 +251,35 @@ Obojsmerný
 - zbernica, krížové prepínače (crossbar), dynamické siete, fat tree</answer>
     </element>
     <element>
+        <question>Krížový prepínač vlastnosti</question>
+        <answer>- Cena: p^2
+- Priepustnosť: O(p)
+- Diameter: 1
+- Konektivita: 1
+- Bisekcia: p
+
+- P2 nová 89/98</answer>
+    </element>
+    <element>
+        <question>Prepínač P2</question>
+        <answer>- dáta prechádzajú cez prepínač, nie cez uzly (napr. hyperkocka)
+- Prepínač.. preposiela vstup na jeden alebo viac výstupov
+- Realizácia, fyzický, multiplexor / demultiplexor</answer>
+    </element>
+    <element>
+        <question>Fat tree</question>
+        <answer>- rieši problém väčšej záťaže komunikácie bližšie ku koreňu stromu
+- dynamická voľba kanálu pre komunikáciu
+- P2 nová 90/98</answer>
+    </element>
+    <element>
+        <question>Zbernica vlastnosti</question>
+        <answer>- obvykle pre zdieľaný prostriedok (pamäť)
+- Cena: p
+- Priepustnosť: 1
+- Diameter: 1</answer>
+    </element>
+    <element>
         <question>Sieť omega</question>
         <answer>0 - vyberá si hornú cestu
 1 - vyberá si spodnú cestu</answer>
@@ -328,7 +368,7 @@ CRCW
         <answer>P5 5/63</answer>
     </element>
     <element>
-        <question>Transpozícia</question>
+        <question>Transpozícia, Mesh transpose, EREW transpose</question>
         <answer>P5 7/63</answer>
     </element>
     <element>
@@ -372,7 +412,7 @@ Pamäť (sada registrov)
         <question>Suma prefixov</question>
         <answer>- All-prefix-sums, allsums, scan
 - jeden zo základných kameňov stavby paralélnych algoritmov
-- suma prefixov je operácia, kde jej vstupom je binárny asociatívny operátor ⊕ a usporiadaná postupnosť prvkov [a0, a1, ... a_(n-1)] ktorá vracia postupnosť [a0, (a0 ⊕ a1), ..., (a0 ⊕ a1 ⊕ ... ⊕ a_(n-1)]
+- suma prefixov je operácia, kde jej vstupom je binárny asociatívny operátor ⊕ a usporiadaná postupnosť prvkov [a0, a1, ... a_(n-1)] ktorá vracia postupnosť [a0, (a0 ⊕ a1), ..., (a0 ⊕ a1 ⊕ ... ⊕ a_(n-1))]
 - napr. ak je operátor ⊕ sčítanie a vstupná postupnosť [3 1 7 0 4 1 6 3] potom výsledok sumy prefixov je [3 4 11 11 15 16 22 25]
 
 - Použitia:
@@ -391,13 +431,117 @@ Pamäť (sada registrov)
     <element>
         <question>Quicksort</question>
         <answer>P6 20/106</answer>
-    </element>
+    </element> -->
     <!-- ################################################################### KONIEC POLSEMESTRALKA ############################################### -->
-    <!-- <element>
-        <question>Question num 2</question>
+    <element>
+        <question>MPI downsweep</question>
         <answer>Answer num 2</answer>
     </element>
     <element>
+        <question>MPI obecny Broadcast</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Reduce</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>PRAM algoritmy</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Etour, Suffixsum (preorder, nasledujuce vrcholy, cesta ...)</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Broadcast FIFO, kauzalita, atomicnost (kod, graf, teoria)</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>OCCAM</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Carry look ahead priklad</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Previest asynchronny system na synchronny</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Pi kalkul</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Monitor, wait, signal</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Test&amp;Set</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Pipeline merge sort</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Random mating</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Linda</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Prescan, upsweep, downsweep teoria + priklady</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>zretazene procesory MISD</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Enumeration sort pole</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>VLIW</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Xeon Phi</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Marzallov algoritmus</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Operacia AND na CRCW princip + priklad</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>PRAM architektura</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Suzuki</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Dataflow</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Producent konzument pseudokód</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Granularita paralelizmu</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <!-- <element>
         <question>Question num 2</question>
         <answer>Answer num 2</answer>
     </element> -->
