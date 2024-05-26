@@ -36,8 +36,12 @@ def print_help_message():
     print("\tpython3.8 theory_learning.py [-f FILE | -h | --help]")
     print()
     print("Options:")
-    print("FILE - Input xml file")
-    print("-h | --help - prints this message")
+    print("\tFILE - Input xml file")
+    print("\t-h | --help - prints this message")
+    print()
+
+    print("Example run:")
+    print("\tpython.exe main.py -f questions/nmal/2sem/sur.xml")
     print()
 
     print_choices_help()
