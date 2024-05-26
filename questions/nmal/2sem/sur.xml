@@ -1,0 +1,103 @@
+<data>
+    <element>
+        <question>Detection error tradeoff (DET), probit scale, FP vs FN</question>
+        <answer>False alarm = False positive
+Miss = False negative</answer>
+    </element>
+    <element>
+        <question>Bayes rule - sum, product, kotrmelec</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>MAP classificator - error minimalization, picking best P(C|x) * P(C)</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Gauss classifier - more dimensional + MLE</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Categorical distribution + MLE</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>GMM - EM, Viterbi, latent variable, mu_new, Pc_new, cov.matrix_new mean through pst, ze patri do triedy alebo na tvrdo</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Extrakcia priznakov</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Diagonalna kovariancna matica - nekorelovane data, je mozne modelovat 2 zvlast gaussovkami</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Vlastne cisla + vlastne vektory, projekcia, skalarny sucin</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>PCA - transformacia kov. matice na diagonalnu, dekorelacia, redukcia dimenzionality, najvacsi rozptyl</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>LDA - stredy vs rozptyly, hladanie smeru, ktory smer najlepsie separuje</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>LDA viac tried - within class, across class</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>MFCC - ramce, hamming, FFT, filter bank energie, log. dekorelacia na MFCC (cosinova, vlastne cisla/vektory)</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>SVD - malo dat, vela rozmerov</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Linearny klasifikator - y(x) = wTx + w0, ak &gt; 0 C1 else C2, vzdialenost od pociatku, (y(x) = 0), alebo w0/|w|</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Perceptron - algoritmus ucenia, kedy funguje, aktivacia, ak &gt; 0 1 else -1, y(x) = f(wTx)</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Pravdepodobnostny generativny model (linear gauss classifier) - MAP klasifikator vzorec (P(C1|x)P(C1) &gt; P(C2|x)P(C2)), rozpisat a dosadit gauss napr. dostaneme W a W0 (W je koeficient pred x, W0 konstanta), MLE, priemerna kovarianca matica (musi byt rovnaka)</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Generativny model a zobecneny linearny klasifikator - vysledok lin. gauss klasifikatoru do sigmoidy, prevedie spat na posterior pst. vystup bol logit, sigmoida a logit = neutralita</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Linearny klasifikator pre viac tried - viac klasifikatorov (proti sebe, jeden proti vsetkym), vyberame triedu s najvacsiou pst.</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Gaussovsky linearny klasifikator pre viac tried - aktivacia softmax (nepreparametrizovat), vystup softmax = vektor pst., mozem odcitat konstantu (poslednu hodnotu) a skratit pocet parametrov</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Logisticka regresia - linearny klasifikator ale na konci nelinearita (sigmoid()), dava pst 0-1</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Linearna logisticka regresia pre viac tried - diskriminativna, P(C1|x) = sigmoid(WTx + W0), minimalizujeme objektivnu funkciu -ln P(t|x) = E(w) (cross-entropy), update vah podla gradientu (∂E(w)/∂w), W_(t+1) = W_t - lr * ∂E(W_t), newton-Raphson (2. derivacia pre presnejsi zostup, Hasseova matica), W_(t+1) = W_t - H(w_T) * ∂E(W_t), regularizacia = pridanie velkosti W do objektivnej funkcie (zamedzuje aby W boli prilis velke), nelinearni transformacie vstupu (umozni linearne oddelit nelinarne data)</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <!-- <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element> -->
+</data>
