@@ -1,0 +1,121 @@
+<data>
+    <element>
+        <question>Nashovo equilibrium, kolko ich moze byt</question>
+        <answer>Majme hru Γ. profil s* patriaci do S sa nazyva Nashovo Equilibrium v rydzich strategiach, ak plati:
+    pre vsetky i z Q, pre vsetky si z Si : Ui(si*, s-i*) &gt;= Ui(si, s-i*)
+    
+- kazda konecna hra ma vzdy aspon 1 rovnovazny bod v zmiesanych strategiach
+- kazda konecna hra ma neparny pocet nashovych ekvilibrii</answer>
+    </element>
+    <element>
+        <question>Algoritmus PNE</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>MNE definica, dokaz preco existuje</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Ako najst MNE</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Odvodit rovnovazny bod u Courtonovho modelu duopolu, monopolu</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Princip spatnej indukcie</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Kooperativna hra s prenositelnym uzitkom</question>
+        <answer>Kooperativna hra TU v tvare charakteristickej funkcie je dana mnozinou hracov:
+    Q = {1, 2, ..., N}
+a realnou funkciou
+    v: 2^Q -&gt; R
+takou, ze v({}) = 0</answer>
+    </element>
+    <element>
+        <question>Imputacia</question>
+        <answer>Nech Γ je hra v tvare charakteristickej funkcie s mnozinou hracov
+    Q = (1, 2, ..., N)
+    
+N-tica realnych cisiel sa nazyva imputacia, ak su splnene podmienky:
+- Individualna racionalita: pre vsetky i patriace do Q : ai &gt;= v({i})
+- Kolektivna racionalita: suma cez vsetky i z Q = v(Q)</answer>
+    </element>
+    <element>
+        <question>Imputacia v jadre</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Condorcetov paradox</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Definovat ESS</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Vysvetlit co je konflikt v evolucnych hrach</question>
+        <answer>- oznacuje situaciu, ked rozne strategie jednotlivcov v populacii sutazia o obmedzene zdroje alebo vyhody, pricom vysledkom je evolucny tlak, ktory ovplyvnuje frekvenciu tychto strategii v populacii.</answer>
+    </element>
+    <element>
+        <question>Nekooperativna hra 2 a N hracov</question>
+        <answer>Γ = (Q, S1, S2, U1, U2)
+    - Q = {1, 2} je konecna mnozina hracov
+    - Si kde i patri Q je konecna mnozina rydzich strategii hracov i patri Q
+    - Ui kde i patri Q : S1 x S2 -&gt; U su uzitkove funkcie hracov</answer>
+    </element>
+    <element>
+        <question>Revenue Equivalence principle</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Folk Theorem</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Strategicka manipulacia formalne</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Striktne a slabo dominantne strategie, porovnat striktne a BR, popisat iterativnu eliminaciu dominovanych strategii</question>
+        <answer>Striktne:
+- Majme hru Γ. Strategia si1 hraca kde i patriaci do Q striktne dominuje strategii si2, ak plati ze:
+    pre vsetky s-i patriace do S-i: U(si1, s-i) &gt; U(si2, s-i)
+    
+Slaba dominancia:
+- Majme hru Γ. Strategia si1 hraca kde i patri do Q slabo dominuje nad strategiou si2 ak plati ze:
+    pre vsetky s-i patriace do S-i: U(si1, s-i) &gt;= U(si2, s-i)
+    a sucasne existuje s-i patriace do S-i: U(si1, s-i) &gt; U(si2, s-i)
+    
+Porovnanie BR a striktne dominantnej strategie:
+- BR - lokalny koncept zavysli na konkretnej strategii ostatnych hracov
+- Striktna dominancia - globalny koncept zavysli od vsetkych moznych strategii protihracov</answer>
+    </element>
+    <element>
+        <question>Vztah medzi uzitkom a ziskom, 3 profily uzitku, kde v THE sa to vyuziva</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Formalna definicia vyjednavania, Nashov kooperativny profil na priklade</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>All pay aukcia</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Arrowov teorem</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Stackelbergov model</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <!-- <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element> -->
+</data>

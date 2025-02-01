@@ -1,0 +1,88 @@
+<data>
+    <element>
+        <question>Mamdaniho fuzzy model</question>
+        <answer>Answer num 1</answer>
+    </element>
+    <element>
+        <question>Max-min kompozicia</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Fuzzy T-normy S-normy</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Fuzzy operatory doplnku</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Sugenov fuzzy model</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>RL MDP s odmenami</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Q Learning</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>RL Nedeterministicky MDP, vypocet V* a Q*</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>On policy vs Off policy</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>TD Learning</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>DQN</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Proximal Policy Optimization</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Krizenie s indexovou tabulkou</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Krizenie PMX</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Ostrovny model GP</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Crowding in GP</question>
+        <answer>- problem kedy jeden jedinec fittuje omnoho viac ako ostatni
+- populacia sa potom zacne koncentrovat do okolia tohto jedinca, a redukuje sa jej diverzita
+- riesenia: zmena selekcnej funkcie, obmedzit niektore casti na rekombinaciu...</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+    <element>
+        <question>Question num 2</question>
+        <answer>Answer num 2</answer>
+    </element>
+</data>
