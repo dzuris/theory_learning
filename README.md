@@ -4,7 +4,7 @@
 
 This project is intended to help you with learning theoretical questions and formulas. You are going to have file with questions and program random choose question, then you will have time to think about the answer and when you will want to see it, you can easily show the answer text. Also you have an overview of all the questions same as the count of the all questions which you have in the file.
 
-With project also comes concise help message which will help you to navigate in the program.
+With project also come concise help message which helps you to navigate in the program.
 
 ## Getting started
 
