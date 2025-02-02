@@ -8,7 +8,7 @@ With project also come concise help message which helps you to navigate in the p
 
 ## Getting started
 
-This is overview of instructions which you will need to work with the program locally.
+This is overview of instructions you need to work with the program locally.
 
 ### Prerequisities
 
@@ -16,7 +16,7 @@ This is overview of instructions which you will need to work with the program lo
 
 ### Installation
 
-There is no need to install program in any way to your computer. You can just start the program through your terminal.
+There is no need to install program in any way to your computer. You can just start the program through your terminal with python interpreter.
 
 ## Usage
 
